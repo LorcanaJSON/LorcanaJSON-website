@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css" />
+    <title>LorcanaJSON Changelog</title>
+    <meta name="description" content="LorcanaJSON - Disney Lorcana card info in an easy data format" />
+    <meta name="robots" content="index,nofollow" />
+</head>
+<body>
+<a href="index.html">Back to main page</a>
+<div id="page">
+    <h2>Lorcana JSON Changelog</h2>
+    <h4 id="2024-04-xx-1.2.0-1">2024-04-xx - format version (<u>breaking and non-breaking changes</u>) 1.2.0</h4>
+    <ul>
+        <li>Add 'Pegasus - Gift for Hercules' (ID 775). <i>Note: The ID might change, since this card was revealed on the official Discord server, and doesn't have an official ID yet</i></li>
+        <li>Correct 'orie' to 'one' in 'Pinocchio - On the Run' (ID 273)</li>
+        <li>Add missing period after Challenger reminder text in 'Rafiki - Mystical Fighter' (ID 490)</li>
+        <li>Remove erroneous extra character in flavor text of the promo version of 'Goofy - Musketeer' (ID 670)</li>
+        <li>Remove extra space and add missing period in Shift reminder text of 'Rapunzel - Gifted Artist' (ID 689)</li>
+    </ul>
+    Permanent links: <a href="files/2024-04-xx-1.2.0-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2024-04-xx-1.2.0-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2024-04-xx-1.2.0-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2024-04-xx-1.2.0-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2024-03-25-1.2.0-1">2024-03-25 - format version (<u>breaking and non-breaking changes</u>) 1.2.0</h4>
+    <ul>
+        <li><b>Breaking</b> format change: Removed 'code' field from set data. It wasn't filled in the latest set anyway, since it got removed from the data in the official app</li>
+        <i>Non-breaking format additions:
+            <ul>
+                <li>Added 'story' field to all cards. It contains the name of the story (movie, show, etc.) that the card is from or references</li>
+                <li>Added 'fullIdentifier' field to all cards. It contains the full identifier as shown on the bottom-left of a card below the artist</li>
+            </ul>
+        </i>
+        <li>Fixed erroneous extra characters in subtypes of 'Pluto - Determined Defender' (ID 453) and 'Stitch - Rock Star' (ID 688)</li>
+        <li>Change dashes in the option list to actual bullet points in 'Maui's Fish Hook' (ID 568)</li>
+    </ul>
+    Permanent links: <a href="files/2024-03-25-1.2.0-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2024-03-25-1.2.0-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2024-03-25-1.2.0-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2024-03-25-1.2.0-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2024-02-29-1.1.0-1">2024-02-29 - format version (<u>breaking changes</u>) 1.1.0</h4>
+    <ul>
+        <li>Added 'Stitch - Rock Star' (ID 688), a special Enchanted promo version of 'Stitch - Rock Star'. Since this is the second 'Stitch - Rock Star' promo card, this neccessitated some changes to the data format</li>
+        <li><b>Breaking</b> format changes:
+            <ul>
+                <li>Replaced the single-value 'specialId' field with the 'promoIds' field, which is a list of all the IDS of promo versions of a non-promo card. For now, for all cards with promos this is a list with a single value, except for 'Stitch - Rock Star' (ID 23) that has two (IDs 660 and the new 688)</li>
+                <li>Replaced the 'nonSpecialId' field with 'nonPromoId', so the name matches 'promoIds'</li>
+                <li><i>The switch from 'special' to 'promo' in the names of these two fields is because it is a more specific naming, which hopefully makes it clearer what they represent</i></li>
+            </ul>
+        </li>
+    </ul>
+    Permanent links: <a href="files/2024-02-29-1.1.0-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2024-02-29-1.1.0-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2024-02-29-1.1.0-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2024-02-29-1.1.0-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2024-02-25-1.0.3-1">2024-02-25 - format version (non-breaking additions) 1.0.3</h4>
+    <ul>
+        <li>Added all Set 3 cards<br />
+            <i>('Kida - Atlantean', ID 442, has flavor text in Atlantean. The datafiles have the English version of this, prefixed with '[in Atlantean]'. This means it's not a direct representation of the card, but that isn't possible here, and this seemed more useful)</i>
+        </li>
+        <li>Added promo cards from all three sets and the Disney100 cards (both listed with rarity 'Special')</li>
+        <li>Non-breaking format additions:
+            <ul>
+                <li>Added fields 'specialId' and 'nonSpecialId'. Promo cards and the Disney100 cards have a 'nonSpecialId' field, referring to the ID of the card they're a special version of. These non-Special cards have a 'specialId' field pointing to their Special version</li>
+                <li>Added fields 'variant' and 'variantIds'. Some cards have same-rarity variants ('Dalmatian Puppy', ID 436 to 440). The 'variant' field lists which variant the current card is (value 'a' for the first one, 'b' for the second, etc.). The 'variantIds' field is a list with all the IDs of cards that are variants of the current card</li>
+                <li><i>Note: Since 'Special'-rarity cards start their 'number'-field numbering from 1, each set now has duplicate 'number' values. The 'id' field is the only guaranteed unique field</i></li>
+            </ul>
+        </li>
+        <li>Fixed missing newline character in the 'fullText' field of cards with the Bodyguard ability reminder text</li>
+        <li>Fixed effect label in Lawrence - Jealous Manservant (ID 402) to remove erroneous extra character</li>
+        <li>The base URL of all images got changed from 'https://ravensburger.cloud' to 'https://api.lorcana.ravensburger.com'</li>
+        <li>Due to changes in the parsing code, the order of some fields has changed. This shouldn't matter for automatic parsing, but might make any comparisons between older dataset files and this version confusing</li>
+    </ul>
+    Permanent links: <a href="files/2024-02-25-1.0.3-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2024-02-25-1.0.3-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2024-02-25-1.0.3-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2024-02-25-1.0.3-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2024-01-07-1.0.2-1">2024-01-07 - format version 1.0.2</h4>
+    <ul>
+        <li>Corrected prerelease date of Set 3 from February 24 2024 to February 23</li>
+        <li>All card image URLs were updated to a new domain ("cdn.ravensburger.de" to "ravensburger.cloud"), the part after the domain stayed the same</li>
+        <li>Added clarifications to 45 cards:
+            <ul>
+                <li>Christopher Robin - Adventurer (ID 218)</li>
+                <li>King Louie - Jungle VIP (ID 228)</li>
+                <li>Mufasa - Betrayed Leader (ID 230)</li>
+                <li>Mulan - Reflecting (ID 232)</li>
+                <li>Rapunzel - Gifted Artist (ID 235)</li>
+                <li>The Queen - Commanding Presence (ID 242)</li>
+                <li>Fairy Godmother - Mystic Armorer (ID 257)</li>
+                <li>Madam Mim - Rival of Merlin (ID 264)</li>
+                <li>Merlin - Crab (ID 266)</li>
+                <li>Merlin - Goat (ID 267)</li>
+                <li>Merlin - Rabbit (ID 268)</li>
+                <li>Merlin - Squirrel (ID 270)</li>
+                <li>Yzma - Scary Beyond All Reason (ID 276)</li>
+                <li>Beast - Relentless (ID 286)</li>
+                <li>Donald Duck - Perfect Gentleman (ID 293)</li>
+                <li>Flynn Rider - His Own Biggest Fan (ID 298)</li>
+                <li>Lucifer - Cunning Cat (ID 301)</li>
+                <li>Prince John - Greediest of All (ID 305)</li>
+                <li>The Queen - Disguised Peddler (ID 309)</li>
+                <li>Lady Tremaine - Imperious Queen (ID 326)</li>
+                <li>Minnie Mouse - Wide-Eyed Diver (ID 330)</li>
+                <li>Mother Gothel - Withered and Wicked (ID 332)</li>
+                <li>Queen of Hearts - Sensing Weakness (ID 336)</li>
+                <li>Ratigan - Very Large Mouse (ID 337)</li>
+                <li>Alice - Growing Girl (ID 353)</li>
+                <li>Cogsworth - Grandfather Clock (ID 358)</li>
+                <li>Cogsworth - Talking Clock (ID 359)</li>
+                <li>Grand Pabbie - Oldest and Wisest (ID 364)</li>
+                <li>Sisu - Divine Water Dragon (ID 375)</li>
+                <li>Beast - Selfless Protector (ID 388)</li>
+                <li>Cinderella - Stouthearted (ID 393)</li>
+                <li>Queen of Hearts - Capricious Monarch (ID 408)</li>
+                <li>Dragon Gem (ID 249)</li>
+                <li>Sleepy's Flute (ID 250)</li>
+                <li>Binding Contract (ID 281)</li>
+                <li>Dinner Bell (ID 350)</li>
+                <li>Sword in the Stone (ID 352)</li>
+                <li>Painting the Roses Red (ID 246)</li>
+                <li>Zero to Hero (ID 248)</li>
+                <li>Bibbidi Bobbidi Boo (ID 312)</li>
+                <li>Improvise (ID 315)</li>
+                <li>Go the Distance (ID 345)</li>
+                <li>Teeth and Ambitions (ID 346)</li>
+                <li>The Most Diabolical Scheme (ID 347)</li>
+                <li>Let the Storm Rage On (ID 415)</li>
+            </ul>
+        </li>
+        <li>Added errata to 2 cards:
+            <ul>
+                <li>Yzma - Scary Beyond All Reason (ID 276)</li>
+                <li>Prince John - Greediest of All (ID 305)</li>
+            </ul>
+        </li>
+        <li>Improved errata and clarification formatting:
+            <ul>
+                <li>Removed newline at the end of each entry</li>
+                <li>Replace double newlines with a single newline</li>
+                <li>Replace special unicode characters with normal ones where possible (quote marks and dashes)</li>
+            </ul>
+        </li>
+    </ul>
+    Permanent links: <a href="files/2024-01-07-1.0.2-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2024-01-07-1.0.2-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2024-01-07-1.0.2-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2024-01-07-1.0.2-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2023-12-10-1.0.2-1">2023-12-10 - format version (minor non-breaking addition) 1.0.2</h4>
+    <ul>
+        <li>Added all 24 Enchanted versions of cards from sets 1 and 2. These are new card entries in the 'cards' list</li>
+        <li>Minor non-breaking format addition: Since Enchanted cards are fancy versions of existing cards, this format update adds two fields to link the two versions:
+            <ul>
+                <li>enchantedId: For non-Enchanted cards that have an Enchanted version, this field contains the ID of the Enchanted version of the same card</li>
+                <li>nonEnchantedId: For Enchanted cards, this field containst the ID of the non-Enchanted version of the same card</li>
+            </ul>
+            For cards that don't have an Enchanted version, these fields doesn't exist
+        </li>
+        <li>Fixed typo in ability of "Lady Tremaine - Imperious Queen" (ID 326): 'Tremaine' was spelled 'Iremaine'</li>
+        <li>Add initial set 3 information, like the name and the release dates. No set 3 cards have been added</li>
+    </ul>
+    Permanent links: <a href="files/2023-12-10-1.0.2-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2023-12-10-1.0.2-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2023-12-10-1.0.2-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2023-12-10-1.0.2-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2023-11-13-1.0.1-1">2023-11-13 - format version (unchanged) 1.0.1</h4>
+    <ul>
+        <li>Added the remaining 65 cards of Set 2, which is now complete, so 'hasAllCards' has been set to 'true' for Set 2:
+            <ul>
+                <li>Eudora - Accomplished Seamstress (ID 223)</li>
+                <li>Gaston - Baritone Bully (ID 224)</li>
+                <li>King Louie - Jungle VIP (ID 228)</li>
+                <li>Mulan - Free Spirit (ID 231)</li>
+                <li>Nana - Darling Family Pet (ID 233)</li>
+                <li>Piglet - Very Small Animal (ID 234)</li>
+                <li>Snow White - Lost in the Forest (ID 239)</li>
+                <li>Snow White - Well Wisher (ID 241)</li>
+                <li>The Queen - Regal Monarch (ID 243)</li>
+                <li>Hold Still (ID 244)</li>
+                <li>Sleepy's Flute (ID 250)</li>
+                <li>Blue Fairy - Rewarding Good Deeds (ID 252)</li>
+                <li>Dr. Facilier - Savvy Opportunist (ID 254)</li>
+                <li>Fairy Godmother - Here to Help (ID 256)</li>
+                <li>Fairy Godmother - Mystic Armorer (ID 257)</li>
+                <li>Fairy Godmother - Pure Heart (ID 258)</li>
+                <li>HeiHei - Persistent Presence (ID 259)</li>
+                <li>Madam Mim - Rival of Merlin (ID 264)</li>
+                <li>Pinocchio - On the Run (ID 273)</li>
+                <li>Yzma - Scary Beyond All Reason (ID 276)</li>
+                <li>Binding Contract (ID 281)</li>
+                <li>Croquet Mallet (ID 282)</li>
+                <li>Arthur - Trained Swordsman (ID 285)</li>
+                <li>Dr. Facilier - Fortune Teller (ID 295)</li>
+                <li>Gaston - Scheming Suitor (ID 299)</li>
+                <li>Little John - Loyal Friend (ID 300)</li>
+                <li>Pain - Underworld Imp (ID 302)</li>
+                <li>Pete - Bad Guy (ID 304)</li>
+                <li>Ratigan - Criminal Mastermind (ID 307)</li>
+                <li>Tiana - True Princess (ID 310)</li>
+                <li>Boun - Precocious Entrepreneur (ID 320)</li>
+                <li>Donald Duck - Not Again! (ID 322)</li>
+                <li>Felicia - Always Hungry (ID 323)</li>
+                <li>Lady Tremaine - Imperious Queen (ID 326)</li>
+                <li>Namaari - Nemesis (ID 334)</li>
+                <li>Queen of Hearts - Sensing Weakness (ID 336)</li>
+                <li>Tuk Tuk - Wrecking Ball (ID 344)</li>
+                <li>The Most Diabolical Scheme (ID 347)</li>
+                <li>What Did You Call Me? (ID 348)</li>
+                <li>Peter Pan's Dagger (ID 351)</li>
+                <li>Caterpillar - Calm and Collected (ID 357)</li>
+                <li>Duke Weaselton - Small-Time Crook (ID 362)</li>
+                <li>James - Role Model (ID 366)</li>
+                <li>Jasmine - Heir of Agrabah (ID 367)</li>
+                <li>Noi - Orphaned Thief (ID 371)</li>
+                <li>Rabbit - Reluctant Host (ID 374)</li>
+                <li>Sisu - Divine Water Dragon (ID 375)</li>
+                <li>The Nokk - Water Spirit (ID 376)</li>
+                <li>Winnie the Pooh - Having a Think (ID 377)</li>
+                <li>Launch (ID 380)</li>
+                <li>Maurice's Workshop (ID 384)</li>
+                <li>Sardine Can (ID 386)</li>
+                <li>Beast - Forbidding Recluse (ID 387)</li>
+                <li>Beast - Selfless Protector (ID 388)</li>
+                <li>Beast - Tragic Hero (ID 389)</li>
+                <li>Benja - Guardian of the Dragon Gem (ID 390)</li>
+                <li>Hercules - Hero in Training (ID 398)</li>
+                <li>Kronk - Junior Chipmunk (ID 401)</li>
+                <li>Lawrence - Jealous Manservant (ID 402)</li>
+                <li>Magic Broom - Industrial Model (ID 404)</li>
+                <li>Namaari - Morning Mist (ID 405)</li>
+                <li>Pacha - Village Leader (ID 406)</li>
+                <li>Tiana - Diligent Waitress (ID 413)</li>
+                <li>Charge! (ID 414)</li>
+                <li>Last Cannon (ID 418)</li>
+            </ul>
+        </li>
+    </ul>
+    Permanent links: <a href="files/2023-11-13-1.0.1-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2023-11-13-1.0.1-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2023-11-13-1.0.1-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2023-11-13-1.0.1-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2023-11-11-1.0.1-1">2023-11-11 - format version (unchanged) 1.0.1</h4>
+    <ul>
+        <li>Added 16 cards:
+            <ul>
+                <li>Rapunzel - Sunshine (ID 236)</li>
+                <li>Painting the Roses Red (ID 246)</li>
+                <li>Jiminy Cricket - Pinocchio's Conscience (ID 260)</li>
+                <li>Peter Pan's Shadow - Not Sewn On (ID 271)</li>
+                <li>Ratigan's Marvelous Trap (ID 318)</li>
+                <li>Baloo - Fun-Loving Bear (ID 319)</li>
+                <li>Raya - Leader of Heart (ID 339)</li>
+                <li>Go the Distance (ID 345)</li>
+                <li>You Can Fly! (ID 349)</li>
+                <li>Alice - Growing Girl (ID 353)</li>
+                <li>Nick Wilde - Wily Fox (ID 370)</li>
+                <li>Pawpsicle (ID 385)</li>
+                <li>Hercules - Divine Hero (ID 397)</li>
+                <li>Let the Storm Rage On (ID 415)</li>
+                <li>Strength of a Raging Fire (ID 417)</li>
+                <li>Weight Set (ID 420)</li>
+            </ul>
+        </li>
+    </ul>
+    Permanent links: <a href="files/2023-11-11-1.0.1-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2023-11-11-1.0.1-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2023-11-11-1.0.1-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2023-11-11-1.0.1-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2023-11-08-1.0.1-1">2023-11-08 - format version (unchanged) 1.0.1</h4>
+    <ul>
+        <li>Added 39 new cards from Set 2:
+            <ul>
+                <li>Bashful - Hopeless Romantic (ID 217)</li>
+                <li>Cinderella - Ballroom Sensation (ID 219)</li>
+                <li>Doc - Leader of the Seven Dwarfs (ID 221)</li>
+                <li>Dopey - Always Playful (ID 222)</li>
+                <li>Grumpy - Bad-Tempered (ID 226)</li>
+                <li>Happy - Good-Natured (ID 227)</li>
+                <li>Mufasa - Betrayed Leader (ID 230)</li>
+                <li>Sleepy - Nodding Off (ID 237)</li>
+                <li>Sneezy - Very Allergic (ID 238)</li>
+                <li>Snow White - Unexpected Houseguest (ID 240)</li>
+                <li>Kuzco - Wanted Llama (ID 261)</li>
+                <li>Yzma - Without Beauty Sleep (ID 277)</li>
+                <li>Legend of the Sword in the Stone (ID 280)</li>
+                <li>Cheshire Cat - Always Grinning (ID 290)</li>
+                <li>Cheshire Cat - From the Shadows (ID 291)</li>
+                <li>Donald Duck - Sleepwalker (ID 294)</li>
+                <li>Flynn Rider - His Own Biggest Fan (ID 298)</li>
+                <li>Ray - Easygoing Firefly (ID 308)</li>
+                <li>The Queen - Disguised Peddler (ID 309)</li>
+                <li>Virana - Fang Chief (ID 311)</li>
+                <li>Fidget - Ratigan's Henchman (ID 324)</li>
+                <li>Honest John - Not That Honest (ID 325)</li>
+                <li>Mother Gothel - Withered and Wicked (ID 332)</li>
+                <li>Queen of Hearts - Impulsive Ruler (ID 335)</li>
+                <li>Ratigan - Very Large Mouse (ID 337)</li>
+                <li>Raya - Headstrong (ID 338)</li>
+                <li>Shere Khan - Menacing Predator (ID 342)</li>
+                <li>Teeth and Ambitions (ID 346)</li>
+                <li>Cruella De Vil - Perfectly Wretched (ID 361)</li>
+                <li>Hiram Flaversham - Toymaker (ID 365)</li>
+                <li>Judy Hopps - Optimistic Officer (ID 368)</li>
+                <li>Owl - Logical Lecturer (ID 372)</li>
+                <li>Falling Down the Rabbit Hole (ID 378)</li>
+                <li>Nothing to Hide (ID 381)</li>
+                <li>Chief Bogo - Respected Officer (ID 391)</li>
+                <li>Jafar - Dreadnought (ID 399)</li>
+                <li>Jafar - Royal Vizier (ID 400)</li>
+                <li>The Huntsman - Reluctant Enforcer (ID 410)</li>
+                <li>Pick a Fight (ID 416)</li>
+            </ul>
+        </li>
+        <li>Fixed effects and abilities text on Madam Mim - Fox (ID 262), her "Rush" ability was accidentally added to her effect text, now it's moved to the 'abilities' and 'keywordAbilities' fields</li>
+        <li>Fixed 'inkwell' field from false to true in Donald Duck - Perfect Gentleman (ID 293), Enchantress - Unexpected Judge (ID 296), and Ring the Bell (ID 317)</li>
+    </ul>
+    Permanent links: <a href="files/2023-11-08-1.0.1-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2023-11-08-1.0.1-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2023-11-08-1.0.1-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2023-11-08-1.0.1-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2023-11-03-1.0.1-1">2023-11-03 - format version (unchanged) 1.0.1</h4>
+    <ul>
+        <li>Added 30 new cards from Set 2:
+            <ul>
+                <li>Christopher Robin - Adventurer (ID 218)</li>
+                <li>Cobra Bubbles - Just a Social Worker (ID 220)</li>
+                <li>Mulan - Reflecting (ID 232)</li>
+                <li>World's Greatest Criminal Mind (ID 247)</li>
+                <li>Dragon Gem (ID 249)</li>
+                <li>Chip the Teacup - Gentle Soul (ID 253)</li>
+                <li>Pinocchio - Star Attraction (ID 272)</li>
+                <li>Gruesome and Grim (ID 278)</li>
+                <li>Perplexing Signposts (ID 283)</li>
+                <li>Belle - Bookworm (ID 287)</li>
+                <li>Donald Duck - Perfect Gentleman (ID 293)</li>
+                <li>Enchantress - Unexpected Judge (ID 296)</li>
+                <li>Lucifer - Cunning Cat (ID 301)</li>
+                <li>Queen of Hearts - Quick-Tempered (ID 306)</li>
+                <li>Pack Tactics (ID 316)</li>
+                <li>Ring the Bell (ID 317)</li>
+                <li>Card Soldiers - Full Deck (ID 321)</li>
+                <li>Lumiere - Hotheaded Candelabra (ID 328)</li>
+                <li>Minnie Mouse - Stylish Surfer (ID 329)</li>
+                <li>Sword in the Stone (ID 352)</li>
+                <li>Basil - Great Mouse Detective (ID 354)</li>
+                <li>Basil - Of Baker Street (ID 355)</li>
+                <li>Basil - Perceptive Investigator (ID 356)</li>
+                <li>Cruella De Vil - Fashionable Cruiser (ID 360)</li>
+                <li>Grand Pabbie - Oldest and Wisest (ID 364)</li>
+                <li>Mrs. Judson - Housekeeper (ID 369)</li>
+                <li>Gumbo Pot (ID 383)</li>
+                <li>Eli La Bouff - Big Daddy (ID 395)</li>
+                <li>Prince Naveen - Penniless Royal (ID 407)</li>
+                <li>Queen of Hearts - Capricious Monarch (ID 408)</li>
+            </ul>
+        </li>
+    </ul>
+    Permanent links: <a href="files/2023-11-03-1.0.1-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2023-11-03-1.0.1-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2023-11-03-1.0.1-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2023-11-03-1.0.1-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2023-10-27-1.0.1-1">2023-10-27 - format version (minor non-breaking addition) 1.0.1</h4>
+    <ul>
+        <li>Minor non-breaking format update: Added field 'simpleName', a simplified version of 'fullName' without the dash (for character cards), without special characters like '!' and '.', in entirely in lower-case.
+            This should make it easier to use this data in a card search engine, since most people won't use the dash or other special characters when searching for a card</li>
+        <li>Added 8 new cards from Set 2:
+            <ul>
+                <li>Rapunzel - Gifted Artist (ID 235)</li>
+                <li>Pinocchio - Talkative Puppet (ID 274)</li>
+                <li>Daisy Duck - Secret Agent (ID 292)</li>
+                <li>Minnie Mouse - Zipping Around (ID 331)</li>
+                <li>Tigger - One of a Kind (ID 343)</li>
+                <li>Four Dozen Eggs (ID 379)</li>
+                <li>Donald Duck - Deep-Sea Diver (ID 394)</li>
+                <li>Goofy - Knight for a Day (ID 396)</li>
+            </ul>
+        </li>
+    </ul>
+    Permanent links: <a href="files/2023-10-27-1.0.1-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2023-10-27-1.0.1-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2023-10-27-1.0.1-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2023-10-27-1.0.1-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2023-10-25-1.0.0-1">2023-10-25 - format version 1.0.0 (unchanged)</h4>
+    <ul>
+        <li>Added 4 new cards from Set 2:
+            <ul>
+                <li>Madam Mim - Purple Dragon (ID 263)</li>
+                <li>Bibbidi Bobbidi Boo (ID 312)</li>
+                <li>Scar - Vicious Cheater (ID 341)</li>
+                <li>Li Shang - Archery Instructor (ID 403)</li>
+            </ul>
+        </li>
+        <li>Fixed 'inkwell' field from false to true for some Set 2 cards: "Bucky - Squirrel Squeak Tutor" (ID 289), "Flynn Rider - Confident Vagabond" (ID 297), "Hypnotize" (ID 314), "Improvise" (ID 315)</li>
+    </ul>
+    Permanent links: <a href="files/2023-10-25-1.0.0-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2023-10-25-1.0.0-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2023-10-25-1.0.0-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2023-10-25-1.0.0-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2023-10-20-1.0.0-1">2023-10-20 - format version (unchanged) 1.0.0</h4>
+    <ul>
+        <li>Added 10 new cards from Set 2:
+            <ul>
+                <li>Grand Duke - Advisor to the King (ID 225)</li>
+                <li>Arthur - Wizard's Apprentice (ID 251)</li>
+                <li>Madam Mim - Fox (ID 262)</li>
+                <li>Madam Mim - Snake (ID 265)</li>
+                <li>Merlin - Crab (ID 266)</li>
+                <li>Merlin - Goat (ID 267)</li>
+                <li>Merlin - Squirrel (ID 270)</li>
+                <li>Prince John - Greediest of All (ID 305)</li>
+                <li>Lady Tremaine - Overbearing Matriarch (ID 327)</li>
+                <li>Prince Charming - Heir to the Throne (ID 373)</li>
+            </ul>
+        </li>
+    </ul>
+    Permanent links: <a href="files/2023-10-20-1.0.0-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2023-10-20-1.0.0-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2023-10-20-1.0.0-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2023-10-20-1.0.0-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2023-10-16-1.0.0-1">2023-10-16 - format version (unchanged) 1.0.0</h4>
+    <ul>
+        <li>Added 13 new cards from Set 2:
+            <ul>
+                <li>Last Stand (ID 245)</li>
+                <li>Merlin - Rabbit (ID 268)</li>
+                <li>I'm Stuck! (ID 279)</li>
+                <li>Beast - Relentless (ID 286)</li>
+                <li>Flynn Rider - Confident Vagabond (ID 297)</li>
+                <li>Panic - Underworld Imp (ID 303)</li>
+                <li>Bounce (ID 313)</li>
+                <li>Hypnotize (ID 314)</li>
+                <li>Mulan - Soldier in Training (ID 333)</li>
+                <li>Cogsworth - Talking Clock (ID 359)</li>
+                <li>Fang Crossbow (ID 382)</li>
+                <li>The Prince - Never Gives Up (ID 411)</li>
+                <li>Mouse Armor (ID 419)</li>
+            </ul>
+        </li>
+        <li>Mention both artists for "John Silver - Alien Pirate"</li>
+        <li>Remove trailing whitespace for artist field in "Ursula's Cauldron"</li>
+    </ul>
+    Permanent links: <a href="files/2023-10-16-1.0.0-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2023-10-16-1.0.0-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2023-10-16-1.0.0-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2023-10-16-1.0.0-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2023-10-10-1.0.0-1">2023-10-10 - format version 1.0.0 (unchanged)</h4>
+    Fixed a few 'artist' entries; added card "Improvise" (ID 315) from Set 2<br />
+    Permanent links: <a href="files/2023-10-10-1.0.0-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2023-10-10-1.0.0-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2023-10-10-1.0.0-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2023-10-10-1.0.0-1/en/allSets.json.zip.md5">md5</a>)
+
+    <h4 id="2023-10-08-1.0.0-1">2023-10-08 - format version 1.0.0</h4>
+    Initial release<br />
+    Permanent links: <a href="files/2023-10-08-1.0.0-1/en/allCards.json.zip">allCards.json.zip</a> (<a href="files/2023-10-08-1.0.0-1/en/allCards.json.zip.md5">md5</a>), <a href="files/2023-10-08-1.0.0-1/en/allSets.json.zip">allSets.json.zip</a> (<a href="files/2023-10-08-1.0.0-1/en/allSets.json.zip.md5">md5</a>)
+</div>
+<a href="index.html">Back to main page</a>
+<hr>
+<footer>
+    LorcanaJSON uses trademarks and/or copyrights associated with <i>Disney Lorcana TCG</i>, used under <a href="https://cdn.ravensburger.com/lorcana/community-code-en" target="_blank">Ravensburger’s Community Code Policy</a>.
+    We are expressly prohibited from charging you to use or access this content. LorcanaJSON is not published, endorsed, or specifically approved by Disney or Ravensburger. For more information about Disney Lorcana TCG, visit <a href="https://www.disneylorcana.com/en-US/" target="_blank">https://www.disneylorcana.com/en-US/</a>.
+</footer>
+</body>
+</html>

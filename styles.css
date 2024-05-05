@@ -1,0 +1,35 @@
+body {
+	font-family: sans-serif;
+}
+
+h3 {
+	margin-bottom: 0px;
+}
+h4 {
+	margin-top: 1em;
+	margin-bottom: 0px;
+}
+
+ul {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+table {
+	border-collapse: collapse;
+}
+th, td {
+	text-align: center;
+	border: 1px solid;
+	padding: 5px;
+}
+
+#sidebar {
+	height: 100%;
+	width: 10%;
+	position: fixed;
+}
+
+#main {
+	margin-left: 10%;
+}
