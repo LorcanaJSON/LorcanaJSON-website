@@ -1,206 +1,482 @@
-<!DOCTYPE html>
-<html lang='en'>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8"/>
     <title>LorcanaJSON - Disney Lorcana card info in an easy data format</title>
-    <meta name="description" content="LorcanaJSON - Disney Lorcana card info in an easy data format" />
-    <meta name="robots" content="index,nofollow" />
+    <meta name="robots" content="index,nofollow"/>
+    <meta name="description" content="LorcanaJSON - Disney Lorcana card info in an easy data format"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/slick.css" type="text/css"/>
+    <link rel="stylesheet" href="css/tooplate-simply-amazed.css" type="text/css"/>
+
+    <!--
+    Tooplate 2123 Simply Amazed
+    https://www.tooplate.com/view/2123-simply-amazed
+    -->
 </head>
+
 <body>
-<div id="page">
-    <div id="sidebar">
-        <h4>Navigation</h4>
-        <ul>
-            <li><a href="#">Top</a></li>
-            <li><a href="#what-is-this">What is this?</a></li>
-            <li><a href="#datafiles">Data files explanation</a></li>
-            <li><a href="#field-explanation">Card data fields explanation</a></li>
-            <li><a href="#downloads">Downloads</a></li>
-            <li><a href="#changelog">Changelog</a></li>
-            <li><a href="#limitations">Limitations</a></li>
-            <li><a href="#plans">Future plans</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-    <div id="main">
-        <h3 id="what-is-this">What is this?</h3>
-        This project aims to collect data about all the cards in the Disney Lorcana trading card game, and to make that data accessible in an easy-to-use format.<br />
-        It's aimed at developers of Disney Lorcana tools and websites, rather than players of the game. Having one source of data should save these developers time, since everybody doesn't individually have to collect and enter their own card data anymore.<br />
-        This project is not affiliated with Ravensburger or Disney.
-
-        <h3 id="datafiles">Data files explanation</h3>
-        There are three types of files: A metadata file; a file for each set; and the file with all the cards. <br />
-        Each data file type has its own use and fields:
-        <ul>
-            <li><b>metadata.json</b> contains data about the data files. Storing these values and occassionally retrieving just this file is an efficient way to check if the datafiles got updated, in which case you need to redownload them to get the latest version of the card data. This datablock is also included in the other data files under the "metadata" key. It consists of these fields:
-                <ul>
-                    <li><b>formatVersion</b>: A string indicating the formatting version of the files, in 'major.minor.path' format. If this version string changes, the data structure was changed, and your tool that uses these data files might need adjustments</li>
-                    <li><b>generatedOn</b>: An ISO 8601 formatted date and time string, indicating when the data files were generated. If field changes, </li>
+<div id="outer">
+    <header class="header">
+        <nav class="navbar">
+            <div class="collapse navbar-collapse single-page-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#"><i
+                            class="fa fa-2x fa-fw fa-arrow-alt-circle-up"></i> Top</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#what-is-this"><i
+                            class="fa fa-2x fa-fw fa-question"></i> What is this?</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#datafiles"><i
+                            class="fa fa-2x fa-fw fa-file-code"></i> Data files explanation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#field-explanation"><i
+                            class="fa fa-2x fa-fw fa-images"></i> <span>Card data fields explanation</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#downloads"><i
+                            class="fa fa-2x fa-fw fa-download"></i> Downloads</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#changelog"><i
+                            class="fa fa-2x fa-fw fa-clipboard-list"></i> Changelog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#limitations"><i
+                            class="fa fa-2x fa-fw fa-toilet-paper"></i> Limitations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#plans"><i class="fa fa-2x fa-fw fa-road"></i> Future
+                        plans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="fa fa-2x fa-fw fa-envelope"></i>
+                        Contact</a></li>
                 </ul>
-            </li>
-            <li><b>setdata.[setnumber].json</b> contains data on all the cards in the set specified by the setnumber. There is a file like this for each released set. It consists of these fields:
+            </div>
+        </nav>
+    </header>
+
+    <button class="navbar-button collapsed" type="button">
+            <span class="menu_icon">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <!--                <i class="fa fa-2x fa-bars fa-fw"></i>-->
+            </span>
+    </button>
+
+    <main id="content-box">
+        <div class="container">
+            <section id="what-is-this"><h3>What is this?</h3>
+                This project aims to collect data about all the cards in the Disney Lorcana trading card game, and to
+                make that data accessible in an easy-to-use format.<br/>
+                It's aimed at developers of Disney Lorcana tools and websites, rather than players of the game. Having
+                one source of data should save these developers time, since everybody doesn't individually have to
+                collect and enter their own card data anymore.<br/>
+                This project is not affiliated with Ravensburger or Disney.
+            </section>
+
+            <section id="datafiles"><h3>Data files explanation</h3>
+                There are three types of files: A metadata file; a file for each set; and the file with all the cards.
+                <br/>
+                Each data file type has its own use and fields:
                 <ul>
-                    <li><b>code</b>: The three-letter code for this set</li>
-                    <li><b>hasAllCards</b>: A boolean indicating whether all cards for this set have been released yet. 'true' if all cards of the set are in the datafile, 'false' otherwise</li>
-                    <li><b>metadata</b>: Contains the same metadata fields as in metadata.json, as described above</li>
-                    <li><b>name</b>: The full name of this set</li>
-                    <li><b>prereleaseDate</b>: The pre-release date for this set, when it was or will be available to buy from local game stores. Format is year-month-day</li>
-                    <li><b>releaseDate</b>: The release date for this set, when it was or will be available to buy from large retailers, and the Ravensburger and ShopDisney websites. Format is year-month-day</li>
-                    <li><b>cards</b>: A list of card objects. The fields of each object are described in the next section</li>
+                    <li><b>metadata.json</b> contains data about the data files. Storing these values and occassionally
+                        retrieving just this file is an efficient way to check if the datafiles got updated, in which
+                        case
+                        you need to redownload them to get the latest version of the card data. This datablock is also
+                        included in the other data files under the "metadata" key. It consists of these fields:
+                        <ul>
+                            <li><b>formatVersion</b>: A string indicating the formatting version of the files, in
+                                'major.minor.path' format. If this version string changes, the data structure was
+                                changed,
+                                and your tool that uses these data files might need adjustments
+                            </li>
+                            <li><b>generatedOn</b>: An ISO 8601 formatted date and time string, indicating when the data
+                                files were generated. If field changes,
+                            </li>
+                        </ul>
+                    </li>
+                    <li><b>setdata.[setnumber].json</b> contains data on all the cards in the set specified by the
+                        setnumber. There is a file like this for each released set. It consists of these fields:
+                        <ul>
+                            <li><b>code</b>: The three-letter code for this set</li>
+                            <li><b>hasAllCards</b>: A boolean indicating whether all cards for this set have been
+                                released
+                                yet. 'true' if all cards of the set are in the datafile, 'false' otherwise
+                            </li>
+                            <li><b>metadata</b>: Contains the same metadata fields as in metadata.json, as described
+                                above
+                            </li>
+                            <li><b>name</b>: The full name of this set</li>
+                            <li><b>prereleaseDate</b>: The pre-release date for this set, when it was or will be
+                                available
+                                to buy from local game stores. Format is year-month-day
+                            </li>
+                            <li><b>releaseDate</b>: The release date for this set, when it was or will be available to
+                                buy
+                                from large retailers, and the Ravensburger and ShopDisney websites. Format is
+                                year-month-day
+                            </li>
+                            <li><b>cards</b>: A list of card objects. The fields of each object are described in the
+                                next
+                                section
+                            </li>
+                        </ul>
+                    </li>
+                    <li><b>allCards.json</b> contains data on all the cards that have been released for Disney Lorcana.
+                        It consists of these fields:
+                        <ul>
+                            <li><b>metadata</b>: Contains the same metadata fields as in metadata.json, as described
+                                above
+                            </li>
+                            <li><b>sets</b>: A dictionary with set data. There is a key for each set number, and the
+                                values are the same set data as described above for the set-specific datafiles
+                            </li>
+                            <li><b>cards</b>: A list of card objects. The fields of each object are described in the
+                                next section
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-            <li><b>allCards.json</b> contains data on all the cards that have been released for Disney Lorcana. It consists of these fields:
+            </section>
+
+            <section id="field-explanation"><h3>Card data fields explanation</h3>
+                The 'allCards.json' file and all the set files have a 'cards' field, which contains a list of card
+                objects.
+                Each of those card objects consists of the following fields:
                 <ul>
-                    <li><b>metadata</b>: Contains the same metadata fields as in metadata.json, as described above</li>
-                    <li><b>sets</b>: A dictionary with set data. There is a key for each set number, and the values are the same set data as described above for the set-specific datafiles</li>
-                    <li><b>cards</b>: A list of card objects. The fields of each object are described in the next section</li>
+                    <li><b>abilities</b> <i>(optional)</i>: A list of all abilities on this character card. For
+                        character-type cards, abilities are generally keywords, like 'Evasive' and 'Shift', and this
+                        field
+                        includes the ability name, its value, and its reminder text. For action-type and item-type
+                        cards,
+                        this field contains what the action does. For cards without abilities, this field doesn't exist
+                    </li>
+                    <li><b>artist</b>: The name(s) of the artist(s) that drew the art for this card</li>
+                    <li><b>baseName</b>: The main name of the card. For characters, this is the character name, without
+                        the
+                        subtitle. For other card types, this is the same as the 'fullName' field. See also the
+                        'fullName'
+                        and 'subtitle' fields
+                    </li>
+                    <li><b>clarifications</b> <i>(optional)</i>: Some cards have extra clarifications for how they work
+                        or
+                        interact with other cards. This field is a list of those clarifications. For cards without
+                        clarifications, this field doesn't exist. The text can contain newline characters
+                    </li>
+                    <li><b>color</b>: The name of the color of the card. One of Amber, Amethyst, Emerald, Ruby,
+                        Sapphire,
+                        Steel
+                    </li>
+                    <li><b>cost</b>: How much Ink this card costs to play</li>
+                    <li><b>effects</b> <i>(optional)</i>: A list of all the effects this card has. Each entry in the
+                        'effects' list is a dictionary with two values:
+                        <ul>
+                            <li><b>name</b>: The name of this effect. This is always fully uppercase</li>
+                            <li><b>text</b>: The description of what the ability actually does</li>
+                        </ul>
+                        For cards without effects, this field doesn't exist
+                    </li>
+                    <li><b>enchantedId</b> <i>(optional)</i>: For cards that have an Enchanted version, this field
+                        contains
+                        the ID of that Enchanted card. For other cards, this field doesn't exist. See also the
+                        'nonEnchantedId' field
+                    </li>
+                    <li><b>errata</b> <i>(optional)</i>: Some cards have errata, correcting mistakes on the card, and/or
+                        improving phrasing. This field is a list of those corrections. For cards without errata, this
+                        field
+                        doesn't exist. The text can contain newline characters
+                    </li>
+                    <li><b>flavorText</b> <i>(optional)</i>: The flavor text at the bottom of a card. This has no
+                        gameplay
+                        effect, but does improve the feel of the card. For cards without flavor text, this field doesn't
+                        exist. The text can contain newline characters
+                    </li>
+                    <li><b>fullIdentifier</b>: The full identifier as displayed on the bottom-left of each card, for
+                        instance '9/204 • EN • 3'. The formatting may be different for promo cards. See also the
+                        'number'
+                        and 'setNumber' fields
+                    </li>
+                    <li><b>fullName</b>: The full name of the card. For characters, this is the baseName plus the
+                        subtitle.
+                        For other card types this is the same as the 'baseName' field. See also the 'baseName' and
+                        'subtitle' fields
+                    </li>
+                    <li><b>fullText</b>: The main gameplay text on the card as printed, not split up into abilities or
+                        effects. Does not include the flavor text. This field always exists, but can be an empty string
+                        on
+                        cards without text. The text can contain newline characters
+                    </li>
+                    <li><b>id</b>: A unique number identifying the card. For the first set, this id is identical to the
+                        'number' field; for subsequent sets the id keeps counting up (so the first card of set 2 has an
+                        id
+                        one higher than the last card of set 1). The id is identical between different language versions
+                        of
+                        the same card
+                    </li>
+                    <li><b>images</b>: A dictionary with several URLs of card images. These images are the same ones as
+                        used
+                        in the official <i>Disney Lorcana</i> app The fields in this dictionary are:
+                        <ul>
+                            <li><b>full</b>: The URL of the card image at full size, usually 1468 by 2048 pixels</li>
+                            <li><b>thumbnail</b>: The URL of the card image at thumbnail size, usually 367 by 512 pixels
+                            </li>
+                            <li><b>foilMask</b> <i>(optional)</i>: A mask of the full card image that the official <i>Disney
+                                Lorcana</i> app uses to draw the foil effect, usually 1468 by 2048 pixels. Not all cards
+                                have this field
+                            </li>
+                        </ul>
+                        Note: If the 'isExternalReveal' field exists and is set to True, this card isn't in the official
+                        app
+                        yet, so only the 'full' image field will be set
+                    </li>
+                    <li><b>inkwell</b>: 'true' if this card is allowed to be put into the inkwell for ink, so if it has
+                        the
+                        extra decoration around the cost in the top left of the card, and 'false' otherwise
+                    </li>
+                    <li><b>isExternalReveal</b> <i>(optional)</i>: This field is missing if the data for this card came
+                        from
+                        the official app. If this field exists and is True, the data from this card didn't come from the
+                        official app, but the card image came from another official Ravensburger source. Practically,
+                        this
+                        means that the 'images' field will probalby only have the 'full' URL set, and it will be in
+                        another
+                        format than usual
+                    </li>
+                    <li><b>keywordAbilities</b> <i>(optional)</i>: A list of the keyword abilities of this character
+                        card,
+                        without the reminder text. For keyword abilities with a value, like 'Shift X' or 'Challenger
+                        +X',
+                        the list entry includes that value.
+                        For characters without keyword abilities and card types other than characters, this field
+                        doesn't
+                        exist
+                    </li>
+                    <li><b>lore</b> <i>(optional)</i>: For character cards, this is the amount of lore this character
+                        earns
+                        for a player when they quest with it. For characters that can't quest, this value is 0. For
+                        location
+                        cards, this is the amount of lore this location card earns at the start of each turn. For other
+                        card
+                        types, this field doesn't exist
+                    </li>
+                    <li><b>moveCost</b> <i>(optional)</i>: For location cards, this is the amount of ink it costs to
+                        move a
+                        character to this location. For other cards, this field doesn't exist
+                    </li>
+                    <li><b>nonEnchantedId</b> <i>(optional)</i>: For Enchanted-rarity cards, this field contains the ID
+                        of
+                        the non-Enchanted version of the same card. For non-Enchanted-rarity cards, this field doesn't
+                        exist. See also the 'enchantedId' field
+                    </li>
+                    <li><b>nonPromoId</b> <i>(optional)</i>: . For these cards, this field points to ID of the non-promo
+                        version of the same card. For other cards, this field doesn't exist. See also the 'promoIds'
+                        field
+                    </li>
+                    <li><b>number</b>: The number of the card inside its set, shown as 'number/totalCards' in the bottom
+                        left of the card. For 'Special'-rarity cards, this number is the promo number instead, so a set
+                        might have two cards with number 1, one Special and one non-Special. This doesn't mean the cards
+                        are
+                        related, for that see the 'specialId' and 'nonSpecialId' fields. For a unique identifier, see
+                        the
+                        'id' field
+                    </li>
+                    <li><b>promoIds</b> <i>(optional)</i>: Special versions of some cards are released at events or at
+                        other
+                        occasions, as 'promo' versions. For cards that have such promo versions, this field has a list
+                        of
+                        IDs of those promo versions of this non-promo card. For other cards, this field doesn't exist.
+                        See
+                        also the 'nonPromoId' field
+                    </li>
+                    <li><b>rarity</b>: The rarity of this card. One of Common, Uncommon, Rare, Super Rare, Legendary,
+                        Enchanted, or Special (the latter is used for promos or other special releases)
+                    </li>
+                    <li><b>setNumber</b>: The number of the set this card is released in. This field does not exist in
+                        the
+                        set-specific data files, since it doesn't make sense there
+                    </li>
+                    <li><b>simpleName</b>: The full name like in the 'fullName' field, but simplified: without the dash
+                        between base name and subtitle (for character cards), without special characters like '!' and
+                        '.',
+                        and entirely in lower-case.
+                        Special versions of letters are simplified too (for instance: "Te Kā - The Burning One" has the
+                        simpleName "te ka the burning one").<br/>
+                        Quotemarks in possessives ("captain colonel's lieutenant") and dashes between words ("minnie
+                        mouse
+                        wide-eyed diver") <i>are</i> still in there, since that's related to basic spelling. <br/>
+                        This field should make it easier to implement this data in a search engine, since most people
+                        won't
+                        use the dash or other special characters when searching for a card, so you can match their query
+                        against this field
+                    </li>
+                    <li><b>story</b>: The name of the story (movie, show, etc.) that the (character on the) card is from
+                        or
+                        that it references
+                    </li>
+                    <li><b>strength</b> <i>(optional)</i>: The strength of a character card, so how much damage it does
+                        to
+                        another character during a challenge. For card types other than characters, this field doesn't
+                        exist
+                    </li>
+                    <li><b>subtitle</b> <i>(optional)</i>: The subtitle of a character or location card, which is a
+                        suffix
+                        to the baseName. For other card types, this field doesn't exist
+                    </li>
+                    <li><b>subtypes</b> <i>(optional)</i>: A list of the subtypes of this card. For characters, this can
+                        have entries like 'Dreamborn' and 'Princess'. For song actions, this contains 'Song'.
+                        The order of the list is the same as on the card. For cards without subtypes, this field doesn't
+                        exist
+                    </li>
+                    <li><b>type</b>: What kind of card this is. One of Action, Character, Item</li>
+                    <li><b>variant</b> <i>(optional)</i>: Some cards have multiple variants that only have different art
+                        (for instance 'Dalmatian Puppy' (ID 436 to 440). These are differentiated by a letter (for
+                        'Dalmatian Puppy', letters 'a' to 'e'). This field contains that letter. For cards without
+                        variants,
+                        this field doesn't exist. See also the 'variantIds' field
+                    </li>
+                    <li><b>variantIds</b> <i>(optional)</i>: Some cards have multiple variants that only have different
+                        art
+                        (for instance 'Dalmatian Puppy' (ID 436 to 440). This field contains a list of the IDs of the
+                        other
+                        cards belonging to this variant. For cards without variants, this field doesn't exist. See also
+                        the
+                        'variant' field
+                    </li>
+                    <li><b>willpower</b> <i>(optional)</i>: The willpower of a character or location card, so how much
+                        damage it can take before they are discarded. For other card types, this field doesn't exist
+                    </li>
                 </ul>
-            </li>
-        </ul>
-
-        <h3 id="field-explanation">Card data fields explanation</h3>
-        The 'allCards.json' file and all the set files have a 'cards' field, which contains a list of card objects. Each of those card objects consists of the following fields:
-        <ul>
-            <li><b>abilities</b> <i>(optional)</i>: A list of all abilities on this character card. For character-type cards, abilities are generally keywords, like 'Evasive' and 'Shift', and this field includes the ability name, its value, and its reminder text. For action-type and item-type cards, this field contains what the action does. For cards without abilities, this field doesn't exist</li>
-            <li><b>artist</b>: The name(s) of the artist(s) that drew the art for this card</li>
-            <li><b>baseName</b>: The main name of the card. For characters, this is the character name, without the subtitle. For other card types, this is the same as the 'fullName' field. See also the 'fullName' and 'subtitle' fields</li>
-            <li><b>clarifications</b> <i>(optional)</i>: Some cards have extra clarifications for how they work or interact with other cards. This field is a list of those clarifications. For cards without clarifications, this field doesn't exist. The text can contain newline characters</li>
-            <li><b>color</b>: The name of the color of the card. One of Amber, Amethyst, Emerald, Ruby, Sapphire, Steel</li>
-            <li><b>cost</b>: How much Ink this card costs to play</li>
-            <li><b>effects</b> <i>(optional)</i>: A list of all the effects this card has. Each entry in the 'effects' list is a dictionary with two values:
+                Certain text fields ('abilities', 'clarifications', 'effects', 'errata', 'fullText') can have special
+                Unicode characters in them that resemble the game-specific icons as closely as possible:
                 <ul>
-                    <li><b>name</b>: The name of this effect. This is always fully uppercase</li>
-                    <li><b>text</b>: The description of what the ability actually does</li>
+                    <li><b>⟳</b> (Unicode character \u27F3): Exert</li>
+                    <li><b>⬡</b> (Unicode character \u2B21): Ink (usually in activation costs)</li>
+                    <li><b>◊</b> (Unicode character \u25CA): Lore (usually used to indicate the lore gain when questing)
+                    </li>
+                    <li><b>¤</b> (Unicode character \u00A4): Strength</li>
+                    <li><b>⛉</b> (Unicode character \u26C9): Willpower</li>
+                    <li><b>•</b> (Unicode character \u2022): Bullet point that separates different subtypes, and is also
+                        used in lists on cards (for instance 'Maui's Fish Hook', ID 568)
+                    </li>
                 </ul>
-                For cards without effects, this field doesn't exist
-            </li>
-            <li><b>enchantedId</b> <i>(optional)</i>: For cards that have an Enchanted version, this field contains the ID of that Enchanted card. For other cards, this field doesn't exist. See also the 'nonEnchantedId' field</li>
-            <li><b>errata</b> <i>(optional)</i>: Some cards have errata, correcting mistakes on the card, and/or improving phrasing. This field is a list of those corrections. For cards without errata, this field doesn't exist. The text can contain newline characters</li>
-            <li><b>flavorText</b> <i>(optional)</i>: The flavor text at the bottom of a card. This has no gameplay effect, but does improve the feel of the card. For cards without flavor text, this field doesn't exist. The text can contain newline characters</li>
-            <li><b>fullIdentifier</b>: The full identifier as displayed on the bottom-left of each card, for instance '9/204 • EN • 3'. The formatting may be different for promo cards. See also the 'number' and 'setNumber' fields</li>
-            <li><b>fullName</b>: The full name of the card. For characters, this is the baseName plus the subtitle. For other card types this is the same as the 'baseName' field. See also the 'baseName' and 'subtitle' fields</li>
-            <li><b>fullText</b>: The main gameplay text on the card as printed, not split up into abilities or effects. Does not include the flavor text. This field always exists, but can be an empty string on cards without text. The text can contain newline characters</li>
-            <li><b>id</b>: A unique number identifying the card. For the first set, this id is identical to the 'number' field; for subsequent sets the id keeps counting up (so the first card of set 2 has an id one higher than the last card of set 1). The id is identical between different language versions of the same card</li>
-            <li><b>images</b>: A dictionary with several URLs of card images. These images are the same ones as used in the official <i>Disney Lorcana</i> app The fields in this dictionary are:
+            </section>
+
+            <section id="downloads"><h3>Downloads</h3>
+                Here are the available downloads of the data files described above. There's the direct JSON download, or
+                that same JSON file except in a zipfile so it's smaller.<br/>
+                For each file there is also an MD5 checksum linked right below it, so you can verify that your download
+                succeeded.
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>JSON</th>
+                        <th>Zipped JSON</th>
+                    </tr>
+                    <tr>
+                        <td>Metadata</td>
+                        <td>Contains format version and creation date</td>
+                        <td><a href="files/current/en/metadata.json">download</a></td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>All Cards</td>
+                        <td>Contains all the cards from all the sets</td>
+                        <td><a href="files/current/en/allCards.json">download</a><br/>(<a
+                                href="files/current/en/allCards.json.md5">md5 checksum</a>)
+                        </td>
+                        <td><a href="files/current/en/allCards.json.zip">download</a><br/>(<a
+                                href="files/current/en/allCards.json.zip.md5">md5 checksum</a>)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>All Sets</td>
+                        <td>Contains all the separate setfiles described below, but in one single zipfile</td>
+                        <td>-</td>
+                        <td><a href="files/current/en/sets/allSets.zip">download</a><br/>(<a
+                                href="files/current/en/sets/allSets.zip.md5">md5 checksum</a>)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Set 1 cards</td>
+                        <td>Contains all the cards from the first set: "The First Chapter"</td>
+                        <td><a href="files/current/en/sets/setdata.1.json">download</a><br/>(<a
+                                href="files/current/en/sets/setdata.1.json.md5">md5 checksum</a>)
+                        </td>
+                        <td><a href="files/current/en/sets/setdata.1.json.zip">download</a><br/>(<a
+                                href="files/current/en/sets/setdata.1.json.zip.md5">md5 checksum</a>)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Set 2 cards</td>
+                        <td>Contains all the cards from the second set: "Rise of the Floodborn"<br/>(Incomplete)</td>
+                        <td><a href="files/current/en/sets/setdata.2.json">download</a><br/>(<a
+                                href="files/current/en/sets/setdata.2.json.md5">md5 checksum</a>)
+                        </td>
+                        <td><a href="files/current/en/sets/setdata.2.json.zip">download</a><br/>(<a
+                                href="files/current/en/sets/setdata.2.json.zip.md5">md5 checksum</a>)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Set 3 cards</td>
+                        <td>Contains all the cards from the third set: "Into the Inklands"<br/>(Incomplete)</td>
+                        <td><a href="files/current/en/sets/setdata.3.json">download</a><br/>(<a
+                                href="files/current/en/sets/setdata.3.json.md5">md5 checksum</a>)
+                        </td>
+                        <td><a href="files/current/en/sets/setdata.3.json.zip">download</a><br/>(<a
+                                href="files/current/en/sets/setdata.3.json.zip.md5">md5 checksum</a>)
+                        </td>
+                    </tr>
+                </table>
+                Please try to use the zipped JSON files to save bandwith. Thanks!
+            </section>
+            <section id="changelog"><h3>Changelog</h3>
+                <a href="changelog.html">Click here for the changelog page</a>
+            </section>
+
+            <section id="limitations"><h3>Limitations</h3>
+                The source of all this data is the same as the official <i>Disney Lorcana</i> app uses, with extra image
+                parsing to make the card text more accurate. This means that LorcanaJSON files don't contain all cards
+                teased for the next set release.<br/>
+                Once the new set cards get added to the official app, they will also get added to the LorcanaJSON data
+                files
+                within a few days.<br/>
+                The data files also don't contain any information about 'Enchanted'-rarity cards or links to their art.
+            </section>
+
+            <section id="plans"><h3>Future plans</h3>
                 <ul>
-                    <li><b>full</b>: The URL of the card image at full size, usually 1468 by 2048 pixels</li>
-                    <li><b>thumbnail</b>: The URL of the card image at thumbnail size, usually 367 by 512 pixels</li>
-                    <li><b>foilMask</b> <i>(optional)</i>: A mask of the full card image that the official <i>Disney Lorcana</i> app uses to draw the foil effect, usually 1468 by 2048 pixels. Not all cards have this field</li>
+                    <li>French and German JSON files</li>
+                    <li>Deck lists of officially released decks</li>
+                    <li>Better site design</li>
                 </ul>
-                Note: If the 'isExternalReveal' field exists and is set to True, this card isn't in the official app yet, so only the 'full' image field will be set
-            </li>
-            <li><b>inkwell</b>: 'true' if this card is allowed to be put into the inkwell for ink, so if it has the extra decoration around the cost in the top left of the card, and 'false' otherwise</li>
-            <li><b>isExternalReveal</b> <i>(optional)</i>: This field is missing if the data for this card came from the official app. If this field exists and is True, the data from this card didn't come from the official app, but the card image came from another official Ravensburger source. Practically, this means that the 'images' field will probalby only have the 'full' URL set, and it will be in another format than usual</li>
-            <li><b>keywordAbilities</b> <i>(optional)</i>: A list of the keyword abilities of this character card, without the reminder text. For keyword abilities with a value, like 'Shift X' or 'Challenger +X', the list entry includes that value.
-                For characters without keyword abilities and card types other than characters, this field doesn't exist</li>
-            <li><b>lore</b> <i>(optional)</i>: For character cards, this is the amount of lore this character earns for a player when they quest with it. For characters that can't quest, this value is 0. For location cards, this is the amount of lore this location card earns at the start of each turn. For other card types, this field doesn't exist</li>
-            <li><b>moveCost</b> <i>(optional)</i>: For location cards, this is the amount of ink it costs to move a character to this location. For other cards, this field doesn't exist</li>
-            <li><b>nonEnchantedId</b> <i>(optional)</i>: For Enchanted-rarity cards, this field contains the ID of the non-Enchanted version of the same card. For non-Enchanted-rarity cards, this field doesn't exist. See also the 'enchantedId' field</li>
-            <li><b>nonPromoId</b> <i>(optional)</i>: . For these cards, this field points to ID of the non-promo version of the same card. For other cards, this field doesn't exist. See also the 'promoIds' field</li>
-            <li><b>number</b>: The number of the card inside its set, shown as 'number/totalCards' in the bottom left of the card. For 'Special'-rarity cards, this number is the promo number instead, so a set might have two cards with number 1, one Special and one non-Special. This doesn't mean the cards are related, for that see the 'specialId' and 'nonSpecialId' fields. For a unique identifier, see the 'id' field</li>
-            <li><b>promoIds</b> <i>(optional)</i>: Special versions of some cards are released at events or at other occasions, as 'promo' versions. For cards that have such promo versions, this field has a list of IDs of those promo versions of this non-promo card. For other cards, this field doesn't exist. See also the 'nonPromoId' field</li>
-            <li><b>rarity</b>: The rarity of this card. One of Common, Uncommon, Rare, Super Rare, Legendary, Enchanted, or Special (the latter is used for promos or other special releases)</li>
-            <li><b>setNumber</b>: The number of the set this card is released in. This field does not exist in the set-specific data files, since it doesn't make sense there</li>
-            <li><b>simpleName</b>: The full name like in the 'fullName' field, but simplified: without the dash between base name and subtitle (for character cards), without special characters like '!' and '.', and entirely in lower-case.
-                Special versions of letters are simplified too (for instance: "Te Kā - The Burning One" has the simpleName "te ka the burning one").<br />
-                Quotemarks in possessives ("captain colonel's lieutenant") and dashes between words ("minnie mouse wide-eyed diver") <i>are</i> still in there, since that's related to basic spelling. <br />
-                This field should make it easier to implement this data in a search engine, since most people won't use the dash or other special characters when searching for a card, so you can match their query against this field</li>
-            <li><b>story</b>: The name of the story (movie, show, etc.) that the (character on the) card is from or that it references</li>
-            <li><b>strength</b> <i>(optional)</i>: The strength of a character card, so how much damage it does to another character during a challenge. For card types other than characters, this field doesn't exist</li>
-            <li><b>subtitle</b> <i>(optional)</i>: The subtitle of a character or location card, which is a suffix to the baseName. For other card types, this field doesn't exist</li>
-            <li><b>subtypes</b> <i>(optional)</i>: A list of the subtypes of this card. For characters, this can have entries like 'Dreamborn' and 'Princess'. For song actions, this contains 'Song'.
-                The order of the list is the same as on the card. For cards without subtypes, this field doesn't exist</li>
-            <li><b>type</b>: What kind of card this is. One of Action, Character, Item</li>
-            <li><b>variant</b> <i>(optional)</i>: Some cards have multiple variants that only have different art (for instance 'Dalmatian Puppy' (ID 436 to 440). These are differentiated by a letter (for 'Dalmatian Puppy', letters 'a' to 'e'). This field contains that letter. For cards without variants, this field doesn't exist. See also the 'variantIds' field</li>
-            <li><b>variantIds</b> <i>(optional)</i>: Some cards have multiple variants that only have different art (for instance 'Dalmatian Puppy' (ID 436 to 440). This field contains a list of the IDs of the other cards belonging to this variant. For cards without variants, this field doesn't exist. See also the 'variant' field</li>
-            <li><b>willpower</b> <i>(optional)</i>: The willpower of a character or location card, so how much damage it can take before they are discarded. For other card types, this field doesn't exist</li>
-        </ul>
-        Certain text fields ('abilities', 'clarifications', 'effects', 'errata', 'fullText') can have special Unicode characters in them that resemble the game-specific icons as closely as possible:
-        <ul>
-            <li><b>⟳</b> (Unicode character \u27F3): Exert</li>
-            <li><b>⬡</b> (Unicode character \u2B21): Ink (usually in activation costs)</li>
-            <li><b>◊</b> (Unicode character \u25CA): Lore (usually used to indicate the lore gain when questing)</li>
-            <li><b>¤</b> (Unicode character \u00A4): Strength</li>
-            <li><b>⛉</b> (Unicode character \u26C9): Willpower</li>
-            <li><b>•</b> (Unicode character \u2022): Bullet point that separates different subtypes, and is also used in lists on cards (for instance 'Maui's Fish Hook', ID 568)</li>
-        </ul>
+            </section>
 
-        <h3 id="downloads">Downloads</h3>
-        Here are the available downloads of the data files described above. There's the direct JSON download, or that same JSON file except in a zipfile so it's smaller.<br />
-        For each file there is also an MD5 checksum linked right below it, so you can verify that your download succeeded.
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>JSON</th>
-                <th>Zipped JSON</th>
-            </tr>
-            <tr>
-                <td>Metadata</td>
-                <td>Contains format version and creation date</td>
-                <td><a href="files/current/en/metadata.json">download</a></td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>All Cards</td>
-                <td>Contains all the cards from all the sets</td>
-                <td><a href="files/current/en/allCards.json">download</a><br />(<a href="files/current/en/allCards.json.md5">md5 checksum</a>)</td>
-                <td><a href="files/current/en/allCards.json.zip">download</a><br />(<a href="files/current/en/allCards.json.zip.md5">md5 checksum</a>)</td>
-            </tr>
-            <tr>
-                <td>All Sets</td>
-                <td>Contains all the separate setfiles described below, but in one single zipfile</td>
-                <td>-</td>
-                <td><a href="files/current/en/sets/allSets.zip">download</a><br />(<a href="files/current/en/sets/allSets.zip.md5">md5 checksum</a>)</td>
-            </tr>
-            <tr>
-                <td>Set 1 cards</td>
-                <td>Contains all the cards from the first set: "The First Chapter"</td>
-                <td><a href="files/current/en/sets/setdata.1.json">download</a><br />(<a href="files/current/en/sets/setdata.1.json.md5">md5 checksum</a>)</td>
-                <td><a href="files/current/en/sets/setdata.1.json.zip">download</a><br />(<a href="files/current/en/sets/setdata.1.json.zip.md5">md5 checksum</a>)</td>
-            </tr>
-            <tr>
-                <td>Set 2 cards</td>
-                <td>Contains all the cards from the second set: "Rise of the Floodborn"<br />(Incomplete)</td>
-                <td><a href="files/current/en/sets/setdata.2.json">download</a><br />(<a href="files/current/en/sets/setdata.2.json.md5">md5 checksum</a>)</td>
-                <td><a href="files/current/en/sets/setdata.2.json.zip">download</a><br />(<a href="files/current/en/sets/setdata.2.json.zip.md5">md5 checksum</a>)</td>
-            </tr>
-            <tr>
-                <td>Set 3 cards</td>
-                <td>Contains all the cards from the third set: "Into the Inklands"<br />(Incomplete)</td>
-                <td><a href="files/current/en/sets/setdata.3.json">download</a><br />(<a href="files/current/en/sets/setdata.3.json.md5">md5 checksum</a>)</td>
-                <td><a href="files/current/en/sets/setdata.3.json.zip">download</a><br />(<a href="files/current/en/sets/setdata.3.json.zip.md5">md5 checksum</a>)</td>
-            </tr>
-        </table>
-        Please try to use the zipped JSON files to save bandwith. Thanks!
+            <section id="contact"><h3>Contact</h3>
+                For suggestions for extra fields or changes, or for data corrections, email <a
+                        href="mailto:suggestions@lorcanajson.org">suggestions@lorcanajson.org</a>.<br/>
+                For other types of messages, email <a
+                        href="mailto:contact@lorcanajson.org">contact@lorcanajson.org</a>.<br/>
+                LorcanaJSON has an account on <a href="https://mastodon.social/@LorcanaJSON">Mastodon</a>, where updates
+                to
+                the dataset will be posted.<br/>
+                To see the sourcecode that generates these datafiles, see <a
+                        href="https://github.com/LorcanaJSON/LorcanaJSON">this GitHub project</a>.
+            </section>
 
-        <h3 id="changelog">Changelog</h3>
-        <a href="changelog.html">Click here for the changelog page</a>
-
-        <h3 id="limitations">Limitations</h3>
-        The source of all this data is the same as the official <i>Disney Lorcana</i> app uses, with extra image parsing to make the card text more accurate. This means that LorcanaJSON files don't contain all cards teased for the next set release.<br />
-        Once the new set cards get added to the official app, they will also get added to the LorcanaJSON data files within a few days.<br />
-        The data files also don't contain any information about 'Enchanted'-rarity cards or links to their art.
-
-        <h3 id="plans">Future plans</h3>
-        <ul>
-            <li>French and German JSON files</li>
-            <li>Deck lists of officially released decks</li>
-            <li>Better site design</li>
-        </ul>
-
-        <h3 id="contact">Contact</h3>
-        For suggestions for extra fields or changes, or for data corrections, email <a href="mailto:suggestions@lorcanajson.org">suggestions@lorcanajson.org</a>.<br />
-        For other types of messages, email <a href="mailto:contact@lorcanajson.org">contact@lorcanajson.org</a>.<br />
-        LorcanaJSON has an account on <a href="https://mastodon.social/@LorcanaJSON">Mastodon</a>, where updates to the dataset will be posted.<br />
-        To see the sourcecode that generates these datafiles, see <a href="https://github.com/LorcanaJSON/LorcanaJSON">this GitHub project</a>.
-    </div>
+        </div>
+        <footer class="bg-blue-transparent">
+            LorcanaJSON uses trademarks and/or copyrights associated with <i>Disney Lorcana TCG</i>, used under
+            <a href="https://cdn.ravensburger.com/lorcana/community-code-en" target="_blank">Ravensburger’s Community
+                Code Policy</a>.
+            We are expressly prohibited from charging you to use or access this content. LorcanaJSON is not published,
+            endorsed, or specifically approved by Disney or Ravensburger. For more information about Disney Lorcana TCG,
+            visit
+            <a href="https://www.disneylorcana.com/en-US/" target="_blank">https://www.disneylorcana.com/en-US/</a>.
+        </footer>
+    </main>
 </div>
-<hr>
-<footer>
-    LorcanaJSON uses trademarks and/or copyrights associated with <i>Disney Lorcana TCG</i>, used under <a href="https://cdn.ravensburger.com/lorcana/community-code-en" target="_blank">Ravensburger’s Community Code Policy</a>.
-    We are expressly prohibited from charging you to use or access this content. LorcanaJSON is not published, endorsed, or specifically approved by Disney or Ravensburger. For more information about Disney Lorcana TCG, visit <a href="https://www.disneylorcana.com/en-US/" target="_blank">https://www.disneylorcana.com/en-US/</a>.
-</footer>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.singlePageNav.min.js"></script>
+<script src="js/slick.js"></script>
+<script src="js/parallax.min.js"></script>
+<script src="js/templatemo-script.js"></script>
 </body>
 </html>
