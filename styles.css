@@ -77,6 +77,61 @@ td,th {
     padding: 0 1em;
 }
 
+a.download::after {
+    display: inline-block;
+    content: "⇓⮋ download";
+}
+
+a.md5::after {
+    display: inline-block;
+    content: "md5 checksum";
+}
+
+b.filename {
+    font-family: monospace;
+    font-size:1.2em;
+}
+
+b.field {
+    display: inline-block;
+}
+
+b.field::after {
+    display:inline-block;
+    content: ":";
+    font-weight: normal;
+}
+
+b.optional.field::before {
+    content: "? ";
+    font-weight: normal;
+}
+b.optional.field::after {
+    content: " (optional):";
+}
+
+/*********************** Code and symbols ****************************/
+code {
+    border: 1px solid silver;
+    padding: 2px 4px;
+}
+
+/** a JS keyword, like 'true' or 'false' */
+code.json-keyword {
+
+}
+
+code.symbol {
+    display:inline-block;
+    width: 1em;
+    text-align: center;
+    border: 1px solid silver;
+}
+
+/** something written on the card **/
+code.on-card {
+}
+
 /*********************** FOOTER ****************************/
 footer {
     background: var(--footer-bgcolor);
