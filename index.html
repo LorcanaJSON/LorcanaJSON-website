@@ -9,9 +9,9 @@
     <meta name="robots" content="index,nofollow"/>
 </head>
 
-<body>
+<body class="index">
 <aside id="sidebar">
-    <ul>
+    <ul class="toc">
         <li><a href="#what-is-this">
             <i18n>What is this?</i18n>
         </a></li>
@@ -24,7 +24,7 @@
         <li><a href="#downloads">
             <i18n>Downloads</i18n>
         </a></li>
-        <li><a href="#changelog">
+        <li><a href="changelog.html">
             <i18n>Changelog</i18n>
         </a></li>
         <li><a href="#limitations">
@@ -37,6 +37,9 @@
             <i18n>Contact</i18n>
         </a></li>
     </ul>
+    <footer>
+        <img src="img/lorcana.png"/>
+    </footer>
 </aside>
 
 <article id="main">
@@ -46,15 +49,15 @@
         </h1>
         <p>
             <i18n>
-                This project aims to collect data about all the cards in the Disney Lorcana trading card game, and to
-                make that data accessible in an easy-to-use format.
+                This project aims to collect data about all the cards in the <span class="lorcana">Disney Lorcana</span>
+                trading card game, and to make that data accessible in an easy-to-use format.
             </i18n>
         </p>
         <p>
             <i18n>
-                It's aimed at developers of Disney Lorcana tools and websites, rather than players of the game. Having
-                one source of data should save these developers time, since everybody doesn't individually have to
-                collect and enter their own card data anymore.
+                It's aimed at developers of <span class="lorcana">Disney Lorcana</span> tools and websites, rather than
+                players of the game. Having one source of data should save these developers time, since everybody
+                doesn't individually have to collect and enter their own card data anymore.
             </i18n>
         </p>
         <p>
@@ -141,7 +144,8 @@
             </li>
             <li><b class="filename">allCards.json</b>
                 <i18n>
-                    contains data on all the cards that have been released for Disney Lorcana.
+                    contains data on all the cards that have been released for
+                    <span class="lorcana">Disney Lorcana</span>.
                     <p>It consists of these fields:</p>
                 </i18n>
                 <ul>
@@ -283,7 +287,7 @@
             <li><b class="field">images</b>
                 <i18n>
                     A dictionary with several URLs of card images. These images are the same ones as used in the
-                    official <i>Disney Lorcana</i> app.<br/>
+                    official <span class="lorcana">Disney Lorcana</span> app.<br/>
                     The fields in this dictionary are:
                     <ul>
                         <li><b class="field">full</b>
@@ -294,7 +298,8 @@
                         </li>
                         <li><b class="optional field">foilMask</b>
                             <i18n>
-                                A mask of the full card image that the official <i>Disney Lorcana</i> app uses to draw
+                                A mask of the full card image that the official
+                                <span class="lorcana">Disney Lorcana</span> app uses to draw
                                 the foil effect, usually 1468 by 2048 pixels. Not all cards have this field
                             </i18n>
                         </li>
@@ -700,9 +705,9 @@
         </h1>
         <p>
             <i18n>
-                The source of all this data is the same as the official <i>Disney Lorcana</i> app uses, with extra image
-                parsing to make the card text more accurate. This means that LorcanaJSON files don't contain all cards
-                teased for the next set release.
+                The source of all this data is the same as the official
+                <span class="lorcana">Disney Lorcana</span> app uses, with extra image parsing to make the card text
+                more accurate. This means that LorcanaJSON files don't contain all cards teased for the next set release.
             </i18n>
         </p>
         <p>
@@ -769,15 +774,18 @@
 <footer>
     <p>
         <i18n>
-            LorcanaJSON uses trademarks and/or copyrights associated with <i>Disney Lorcana TCG</i>, used under
-            <a href="https://cdn.ravensburger.com/lorcana/community-code-en" target="_blank">Ravensburger’s Community
-                Code Policy</a>.
+            LorcanaJSON uses trademarks and/or copyrights associated with
+            <span class="lorcana">Disney Lorcana <span class="TCG">TCG</span></span>, used under
+            <a href="https://cdn.ravensburger.com/lorcana/community-code-en" target="_blank">
+                Ravensburger’s Community Code Policy
+            </a>.
         </i18n>
     </p>
     <p>
         <i18n>
             We are expressly prohibited from charging you to use or access this content. LorcanaJSON is not published,
-            endorsed, or specifically approved by Disney or Ravensburger. For more information about Disney Lorcana TCG,
+            endorsed, or specifically approved by Disney or Ravensburger.
+            For more information about <span class="lorcana">Disney Lorcana <span class="TCG">TCG</span></span>,
             visit <a href="https://www.disneylorcana.com/en-US/" target="_blank">https://www.disneylorcana.com/</a>.
         </i18n>
     </p>

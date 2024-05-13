@@ -1,27 +1,54 @@
+:root {
+    --lorcana-indigo: #373b70;
+    --lorcana-illuminary-gold: #d3ba84;
+    --lorcana-parchment: #e3caa8;
+    --lorcana-kelp: #1c1c1a;
+
+    --sidebar-bgcolor: var(--lorcana-illuminary-gold);
+    --sidebar-color: var(--lorcana-indigo);
+    --footer-bgcolor: var(--lorcana-kelp);
+    --footer-color: var(--lorcana-parchment);
+    --title-color: var(--lorcana-indigo);
+    --title-underline-color: var(--lorcana-illuminary-gold);
+    --even-rows-bgcolor: var(--lorcana-parchment);
+    --version-bdcolor: var(--lorcana-indigo);
+    --link-color: var(--lorcana-indigo);
+    --link-hover-color: var(--lorcana-illuminary-gold);
+
+    --sidebar-width: 300px;
+    --links-width: 140px;
+}
+
 html, body {
     width: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    color: var(--lorcana-kelp);
 }
 
-:root {
-    --sidebar-width: 300px;
-    --sidebar-bgcolor: #356ba2;
-    --footer-bgcolor: #c0c0c0;
-    --title-underline-color: #356ba2;
-    --even-rows-bgcolor: #c0c0c0;
+ul {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+a, a:visited, a:active {
+    color: var(--link-color);
+    text-decoration: underline;
 }
 
 /*********************** MENU ****************************/
 #sidebar {
     position: fixed;
+    top: 0;
+    height: 100%;
     width: var(--sidebar-width);
     background: var(--sidebar-bgcolor);
-    color: white;
-    height: 100%;
-    padding-top: 5em;
+    color: var(--sidebar-color);
+    padding: 2em 1em 1em 1em;
+    overflow: auto;
+    box-sizing: border-box;
 }
 
 #sidebar * {
@@ -30,6 +57,8 @@ html, body {
 
 #sidebar ul {
     list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 2em;
 }
 
 #sidebar li {
@@ -44,18 +73,38 @@ html, body {
     margin-left: var(--sidebar-width);
 }
 
+#sidebar li a {
+    position: relative;
+    margin-left: 2em;
+}
+
+#sidebar li a:hover::before {
+    content: " ➤";
+    position: absolute;
+    transform: translate(-2em, -2px);
+}
+
+#sidebar > footer img {
+    width: 100%;
+}
+
 /*********************** MAIN ****************************/
 #main {
     padding: 0 2em;
 }
 
 #main section {
-    margin-top: 3em;
+    padding-top: 2em;
 }
 
-#main section h1 {
+#main h1 {
     font-size: 1.5em;
-    border-bottom: 1px solid var(--title-underline-color)
+    border-bottom: 2px solid var(--title-underline-color);
+    color: var(--title-color);
+}
+
+#main h2 {
+    font-size: 1.3em;
 }
 
 #main li {
@@ -67,29 +116,32 @@ table {
     width: 100%;
 }
 
-tr:nth-child(2n) td {
+th,
+tr:nth-child(2n+1) td {
     background: var(--even-rows-bgcolor);
 }
 
-td,th {
+td, th {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    padding: 0 1em;
+    padding: 0.25em 1em;
+    vertical-align: top;
 }
 
-a.download::after {
+body.index a.download::after {
     display: inline-block;
-    content: "⇓⮋ download";
+    content: "⮋ download";
 }
 
-a.md5::after {
-    display: inline-block;
+body.index a.md5::after {
+    display: block;
     content: "md5 checksum";
+    font-size: 0.8em;
 }
 
 b.filename {
     font-family: monospace;
-    font-size:1.2em;
+    font-size: 1.2em;
 }
 
 b.field {
@@ -97,18 +149,98 @@ b.field {
 }
 
 b.field::after {
-    display:inline-block;
+    display: inline-block;
     content: ":";
     font-weight: normal;
 }
 
-b.optional.field::before {
-    content: "? ";
-    font-weight: normal;
-}
 b.optional.field::after {
     content: " (optional):";
 }
+
+/*********************** Versions (changelog) ****************************/
+.version > ul,
+.version > p {
+    border-left: 7px solid var(--version-bdcolor);
+    margin-top: 0;
+    padding-left: 2em;
+}
+
+.version > p {
+    padding-left: 1em;
+}
+
+#versions-toc li {
+    margin-top: 0.25em;
+    font-size: 0.9em;
+}
+
+div.version {
+    display: flex;
+}
+
+div.version > * {
+    flex: 1;
+}
+
+div.version .links {
+    flex: 0;
+    min-width: var(--links-width);
+    margin-left: 2em;
+    border: 2px solid var(--lorcana-parchment);
+    padding: 0 1em 1em 1em;
+    height: auto;
+    align-self: baseline;
+    box-sizing: content-box;
+}
+
+div.version .links header {
+    background-color: var(--lorcana-parchment);
+    margin-left: -1em;
+    width: calc(100%);
+    padding: 0.25em 1em;
+    margin-bottom: 1em;
+}
+
+div.version .links a.download {
+    display: block;
+}
+
+h2 .format {
+    color: var(--lorcana-indigo);
+    font-size: 0.6em;
+    padding: 3px 7px;
+    font-weight: normal;
+    border-radius: 12px;
+}
+h2 .format::before {
+    content: "format: "
+}
+
+h2 .format.unchanged {
+    outline: 1px solid var(--lorcana-parchment);
+}
+h2 .format.unchanged::after {
+    content: " (unchanged)"
+}
+
+h2 .format.nonbreaking {
+    background: var(--lorcana-parchment);
+}
+h2 .format.nonbreaking::after {
+    content: " (non-breaking changes)"
+}
+
+h2 .format.initial,
+h2 .format.breaking {
+    color: var(--lorcana-illuminary-gold);
+    background-color: var(--lorcana-indigo);
+    font-weight: bold;
+}
+h2 .format.breaking::after {
+    content: " (BREAKING CHANGES)"
+}
+
 
 /*********************** Code and symbols ****************************/
 code {
@@ -122,7 +254,7 @@ code.json-keyword {
 }
 
 code.symbol {
-    display:inline-block;
+    display: inline-block;
     width: 1em;
     text-align: center;
     border: 1px solid silver;
@@ -132,8 +264,16 @@ code.symbol {
 code.on-card {
 }
 
+.lorcana {
+    font-style: italic;
+}
+
+.lorcana .TCG {
+    font-style: normal;
+}
 /*********************** FOOTER ****************************/
-footer {
+body > footer {
     background: var(--footer-bgcolor);
     padding: 1em 2em;
+    position: fixed;
 }
