@@ -102,10 +102,6 @@ a:hover {
     padding: 0 2em;
 }
 
-#main section {
-    padding-top: 2em;
-}
-
 #main h1 {
     font-size: 1.5em;
     border-bottom: 2px solid var(--title-underline-color);
