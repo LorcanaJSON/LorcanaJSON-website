@@ -128,7 +128,7 @@
                     <li><b class="field">hasAllCards</b>
                         <i18n>
                             A boolean indicating whether all cards for this set have been released yet.
-                            <code class="json-keyword">true</code> if all cards of the set are in the datafile,
+                            <code class="json-keyword">true</code> if all main cards (so excluding promos) of the set are in the datafile,
                             <code class="json-keyword">false</code> otherwise
                         </i18n>
                     </li>
@@ -151,7 +151,7 @@
                         </i18n>
                     </li>
                     <li><b class="field">cards</b>
-                        <i18n>A list of card objects. The fields of each object are described in the next section</i18n>
+                        <i18n>A list of card objects. The fields of each card object are described in the next section</i18n>
                     </li>
                 </ul>
             </li>
@@ -172,7 +172,7 @@
                         </i18n>
                     </li>
                     <li><b class="field">cards</b>
-                        <i18n>A list of card objects. The fields of each object are described in the next section</i18n>
+                        <i18n>A list of card objects. The fields of each card object are described in the next section</i18n>
                     </li>
                 </ul>
             </li>
@@ -198,9 +198,8 @@
                 <i18n>
                     A list of all abilities on this character card.
                     For character-type cards, abilities are generally keywords, like 'Evasive' and 'Shift', and this
-                    field includes the ability name, its value, and its reminder text. For action-type and item-type
-                    cards, this field contains what the action does. For cards without abilities, this field doesn't
-                    exist
+                    field includes the ability name, its value if it has one, and its reminder text. For action-type and item-type
+                    cards, this field contains what the action does. For cards without abilities, this field doesn't exist
                 </i18n>
             </li>
             <li><b class="field">artist</b>
@@ -284,7 +283,7 @@
             </li>
             <li><b class="field">fullText</b>
                 <i18n>
-                    The main gameplay text on the card as printed, not split up into abilities or effects. Does not
+                    The entire main gameplay text on the card as printed, not split up into abilities or effects. Does not
                     include the flavor text. This field always exists, but can be an empty string on cards without text.
                     The text can contain newline characters
                 </i18n>
@@ -328,7 +327,7 @@
             </li>
             <li><b class="field">inkwell</b>
                 <i18n>
-                    <code class="json-keyword">true</code> if this card is allowed to be put into the inkwell for ink,
+                    <code class="json-keyword">true</code> if this card is allowed to be put into the inkwell as ink,
                     so if it has the extra decoration around the cost in the top left of the card, and
                     <code class="json-keyword">false</code> otherwise
                 </i18n>
@@ -346,9 +345,8 @@
                 <i18n>
                     A list of the keyword abilities of this character card, without the reminder text. For keyword
                     abilities with a value, like <code class="on-card">Shift X</code> or
-                    <code class="on-card">Challenger +X</code>, the list entry includes that value. For characters
-                    without
-                    keyword abilities and card types other than characters, this field doesn't exist
+                    <code class="on-card">Challenger +X</code>, the list entry includes that value. For cards
+                    without keyword abilities, this field doesn't exist
                 </i18n>
             </li>
             <li><b class="optional field">lore</b>
@@ -466,8 +464,7 @@
             </li>
             <li><b class="field">story</b>
                 <i18n>
-                    The name of the story (movie, show, etc.) that the (character on the) card is from or that it
-                    references
+                    The name of the story (movie, show, etc.) that the card is from or that it references
                 </i18n>
             </li>
             <li><b class="optional field">strength</b>
@@ -530,7 +527,7 @@
             </li>
             <li><b class="field">willpower</b>
                 <i18n>
-                    The willpower of a character or location card, so how much damage it can take before they are
+                    The willpower of a character or location card, so how much damage it can take before it is
                     discarded. For other card types, this field doesn't exist
                 </i18n>
             </li>
@@ -698,7 +695,7 @@
         </table>
         <p>
             <i18n>
-                Please try to use the zipped JSON files to save bandwith. Thanks!
+                Please use the zipped JSON files if possible, to save bandwith. Thanks!
             </i18n>
         </p>
     </section>
