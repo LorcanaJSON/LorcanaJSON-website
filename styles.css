@@ -164,6 +164,7 @@ b.field::after {
 
 b.optional.field::after {
     content: " (optional):";
+    font-style: italic;
 }
 
 /*********************** Versions (changelog) ****************************/
