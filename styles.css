@@ -6,8 +6,6 @@
 
     --sidebar-bgcolor: var(--lorcana-illuminary-gold);
     --sidebar-color: var(--lorcana-indigo);
-    --footer-bgcolor: var(--lorcana-kelp);
-    --footer-color: var(--lorcana-parchment);
     --title-color: var(--lorcana-indigo);
     --title-underline-color: var(--lorcana-illuminary-gold);
     --even-rows-bgcolor: var(--lorcana-parchment);
@@ -84,8 +82,15 @@ a, a:visited, a:active {
     transform: translate(-2em, -2px);
 }
 
-#sidebar > footer img {
-    width: 100%;
+#sidebar footer {
+    padding: 0em 1em;
+    font-size: smaller;
+    position: absolute;
+    bottom: 0;
+}
+
+#sidebar footer a {
+	color: var(--lorcana-kelp);
 }
 
 /*********************** MAIN ****************************/
@@ -270,10 +275,4 @@ code.on-card {
 
 .lorcana .TCG {
     font-style: normal;
-}
-/*********************** FOOTER ****************************/
-body > footer {
-    background: var(--footer-bgcolor);
-    padding: 1em 2em;
-    position: fixed;
 }
