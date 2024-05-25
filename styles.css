@@ -133,7 +133,7 @@ td, th {
 }
 
 body.index a.download::after {
-    display: inline-block;
+    display: block;
     content: "⮋ download";
 }
 
