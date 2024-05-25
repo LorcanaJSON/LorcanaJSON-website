@@ -36,6 +36,10 @@ a, a:visited, a:active {
     text-decoration: underline;
 }
 
+a:hover {
+	color: var(--link-hover-color);
+}
+
 /*********************** MENU ****************************/
 #sidebar {
     position: fixed;
