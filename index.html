@@ -207,9 +207,9 @@
             </li>
             <li><b class="field">baseName</b>
                 <i18n>
-                    The main name of the card. For characters, this is the character name, without the subtitle. For
                     other card types, this is the same as the 'fullName' field. See also the 'fullName' and 'subtitle'
                     fields
+                    The main name of the card. For characters and locations, this is the character or location name without the subtitle. For
                 </i18n>
             </li>
             <li><b class="optional field">clarifications</b>
@@ -275,7 +275,7 @@
             </li>
             <li><b class="field">fullName</b>
                 <i18n>
-                    The full name of the card. For characters, this is the baseName plus the subtitle.
+                    The full name of the card. For characters and locations, this is the <code class="field ref">baseName</code> plus the <code class="field ref">subtitle</code>, separated by a dash.
                     For other card types this is the same as the <code class="field ref">baseName</code> field.
                     See also the <code class="field ref">baseName</code> and <code class="field ref">subtitle</code>
                     fields
@@ -489,7 +489,7 @@
             </li>
             <li><b class="field">type</b>
                 <i18n>
-                    What kind of card this is. One of Action, Character, Item
+                    What kind of card this is. One of Action, Character, Item, Location
                 </i18n>
             </li>
             <li><b class="field">variant</b>
