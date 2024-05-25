@@ -255,7 +255,7 @@ code {
 
 /** a JS keyword, like 'true' or 'false' */
 code.json-keyword {
-
+	font-family: monospace;
 }
 
 code.symbol {
