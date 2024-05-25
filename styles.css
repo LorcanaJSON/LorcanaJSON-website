@@ -267,6 +267,7 @@ code.symbol {
     width: 1em;
     text-align: center;
     border: 1px solid silver;
+    margin: 0em 0.25em;
 }
 
 /** something written on the card **/
