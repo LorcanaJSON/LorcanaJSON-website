@@ -123,8 +123,8 @@
                 </ul>
             </li>
             <li>
-                <b class="filename">setdata.[setnumber].json</b> contains data on all the cards in the set specified by
-                the setnumber. There is a file like this for each released set. It consists of these fields:
+                <b class="filename">setdata.[setCode].json</b> contains data on all the cards in the set specified by
+                the set code. There is a file like this for each released set. It consists of these fields:
                 <ul>
                     <li><b class="field">hasAllCards</b>
                         <i18n>
@@ -141,14 +141,17 @@
                     </li>
                     <li><b class="field">prereleaseDate</b>
                         <i18n>
-                            The pre-release date for this set, when it was or will be available to buy from local game
-                            stores. Format is year-month-day.
+                            The pre-release date for this set, when it was or will be available to buy from local game stores. Format is year-month-day
                         </i18n>
                     </li>
                     <li><b class="field">releaseDate</b>
                         <i18n>
-                            The release date for this set, when it was or will be available to buy from large retailers,
-                            and the Ravensburger and ShopDisney websites. Format is year-month-day
+                            The release date for this set, when it was or will be available to buy from large retailers. Format is year-month-day
+                        </i18n>
+                    </li>
+                    <li><b class="field">type</b>
+                        <i18n>
+                            What type of set this is. Most sets are type <code class="on-card">expansion</code>, but sets like 'Illumineer's Quest: Deep Trouble' are type <code class="on-card">quest</code>. The latter type may be missing some fields or values, and cards from these sets aren't allowed to be used during tournaments or official games
                         </i18n>
                     </li>
                     <li><b class="field">cards</b>
@@ -168,7 +171,7 @@
                     </li>
                     <li><b class="field">sets</b>
                         <i18n>
-                            A dictionary with set data. There is a key for each set number, and the values are the same
+                            A dictionary with set data. There is a key for each set code, and the values are the same
                             set data as described above for the set-specific datafiles
                         </i18n>
                     </li>
@@ -392,10 +395,17 @@
                     (the latter is used for promos or other special releases)
                 </i18n>
             </li>
-            <li><b class="field">setNumber</b>
+            <li><b class="field">setCode</b>
                 <i18n>
-                    The number of the set this card is released in. This field does not exist in the set-specific data
-                    files, since it doesn't make sense there
+                        A string representation of the set code, which is the set number for 'normal' cards, and <code class="on-card">Q1</code> for Illumineer's Quest cards. This is exactly how it's printed as the last part of the identifier at the bottom-left of each card.<br />
+                        This set code is also a key in the "sets" dictionary inside the "allCards.json" file, linking to the set name and other set data.<br />
+                        This field does not exist in the set-specific data files, since it doesn't make sense there. See also the <code class="field ref">setNumber</code> field
+                </i18n>
+            </li>
+            <li><b class="optional field">setNumber</b>
+                <i18n>
+                    The number of the set this card is released in. For cards from Quest sets (f.i. Illumineer's Quest: Deep Trouble), this field does not exist<br />
+                    This field also does not exist in the set-specific data files, since it doesn't make sense there. See also the <code class="field ref">setCode</code> field
                 </i18n>
             </li>
             <li><b class="field">simpleName</b>
