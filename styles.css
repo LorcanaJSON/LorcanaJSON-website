@@ -48,7 +48,7 @@ a:hover {
     width: var(--sidebar-width);
     background: var(--sidebar-bgcolor);
     color: var(--sidebar-color);
-    padding: 2em 1em 1em 1em;
+    padding: 0em 1em 1em 1em;
     overflow: auto;
     box-sizing: border-box;
 }
@@ -60,11 +60,11 @@ a:hover {
 #sidebar ul {
     list-style-type: none;
     padding-left: 0;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 #sidebar li {
-    margin-top: 1em;
+    margin-top: 0.5em;
 }
 
 #sidebar a {
