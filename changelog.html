@@ -42,6 +42,23 @@
         <i18n>Versions:</i18n>
     </p>
     <ul id="versions-toc">
+        <li><a href="#v2024-05-27-1.3.0-1">2024-05-27-1.3.0-1</a></li>
+        <li><a href="#v2024-05-18-1.2.0-1">2024-05-18-1.2.0-1</a></li>
+        <li><a href="#v2024-03-25-1.2.0-1">2024-03-25-1.2.0-1</a></li>
+        <li><a href="#v2024-02-29-1.1.0-1">2024-02-29-1.1.0-1</a></li>
+        <li><a href="#v2024-02-25-1.0.3-1">2024-02-25-1.0.3-1</a></li>
+        <li><a href="#v2024-01-07-1.0.2-1">2024-01-07-1.0.2-1</a></li>
+        <li><a href="#v2023-12-10-1.0.2-1">2023-12-10-1.0.2-1</a></li>
+        <li><a href="#v2023-11-13-1.0.1-1">2023-11-13-1.0.1-1</a></li>
+        <li><a href="#v2023-11-11-1.0.1-1">2023-11-11-1.0.1-1</a></li>
+        <li><a href="#v2023-11-08-1.0.1-1">2023-11-08-1.0.1-1</a></li>
+        <li><a href="#v2023-11-03-1.0.1-1">2023-11-03-1.0.1-1</a></li>
+        <li><a href="#v2023-10-27-1.0.1-1">2023-10-27-1.0.1-1</a></li>
+        <li><a href="#v2023-10-25-1.0.0-1">2023-10-25-1.0.0-1</a></li>
+        <li><a href="#v2023-10-20-1.0.0-1">2023-10-20-1.0.0-1</a></li>
+        <li><a href="#v2023-10-16-1.0.0-1">2023-10-16-1.0.0-1</a></li>
+        <li><a href="#v2023-10-10-1.0.0-1">2023-10-10-1.0.0-1</a></li>
+        <li><a href="#v2023-10-08-1.0.0-1">2023-10-08-1.0.0-1</a></li>
     </ul>
 
     <footer>
@@ -827,19 +844,6 @@
         </div>
     </section>
 </article>
-
-<script>
-    let ul = document.getElementById('versions-toc');
-    let versions = document.querySelectorAll('#main h2');
-    versions.forEach(function (h2) {
-        let li = document.createElement('li');
-        let a = document.createElement('a');
-        a.href = '#' + h2.id
-        a.innerHTML = h2.id.replace('v', '')
-        li.appendChild(a);
-        ul.appendChild(li);
-    });
-</script>
 
 </body>
 </html>
