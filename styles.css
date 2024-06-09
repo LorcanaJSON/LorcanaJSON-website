@@ -157,7 +157,7 @@ a:hover {
 }
 
 #sidebar footer {
-    padding: 0em 1em;
+    padding: 0 1em;
     font-size: smaller;
     position: absolute;
     bottom: 0;
@@ -167,7 +167,7 @@ a:hover {
 }
 
 #sidebar footer a {
-	color: var(--lorcana-kelp);
+    color: var(--lorcana-kelp);
 }
 
 /*********************** MAIN ****************************/
