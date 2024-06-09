@@ -15,6 +15,9 @@
 
     --sidebar-width: 300px;
     --links-width: 140px;
+
+    /* height of the footer, used for versions-toc */
+    --footer-height: 13em;
 }
 
 html, body {
@@ -158,6 +161,9 @@ a:hover {
     font-size: smaller;
     position: absolute;
     bottom: 0;
+    background: inherit;
+    border-top: 1px solid var(--lorcana-kelp);
+    margin-top: 0.5em;
 }
 
 #sidebar footer a {
@@ -242,7 +248,18 @@ b.optional.field::after {
     padding-left: 1em;
 }
 
-#versions-toc li {
+#versions-toc {
+    margin-bottom: 10em;
+    overflow: auto;
+    bottom: 0;
+    position: absolute;
+    top: 7em;
+    right: 0;
+    left: 1.5em;
+    padding-bottom: var(--footer-height);
+}
+
+#versions-toc li a {
     margin-top: 0.25em;
     font-size: 0.9em;
 }
