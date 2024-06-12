@@ -131,7 +131,12 @@
                 <b class="filename">setdata.[setCode].json</b> contains data on all the cards in the set specified by
                 the set code. There is a file like this for each released set. It consists of these fields:
                 <ul>
-                    <li><b class="field">hasAllCards</b>
+                    <li><b class="field">code</b>
+                        <i18n>
+                            The code of this set. This is already in the name of the set file, but it's here too for completion's sake
+                        </i18n>
+                    </li>
+                     <li><b class="field">hasAllCards</b>
                         <i18n>
                             A boolean indicating whether all cards for this set have been released yet.
                             <code class="json-keyword">true</code> if all main cards (so excluding promos) of the set are in the datafile,
