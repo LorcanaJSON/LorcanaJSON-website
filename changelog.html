@@ -42,6 +42,7 @@
         <i18n>Versions:</i18n>
     </p>
     <ul id="versions-toc">
+        <li><a href="#v2024-06-12-1.3.1-1">2024-06-12-1.3.1-1</a></li>
         <li><a href="#v2024-05-27-1.3.0-1">2024-05-27-1.3.0-1</a></li>
         <li><a href="#v2024-05-18-1.2.0-1">2024-05-18-1.2.0-1</a></li>
         <li><a href="#v2024-03-25-1.2.0-1">2024-03-25-1.2.0-1</a></li>
@@ -83,6 +84,51 @@
 <article id="main">
     <section>
         <h1>LorcanaJSON Changelog</h1>
+
+        <h2 id="v2024-06-12-1.3.1-1">2024-06-12 <span class="format nonbreaking">1.3.1</span></h2>
+        <div class="version">
+            <ul>
+                <li>Small non-breaking format changes:
+                    <ul>
+                        <li>Cards now have a <code class="field">code</code> field, containing a two-character code for this card that the official app uses when saving a deck. It is the base-62 version of the card ID (digits higher than 9 use lowercase a-z and then uppercase A-Z)</li>
+                        <li>The set dictionary in the 'allCards' file and the set data in the set-specific files now have a <code class="field">number</code> field, showing which number of that set's type this is. So both setcode "1" and "Q1" have <code class="field">number</code> 1, since the former is expansion 1 and the latter is quest 1</li>
+                        <li>The set-specific files now have a <code class="field">code</code> field that contains the set code, so you don't have to get it from the filename anymore</li>
+                        <li>The 'metadata' block in each file and the 'metadata.json' file now have a <code class="field">language</code> field, containing a two-letter code indicating the language of the cards</li>
+                    </ul>
+                </li>
+                <li>Added the secret card you win by beating "Illumineer's Quest: Deep Trouble", as an external reveal card. The ID for this card is 1172, which is extrapolated from existing IDs, so this ID might change in the future when the card is added to the official app</li>
+                <li>Set 5 name and release dates have been added</li>
+                <li>Small text fixes:
+                    <ul>
+                        <li>Correct 'Dwarves' to 'Dwarfs' in the story name "Snow White and the Seven Dwarfs"</li>
+                        <li>Add missing comma to flavor text of <code class="card-name">Mad Hatter - Gracious Host</code> (ID 86)</li>
+                        <li>Fixed dash in flavor text of <code class="card-name">Flounder - Voice of Reason</code> (ID 145)</li>
+                        <li>Corrected 'to' to 'To' in flavor text of <code class="card-name">Let It Go</code> (ID 163)</li>
+                        <li>Remove extra period in effect of <code class="card-name">Fairy Godmother - Mystic Armorer</code> (ID 257)</li>
+                        <li>Fixed dash in flavor text of <code class="card-name">Merlin - Shapeshifter</code> (ID 269)</li>
+                        <li>Correct 'quy' to 'guy' in flavor text of <code class="card-name">Yzma - Without Beauty Sleep</code> (ID 277)</li>
+                        <li>Fixed dash in flavor text of <code class="card-name">Chief Bogo - Respected Officer</code> (ID 391)</li>
+                        <li>Correct period to comma in flavor text of <code class="card-name">Magic Broom - Industrial Model</code> (ID 404)</li>
+                        <li>Add missing exclamation mark to flavor text of <code class="card-name">Sir Hiss - Aggravating Asp</code> (ID 522)</li>
+                        <li>Correct 'Io' to 'To' in flavor text of <code class="card-name">I Will Find My Way</code> (ID 531)</li>
+                        <li>Add missing period at the end of the effect of <code class="card-name">Scroop - Backstabber</code> (ID 558)</li>
+                        <li>Remove erroneous closing bracket from the effect of <code class="card-name">Lythos - Rock Titan</code> (ID 616)</li>
+                        <li>Fixed dashes in flavor text of <code class="card-name">And Then Along Came Zeus</code> (ID 631)</li>
+                        <li>Correct 'Iala' to 'Tala' in Shift reminder text of <code class="card-name">Gramma Tala - Spirit of the Ocean</code> (ID 653)</li>
+                    </ul>
+                </li>
+            </ul>
+            <aside class="links">
+                <header>
+                    <i18n>Permanent links:</i18n>
+                </header>
+                <a class="download" href="files/2024-06-12-1.3.1-1/en/allCards.json.zip">allCards.json.zip</a>
+                (<a class="md5" href="files/2024-06-12-1.3.1-1/en/allCards.json.zip.md5">md5</a>),
+                <a class="download" href="files/2024-06-12-1.3.1-1/en/sets/allSets.zip">allSets.zip</a>
+                (<a class="md5" href="files/2024-06-12-1.3.1-1/en/sets/allSets.zip.md5">md5</a>)
+            </aside>
+        </div>
+
         <h2 id="v2024-05-27-1.3.0-1">2024-05-27 <span class="format breaking">1.3.0</span></h2>
         <div class="version">
         <ul>
