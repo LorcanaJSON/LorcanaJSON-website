@@ -10,33 +10,13 @@
 </head>
 
 <body>
+<input type="checkbox" id="sidebar-button" autocomplete="off" />
 <aside id="sidebar">
     <h1>LorcanaJSON</h1>
-    <p>
-        <a href="index.html"><i18n>Main</i18n></a>
-    </p>
-    <ul class="toc">
-        <li><a href="index.html#what-is-this">
-            <i18n>What is this?</i18n>
-        </a></li>
-        <li><a href="index.html#datafiles">
-            <i18n>Data files explanation</i18n>
-        </a></li>
-        <li><a href="index.html#field-explanation">
-            <i18n>Card data fields explanation</i18n>
-        </a></li>
-        <li><a href="index.html#downloads">
-            <i18n>Downloads</i18n>
-        </a></li>
-        <li><a href="index.html#limitations">
-            <i18n>Limitations</i18n>
-        </a></li>
-        <li><a href="index.html#plans">
-            <i18n>Future plans</i18n>
-        </a></li>
-        <li><a href="index.html#contact">
-            <i18n>Contact</i18n>
-        </a></li>
+    <ul>
+        <li>
+            <a href="index.html"><i18n>Back to main</i18n></a>
+        </li>
     </ul>
     <p>
         <i18n>Versions:</i18n>
@@ -890,6 +870,8 @@
         </div>
     </section>
 </article>
-
+<script>
+    document.getElementById('versions-toc').scrollTop = 0;
+</script>
 </body>
 </html>
