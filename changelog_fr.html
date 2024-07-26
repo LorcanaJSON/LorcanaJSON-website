@@ -22,6 +22,7 @@
         <i18n>Versions:</i18n>
     </p>
     <ul id="versions-toc">
+        <li><a href="#v2024-07-26-2.0.0-1">2024-07-26-2.0.0-1</a></li>
         <li><a href="#v2024-06-26-1.3.1-1">2024-06-26-1.3.1-1</a></li>
     </ul>
 
@@ -47,6 +48,60 @@
 <article id="main">
     <section>
         <h1>LorcanaJSON French Changelog</h1>
+
+        <h2 id="v2024-07-26-2.0.0-1">2024-07-26 <span class="format breaking">2.0.0</span></h2>
+        <div class="version">
+            <div>
+                After a careful review of the <a href="https://files.disneylorcana.com/Disney%20Lorcana%20Comprehensive%20Rules%20-%20EN%20-%2005.21.24.pdf" target="_blank">Comprehensive Rules</a>,
+                it came to light that some terms in the LorcanaJSON dataset were used wrong.<br />
+                Firstly, the terms 'effects' and 'abilities' refer to different things than was used in this dataset:
+                Characters, Locations, and Items don't have named effects, as the previous LorcanaJSON naming scheme used; they have named abilities that cause effects when resolved. Keyword abilities are just types of abilities. All fields related to this have been changed.<br />
+                Secondly, 'baseName' and 'subtitle' should be 'name' and 'version', respectively. The 'fullName' field that combines the two IS named properly and is still a combination of these two fields.<br />
+                This 2.0.0 format release aims to fix these errors through renaming and repurposing fields, which will sadly break existing code that uses these fields.<br />
+                This isn't a decision taken lightly, but since accuracy is the main goal of this LorcanaJSON project, these changes felt necessary. Sorry for the inconvenience caused.<br />
+                To make the transition easier, this release only contains the format changes and no new card data, so the <a href="#v2024-06-26-1.3.1-1">previous release</a> can be used until you've updated your project to the format changes.<br />
+                For the old deprecated v1 format fields, <a href="cardExplanations_formatV1.html">click here</a>.<br />
+                These fields have been <b>modified</b>:
+                <ul>
+                    <li>Characters, Locations, and Items don't have an <code class="field">effects</code> field anymore, instead they now have an <code class="field">abilities</code> field, containing both keyword abilities and named abilities</li>
+                    <li><code class="field">abilities</code> is now a list of dictionaries, with each dictionary containing at least the <code class="field">type</code> and <code class="field">fullText</code> of the ability, and more fields depending on the type of ability.</li>
+                    <li><code class="field">type</code> can be one of 'keyword', 'activated', 'triggered', or 'static'</li>
+                    <li><code class="field">fullText</code> is the entire text as printed on the card, including newline characters</li>
+                    <li>For keyword abilities, this also contains <code class="field">keyword</code> and <code class="field">reminderText</code>, and <code class="field">keywordValue</code> and <code class="field">keywordValueNumber</code> if applicable.</li>
+                    <li>For named abilities, this also contains <code class="field">name</code> and <code class="field">effect</code></li>
+                    <li>The <code class="field">abilities</code> field on Action-type cards has been renamed to <code class="field">effects</code>. The contents of this field is still a list of strings containing the effect(s) of playing the Action</li>
+                    <li><code class="field">baseName</code> and <code class="field">subtitle</code> have been renamed to <code class="field">name</code> and <code class="field">version</code> respectively. <code class="field">fullName</code> is unchanged</li>
+                    <li><code class="field">keywordAbilities</code> no longer lists the values of the keywords, so instead of it listing "Shift 5" or "Resist +1", it now lists just "Shift" or "Resist". This should make finding cards with these keywords easier. The value of the keyword can still be found in the <code class="field">keywordValue</code> and <code class="field">keywordValueNumber</code> fields in its <code class="field">abilities</code> entry</li>
+                    <li>The reminder text of Song cards is no longer listed as a separate effect, instead it is now listed as a static ability in <code class="field">abilities</code></li>
+                </ul>
+                These fields have been <b>added</b>:
+                <ul>
+                    <li><code class="field">fullTextSections</code> is a new field containing a list with each section (an ability or effect) of a card as a string. This field got added because these section divisions can't easily be gotten from <code class="field">fullText</code> or from the various <code class="field">abilities</code> and/or <code class="field">effects</code> emtries</li>
+                    <li>Since quite a few cards have multiple artists, the <code class="field">artist</code> field has been removed and replaced with an <code class="field">artist<b>s</b></code> list field, listing all the artists. The artist text as shown on the card is available in the new <code class="field">artistsText</code> text field</li>
+                    <li>With the errata for <code class="card-name">Bucky - Squirrel Squeak Tutor</code> (ID 289), a new field called <code class="field">historicData</code> has been added, which is a list of dictionaries with previous values a card had before they were officially changed, including until when the old values were active in the <code class="field">usedUntil</code> dictionary field</li>
+                    <li><code class="field">foilTypes</code> is a new field listing the possible types of foiling for a card, including 'null' for no foiling</li>
+                </ul>
+                These fields have been <b>removed</b>:
+                <ul>
+                    <li>As mentioned above, the <code class="field">artist</code> field has been removed and replaced with the <code class="field">artist<b>s</b></code> and <code class="field">artistsText</code> fields</li>
+                    <li>The <code class="field">setNumber</code> field was removed, since it's been superceded by the <code class="field">setCode</code> field and was only left in for backwards compatibility</li>
+                </ul>
+                Smaller changes:
+                <ul>
+                    <li>The keys of each card and each ability are now sorted alphabetically, which doesn't affect programmatically processing the data, but it should make manual checking easier</li>
+                </ul>
+                All these fields are explained in more detail on the <a href="https://lorcanajson.org/#field-explanation">main page</a>
+            </div>
+            <aside class="links">
+                <header>
+                    <i18n>Permanent links:</i18n>
+                </header>
+                <a class="download" href="files/2024-07-26-2.0.0-1/fr/allCards.json.zip">allCards.json.zip</a>
+                (<a class="md5" href="files/2024-07-26-2.0.0-1/fr/allCards.json.zip.md5">md5</a>),
+                <a class="download" href="files/2024-07-26-2.0.0-1/fr/sets/allSets.zip">allSets.zip</a>
+                (<a class="md5" href="files/2024-07-26-2.0.0-1/fr/sets/allSets.zip.md5">md5</a>)
+            </aside>
+        </div>
 
         <h2 id="v2024-06-26-1.3.1-1">2024-06-26 <span class="format initial">1.3.1</span></h2>
         <div class="version">
