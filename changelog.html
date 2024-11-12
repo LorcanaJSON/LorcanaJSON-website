@@ -22,6 +22,7 @@
         <i18n>Versions:</i18n>
     </p>
     <ul id="versions-toc">
+        <li><a href="#v2024-11-12-2.0.1-1">2024-11-12-2.0.1-1</a></li>
         <li><a href="#v2024-08-23-2.0.0-1">2024-08-23-2.0.0-1</a></li>
         <li><a href="#v2024-08-22-2.0.0-1">2024-08-22-2.0.0-1</a></li>
         <li><a href="#v2024-08-10-2.0.0-1">2024-08-10-2.0.0-1</a></li>
@@ -70,6 +71,35 @@
     <section>
         <h1>LorcanaJSON English Changelog</h1>
 
+        <h2 id="v2024-11-12-2.0.1-1">2024-08-23 <span class="format nonbreaking">2.0.1</span></h2>
+        <div class="version">
+            <ul>
+                <li><b>Added all cards from set 6 "Azurite Sea"</b></li>
+                <li>Non-breaking format addition: A new dictionary called <code class="field">externalLinks</code> has been added to each card, that contains the IDs that various online card stores use for that card and links to the card on those stores.
+                    While adding pricing data directly to LorcanaJSON would currently be too much extra work and upkeep, hopefully with this addition it's easier for interested users to gather and use that pricing data themselves.
+                    See <a href="/index.html#field-explanation">the <code class="field">externalLinks</code> explanation</a> for details on which card store IDs and links exist, and where to get pricing data</li>
+                <li><code class="card-name">Huey - Savvy Nephew</code> (ID 581) was erroneously listed as having the <code class="on-card">Storyborn</code> subtype in the app and the LorcanaJSON data previously, it is now correctly listed as having the <code class="on-card">Dreamborn</code> subtype, just like his brothers</li>
+                <li>Some small card fixes:
+                    <ul>
+                        <li>Correct card name in <code class="field">clarifications</code> of <code class="card-name">Prince John - Greediest of All</code> (ID 305)</li>
+                        <li>Correct ability name in <code class="field">clarifications</code> of <code class="card-name">Grand Pabbie - Oldest and Wisest</code> (Id 364)</li>
+                        <li>Remove incorrect <code class="field">clarifications</code> from <code class="card-name">Mickey Mouse - Trumpeter</code> (ID 618)</li>
+                        <li>Add promo ID 1432 to <code class="card-name">Mickey Mouse - Playful Sorcerer</code> (ID 878)</li>
+                        <li>Remove erroneous <code class="field">enchantedId</code> from promo version of <code class="card-name">Yen Sid - Powerful Sorcerer</code> (ID 946). It still exists in the non-promo version of the card (ID 750)</li>
+                    </ul>
+                </li>
+            </ul>
+            <aside class="links">
+                <header>
+                    <i18n>Permanent links:</i18n>
+                </header>
+                <a class="download" href="files/2024-11-12-2.0.1-1/en/allCards.json.zip">allCards.json.zip</a>
+                (<a class="md5" href="files/2024-11-12-2.0.1-1/en/allCards.json.zip.md5">md5</a>),
+                <a class="download" href="files/2024-11-12-2.0.1-1/en/sets/allSets.zip">allSets.zip</a>
+                (<a class="md5" href="files/2024-11-12-2.0.1-1/en/sets/allSets.zip.md5">md5</a>)
+            </aside>
+        </div>
+
         <h2 id="v2024-08-23-2.0.0-1">2024-08-23 <span class="format unchanged">2.0.0</span></h2>
         <div class="version">
             <ul>
@@ -85,7 +115,7 @@
                 (<a class="md5" href="files/2024-08-23-2.0.0-1/en/sets/allSets.zip.md5">md5</a>)
             </aside>
         </div>
-
+        
         <h2 id="v2024-08-22-2.0.0-1">2024-08-22 <span class="format unchanged">2.0.0</span></h2>
         <div class="version">
             <ul>
