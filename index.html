@@ -291,6 +291,31 @@
                     newline characters
                 </i18n>
             </li>
+            <li><b class="field">externalLinks</b>
+                <i18n>
+                    This dictionary contains information to link this dataset to other Lorcana-related datasets. The dictionary itself always exists, but each field inside it only exists when it is known for the card. Available external link fields are:
+                </i18n>
+                <ul>
+                    <li><b class="optional field">cardTraderId</b>
+                        <i18n>The ID used by the <a href="https://www.cardtrader.com/en/lorcana" target="_blank">CardTrader card marketplace</a> for this card. You can use <a href="https://www.cardtrader.com/docs/api/full/reference" target="_blank">their API</a> and this ID to look up pricing data of this card</i18n>
+                    </li>
+                    <li><b class="optional field">cardTraderUrl</b>
+                        <i18n>The page of this card on the <a href="https://www.cardtrader.com/en/lorcana" target="_blank">CardTrader card marketplace</a>. This is not a referral link, so LorcanaJSON doesn't earn any money when this link is used</i18n>
+                    </li>
+                    <li><b class="optional field">cardmarketId</b>
+                        <i18n>The ID used by the <a href="https://www.cardmarket.com/en/Lorcana" target="_blank">Cardmarket card marketplace</a> for this card. On their website, you can <a href="https://www.cardmarket.com/en/Lorcana/Data/Price-Guide" target="_blank">download a price guide</a>, and use this ID to look up pricing data of this card</i18n>
+                    </li>
+                    <li><b class="optional field">cardmarketUrl</b>
+                        <i18n>The page of this card on the <a href="https://www.cardmarket.com/en/Lorcana" target="_blank">Cardmarket card marketplace</a>. This is not a referral link, so LorcanaJSON doesn't earn any money when this link is used</i18n>
+                    </li>
+                    <li><b class="optional field">tcgPlayerId</b>
+                        <i18n>The ID used by the <a href="https://www.tcgplayer.com/categories/trading-and-collectible-card-games/disney-lorcana" target="_blank">TCGplayer card marketplace</a>. You can use the data from <a href="https://tcgcsv.com/" target="_blank">TCGCSV</a> and this ID to look up pricing data of this card</i18n>
+                    </li>
+                    <li><b class="optional field">tcgPlayerUrl</b>
+                        <i18n>The page of this card on the <a href="https://www.tcgplayer.com/categories/trading-and-collectible-card-games/disney-lorcana" target="_blank">TCGplayer card marketplace</a>. This is not a referral link, so LorcanaJSON doesn't earn any money when this link is used</i18n>
+                    </li>
+                </ul>
+            </li>
             <li><b class="optional field">flavorText</b>
                 <i18n>
                     The flavor text at the bottom of a card. This has no gameplay effect, but does improve the feel of
