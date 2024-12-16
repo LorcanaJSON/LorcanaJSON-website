@@ -130,7 +130,7 @@
             </li>
             <li>
                 <b class="filename">setdata.[setCode].json</b> contains data on all the cards in the set specified by
-                the set code. There is a file like this for each released set. It consists of these fields:
+                the set code. There is a file like this for each released set. Each setdata file consists of these fields:
                 <ul>
                     <li><b class="field">code</b>
                         <i18n>
@@ -171,15 +171,14 @@
                         </i18n>
                     </li>
                     <li><b class="field">cards</b>
-                        <i18n>A list of card objects. The fields of each card object are described in the next section</i18n>
+                        <i18n>A list of card objects. The fields of each card object are described in the section below</i18n>
                     </li>
                 </ul>
             </li>
             <li><b class="filename">allCards.json</b>
                 <i18n>
                     contains data on all the cards that have been released for
-                    <span class="lorcana">Disney Lorcana</span>.
-                    <p>It consists of these fields:</p>
+                    <span class="lorcana">Disney Lorcana</span>. It consists of these fields:
                 </i18n>
                 <ul>
                     <li><b class="field">metadata</b>
@@ -188,7 +187,7 @@
                     <li><b class="field">sets</b>
                         <i18n>
                             A dictionary with set data. There is a key for each set code, and the values are the same
-                            set data as described above for the set-specific datafiles (except the <code class="field">code</code> field isn't here, since it's already the key of the dictionary)
+                            set data as described above for the set-specific datafiles (except the <code class="field">code</code> field isn't here, since it's already the key of the dictionary, and there's no <code class="field">cards</code> field here since there's already a general card list)
                         </i18n>
                     </li>
                     <li><b class="field">cards</b>
