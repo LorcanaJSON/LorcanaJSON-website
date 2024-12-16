@@ -22,6 +22,7 @@
         <i18n>Versions:</i18n>
     </p>
     <ul id="versions-toc">
+        <li><a href="#v2024-12-16-2.0.2-1">2024-12-16-2.0.2-1</a></li>
         <li><a href="#v2024-11-15-2.0.1-1">2024-11-15-2.0.1-1</a></li>
         <li><a href="#v2024-08-23-2.0.0-1">2024-08-23-2.0.0-1</a></li>
         <li><a href="#v2024-08-22-2.0.0-1">2024-08-22-2.0.0-1</a></li>
@@ -53,6 +54,66 @@
     <section>
         <h1>LorcanaJSON French Changelog</h1>
         
+        <h2 id="v2024-12-16-2.0.2-1">2024-12-16 <span class="format nonbreaking">2.0.2</span></h2>
+        <div class="version">
+            <ul>
+                <li>Non-breaking format addition: A new optional field <code class="field">promoGrouping</code> has been added to promo cards. It contains which grouping ('P1', 'D23', etc) the card belongs to. This field doesn't exist on non-promo cards</li>
+                <li>New file type: Deck files. These files contain data about all the official decks that have been released for <i>Disney Lorcana</i>, including Starter Decks, decks in the Illumineer's Quest box, and in Gateway.
+                    See the deckfiles explanation in the <a href="/index.html#datafiles">Data files explanation</a> section for more details</li>
+                <li>Fixed name of <code class="card-name">Obscurosphère</code> (ID 1055), it was missing the 'h'</li>
+                <li>Added basic set info for Set 7 "L'île d'Archazia" and Set 8 "Le Règne de Jafar". The release dates listed are the latest dates possible based on official announcements ('March 2025' for Set 7, 'Q2 2025' for Set 8)</li>
+                <li>Added <code class="card-name">Vaiana - Aventurière de la terre et de la mer</code> (ID 1433), the first card from Set 7</li>
+                <li>Some cards were updated in the official app over the past months, this is now reflected in the LorcanaJSON data too. The old values are stored in each card's 'historicData' field. The changed cards are:
+                    <ul>
+                        <li><code class="card-name">La Fée Clochette - Fée géante</code> (IDs 193 and 216): Updated 'Alter' reminder text to use 'La Fée Clochette' instead of just 'Clochette'</li>
+                        <li><code class="card-name">Frère Tuck - Prêtre de Nottingham</code> (ID 509): Changed 'adversaire' and 'adversaires' to 'joueur' and 'joueurs'</li>
+                        <li><code class="card-name">Kit - Copilote</code> (ID 583): Update 'Hors d'atteinte' reminder text to use 'choisir' instead of 'défier'</li>
+                        <li><code class="card-name">Île d'exil de Maui - Rocher caché</code> (ID 638): Correct 'gagne' to 'gagnet'</li>
+                        <li><code class="card-name">Belle - Mystique novice</code> (ID 728): Artist name was changed from 'Angelina Ricardo' to 'Angelina "Spikie" Ricardo'</li>
+                        <li><code class="card-name">Mégara - Cynique captivante</code> (ID 770), <code class="card-name">Hercule - Demi-dieu intrépid</code> (ID 800), <code class="card-name">Anna - Bravant la tempête</code> (ID 828): Subtype changed from 'Dreamborn' to 'Storyborn'</li>
+                        <li><code class="card-name">Hans - Noble crapule</code> (ID 837): Change 'Si vous avez' to 'S'il y a'</li>
+                        <li><code class="card-name">Bloc de Glace</code> (ID 859): Artist name was changed from 'Gregor Krysinski' to 'Grzegorz Krysińiski'</li>
+                        <li><code class="card-name">Mickey Mouse - Porte-étendard</code> (ID 879): Artist name was changed from 'Cristian Romero' to 'Mariana Moreno'</li>
+                        <li><code class="card-name">Ed - Hyène rieuse</code> (ID 1030): Change phrasing of ability (It's still functionally the same)</li>
+                        <li><code class="card-name">Caprice royal</code> (ID 1117): One of the artist names was changed from 'Giulia Riva' to 'Giulia Priori'</li>
+                    </ul>
+                </li>
+                <li>Fixed <code class="field">cardmarketUrl</code> in <code class="field">externalLinks</code> of :
+                    <ul>
+                        <li><code class="card-name">Chiot dalmatien - Frétille de joie</code> (IDs 436-440), each variant has its own URL now</li>
+                        <li><code class="card-name">Porcinet - Capitaine pirate de Winnie</code> (ID 452)</li>
+                        <li><code class="card-name">Isabela Madrigal - Enfant chérie</code> (ID 736)</li>
+                        <li><code class="card-name">Mulan - Archère d'élite</code> (ID 805)</li>
+                        <li><code class="card-name">La Grotte d'Ariel - Un endroit secret</code> (ID 860 & 910)</li>
+                        <li><code class="card-name">Mickey Mouse - Sorcier espiègle</code> (ID 878)</li>
+                        <li><code class="card-name">Tic et Tac - Rangers-sauveteurs</code> (ID 1213)</li>
+                    </ul>
+                    Some of these were fixed based on emailed reports, thanks!
+                </li>
+                <li>Filled in <code class="field">externalLinks</code> for:
+                    <ul>
+                        <li><code class="card-name">Stitch - Boucanier alien</code> (ID 1423)</li>
+                        <li><code class="card-name">Aladdin - Commandant intrépide</code> (ID 1424)</li>
+                        <li><code class="card-name">Rangers du risque à la rescousse !</code> (ID 1425)</li>
+                        <li><code class="card-name">Honey Lemon - Génie de la chimie</code> (ID 1426)</li>
+                        <li><code class="card-name">Minnie - Vigie pirate</code> (ID 1427)</li>
+                        <li><code class="card-name">Wasabi - Ingénieur méthodique</code> (ID 1428)</li>
+                        <li><code class="card-name">Scar - Chasseur sans cœur</code> (ID 1429)</li>
+                    </ul>
+                </li>
+                <li>Corrected ability type of <code class="card-name">Pongo - Père persévérant</code> (ID 455) and <code class="card-name">Piste de Sugar Rush - Ligne de départ</code> (ID 1091) from 'static' to 'activated'. Even though these abilities are not formatted like activated abilities on other cards, they still count as 'activated'</li>
+            </ul>
+            <aside class="links">
+                <header>
+                    <i18n>Permanent links:</i18n>
+                </header>
+                <a class="download" href="files/2024-12-16-2.0.2-1/en/allCards.json.zip">allCards.json.zip</a>
+                (<a class="md5" href="files/2024-12-16-2.0.2-1/en/allCards.json.zip.md5">md5</a>),
+                <a class="download" href="files/2024-12-16-2.0.2-1/en/sets/allSets.zip">allSets.zip</a>
+                (<a class="md5" href="files/2024-12-16-2.0.2-1/en/sets/allSets.zip.md5">md5</a>)
+            </aside>
+        </div>
+
         <h2 id="v2024-11-15-2.0.1-1">2024-11-15 <span class="format unchanged">2.0.1</span></h2>
         <div class="version">
             <ul>
