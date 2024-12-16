@@ -87,9 +87,7 @@
             <i18n>Data files explanation</i18n>
         </h1>
         <p>
-            <i18n>There are three types of files: A metadata file; a file for each set; and the file with all the
-                cards.
-            </i18n>
+            <i18n>There are four types of files: A metadata file; a file for each set and a zipfile with all individual set files; a file for each official deck and a zipfile with all individual deck files; and the file with all the cards.</i18n>
         </p>
         <p>
             <i18n>Each data file type has its own use and fields:</i18n>
@@ -172,6 +170,34 @@
                     </li>
                     <li><b class="field">cards</b>
                         <i18n>A list of card objects. The fields of each card object are described in the section below</i18n>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <b class="filename">deckdata.[deckCode].json</b> and <b class="filename">deckdata.[deckCode].full.json</b> contain data on all the cards in the deck specified by
+                the deck code. The difference between the files is that the file with '.full' in the name contains full data on each card, whereas the other file only contains deck-specific card data. Each deck file consists of these fields:
+                <ul>
+                    <li><b class="field">colors</b>
+                        <i18n>A list of the card colors that this deck uses. Decks usually have two colors, but Ursula's deck in Illumineer's Quest: Deep Trouble doesn't have any, and the Gateway reward packs have four</i18n>
+                    </li>
+                    <li><b class="field">deckGroup</b>
+                        <i18n>The code of the group this deck belongs to. For instance, with each new set they release two or three starter decks, and each of the starter decks for one set would have the same <code class="field">deckGroup</code> value</i18n>
+                    </li>
+                    <li><b class="field">foilIds</b>
+                        <i18n>A lot of decks include foil versions of one or more cards. For instance, starter decks contain foil versions of the cards on the packaging. This field contains a list of IDs of the cards that are foil in this deck</i18n>
+                    </li>
+                    <li><b class="field">metadata</b>
+                        <i18n>Contains the same metadata fields as in metadata.json, as described above</i18n>
+                    </li>
+                    <li><b class="optional field">name</b>
+                        <i18n>Some decks have a name. Starter decks for instance list the name on the back of the packaging. If a deck has a name, it's in this field. If it doesn't have a name, this field doesn't exist.
+                        <i><b>Help wanted</b>: While the names of the English starter decks are easy to find, it's far harder for starter decks in other languages. If you know the names of the starter decks in non-English languages, please send a message, contact info is listed <a href="#contact">at the bottom of this page</a></i></i18n>
+                    </li>
+                    <li><b class="field">type</b>
+                        <i18n>Different types of decks exist, for instance Starter Decks, Gateway Decks, and Quest decks. This field contains what type of deck this is</i18n>
+                    </li>
+                    <li><b class="field">cards</b>
+                        <i18n>A list of card objects. For the contents of these objects, and the difference between the normal and the '.full' deckfiles, see the <a href="#field-explanation-decks">Deck Files paragraph</a> in the next section</i18n>
                     </li>
                 </ul>
             </li>
@@ -556,6 +582,18 @@
                 </i18n>
             </li>
         </ul>
+
+        <h2 id="field-explanation-decks">Deck files</h2>
+        The deck files also have a <code class="field">cards</code> field with card objects.
+        The difference between the <code class="filename">deckdata.[deckCode].json</code> and the <code class="filename">deckdata.[deckCode].full.json</code> deckfiles is that the card objects in the former only contain the following fields, while the card objects in the latter, '.full', deck files contain these fields in addition to all the fields listed above.
+        The fields specific to card objects in the deck files are:
+        <ul>
+            <li><b class="field">amount</b> How many copies of this card are in the deck</li>
+            <li><b class="field">id</b> The ID of the card, uniquely identifying it. See the explanation for the <code class="field">id</code> field in the <a href="#field-explanation">Card data fields explanation</a> section for a more extensive explanation</li>
+            <li><b class="field">isFoil</b> Whether the card is foil in this deck. If 'true', the <code class="field">id</code> of this card is then also in the <code class="field">foilIds</code> field of the deck</li>
+        </ul>
+
+        <h2 id="field-explanation-symbols"><i>Disney Lorcana</i> symbols</h2>
         <p>
             Certain text fields (<code class="field ref">abilities</code>, <code class="field ref">clarifications</code>, <code class="field ref">effects</code>,
             <code class="field ref">errata</code>, <code class="field ref">fullText</code>, <code class="field ref">fullTextSections</code>, <code class="field ref">historicData</code>) can have special Unicode characters in them that resemble the game-specific icons as closely as possible:
@@ -845,6 +883,495 @@
                 </td>
             </tr>
         </table>
+
+        <h2>Deck downloads</h2>
+        <p>
+            For each deck, there are two flavors: The basic file, and the 'full' file.
+            In the former, each card entry only contains deck-specific fields as described in the 'deckdata' part of the <a href="#datafiles">Data files explanation</a>, so if you're already parsing the 'allCards.json' file, this is all you need.
+            In the 'full' file, on top of the deck-specific fields each card entry also contains all the card fields as described in the <a href="#field-explanation">Card data fields explanation</a> section.
+        </p>
+        <table>
+            <tr>
+                <th>Group</th>
+                <th>Description</th>
+                <th>English download</th>
+                <th>English full download</th>
+                <th>French download</th>
+                <th>French full download</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Zipfiles containing all the separate deck files described below</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/allDecks.zip" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/allDecks.zip.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/allDecks.full.zip" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/allDecks.full.zip.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/allDecks.zip" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/allDecks.zip.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/allDecks.full.zip" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/allDecks.full.zip.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="5"><b>Gateway Decks</b></td>
+            </tr>
+            <tr>
+                <td>G1</td>
+                <td>The starter deck with Stitch and Maleficent of the first Gateway set</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.G1-1.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.G1-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.G1-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.G1-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.G1-1.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.G1-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.G1-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.G1-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>G1</td>
+                <td>The starter deck with Elsa and Mickey Mouse of the first Gateway set</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.G1-2.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.G1-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.G1-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.G1-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.G1-2.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.G1-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.G1-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.G1-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>G1</td>
+                <td>The first reward pack of the first Gateway set</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.G1-3.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.G1-3.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.G1-3.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.G1-3.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.G1-3.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.G1-3.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.G1-3.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.G1-3.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>G1</td>
+                <td>The second reward pack of the first Gateway set</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.G1-4.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.G1-4.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.G1-4.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.G1-4.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.G1-4.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.G1-4.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.G1-4.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.G1-4.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>G1</td>
+                <td>The third reward pack of the first Gateway set</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.G1-5.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.G1-5.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.G1-5.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.G1-5.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.G1-5.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.G1-5.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.G1-5.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.G1-5.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>G1</td>
+                <td>The fourth reward pack of the first Gateway set</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.G1-6.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.G1-6.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.G1-6.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.G1-6.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.G1-6.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.G1-6.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.G1-6.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.G1-6.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="5"><b>Quest Decks</b></td>
+            </tr>
+            <tr>
+                <td>Q1</td>
+                <td>Ursula's scenario deck from "Illumineer's Quest: Deep Trouble"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.Q1-1.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.Q1-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.Q1-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.Q1-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.Q1-1.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.Q1-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.Q1-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.Q1-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Q1</td>
+                <td>Prebuilt deck with a special <code class="card-name">Mulan - Elite Archer</code> from "Illumineer's Quest: Deep Trouble"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.Q1-2.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.Q1-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.Q1-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.Q1-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.Q1-2.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.Q1-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.Q1-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.Q1-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Q1</td>
+                <td>Prebuilt deck with a special <code class="card-name">Yen Sid - Powerful Sorcerer</code> from "Illumineer's Quest: Deep Trouble"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.Q1-3.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.Q1-3.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.Q1-3.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.Q1-3.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.Q1-3.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.Q1-3.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.Q1-3.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.Q1-3.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="5"><b>Starter Decks</b></td>
+            </tr>
+            <tr>
+                <td>S1</td>
+                <td>The Amber/Amethyst starter deck of the first set "The First Chapter"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S1-1.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S1-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S1-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S1-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S1-1.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S1-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S1-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S1-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>S1</td>
+                <td>The Emerald/Ruby starter deck of the first set "The First Chapter"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S1-2.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S1-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S1-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S1-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S1-2.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S1-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S1-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S1-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>S1</td>
+                <td>The Sapphire/Steel starter deck of the first set "The First Chapter"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S1-3.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S1-3.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S1-3.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S1-3.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S1-3.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S1-3.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S1-3.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S1-3.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>S2</td>
+                <td>The Amber/Sapphire starter deck of the second set "Rise of the Floodborn"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S2-1.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S2-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S2-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S2-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S2-1.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S2-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S2-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S2-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>S2</td>
+                <td>The Amethyst/Steel starter deck of the second set "Rise of the Floodborn"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S2-2.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S2-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S2-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S2-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S2-2.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S2-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S2-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S2-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>S3</td>
+                <td>The Amber/Emerald starter deck of the third set "Into the Inklands"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S3-1.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S3-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S3-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S3-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S3-1.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S3-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S3-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S3-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>S3</td>
+                <td>The Ruby/Sapphire starter deck of the third set "Into the Inklands"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S3-2.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S3-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S3-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S3-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S3-2.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S3-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S3-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S3-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>S4</td>
+                <td>The Amber/Amethyst starter deck of the fourth set "Ursula's Return"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S4-1.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S4-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S4-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S4-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S4-1.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S4-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S4-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S4-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>S4</td>
+                <td>The Sapphire/Steel starter deck of the fourth set "Ursula's Return"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S4-2.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S4-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S4-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S4-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S4-2.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S4-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S4-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S4-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>S5</td>
+                <td>The Amethyst/Ruby starter deck of the fifth set "Shimmering Skies"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S5-1.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S5-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S5-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S5-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S5-1.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S5-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S5-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S5-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>S5</td>
+                <td>The Emerald/Steel starter deck of the fifth set "Shimmering Skies"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S5-2.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S5-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S5-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S5-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S5-2.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S5-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S5-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S5-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>S6</td>
+                <td>The Amber/Ruby starter deck of the sixth set "Azurite Sea"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S6-1.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S6-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S6-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S6-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S6-1.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S6-1.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S6-1.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S6-1.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>S6</td>
+                <td>The Emerald/Sapphire starter deck of the sixth set "Azurite Sea"</td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S6-2.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S6-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/en/decks/deckdata.S6-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/en/decks/deckdata.S6-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S6-2.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S6-2.json.md5" title="md5 checksum"></a>
+                </td>
+                <td>
+                    <a class="download" href="files/current/fr/decks/deckdata.S6-2.full.json" title="download"></a>
+                    <a class="md5" href="files/current/fr/decks/deckdata.S6-2.full.json.md5" title="md5 checksum"></a>
+                </td>
+            </tr>
+        </table>
     </section>
 
     <section id="changelogs">
@@ -880,9 +1407,6 @@
         <ul>
             <li>
                 <i18n>German and Italian JSON files</i18n>
-            </li>
-            <li>
-                <i18n>Deck lists of officially released decks</i18n>
             </li>
         </ul>
     </section>
