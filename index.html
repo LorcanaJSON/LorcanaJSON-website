@@ -294,7 +294,10 @@
                 </i18n>
             </li>
             <li><b class="field">color</b>
-                <i18n>The name of the color of the card. One of Amber, Amethyst, Emerald, Ruby, Sapphire, Stee. Cards from Quest-type sets don't have a color, so for those, this field is an empty string</i18n>
+                <i18n>The name of the color of the card. One of Amber, Amethyst, Emerald, Ruby, Sapphire, Steel. Cards from Quest-type sets don't have a color, so for those, this field is an empty string. For dual-ink cards, it lists both colors separated by a '-'; see also the <code class="field">colors</code> field</i18n>
+            </li>
+            <li><b class="optional field">colors</b>
+                <i18n>Only dual-ink cards have this field. This is a list field with each color of the card as a separate string. For single-color cards or cards with no color, this field doesn't exist. See also the <code class="field">color</code> field</i18n>
             </li>
             <li><b class="field">cost</b>
                 <i18n>How much Ink this card costs to play</i18n>
