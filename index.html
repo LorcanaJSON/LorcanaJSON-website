@@ -456,6 +456,13 @@
                     amount of lore this location card earns at the start of each turn. For other card types, this field doesn't exist
                 </i18n>
             </li>
+            <li><b class="optional field">maxCopiesInDeck</b>
+                <i18n>
+                    When building a deck, you can usually add a maximum of 4 copies of a card to that deck. Some cards are exceptions to that rule. For those cards, this field exists and is set to the maximum amount that applies for this card.
+                    See for example the card <code class="card-name">Dalmatian Puppy - Tail Wagger</code> (IDs 436-440): the card allows 99 copies of it in a deck, so the value of this field is set to '99'.
+                    If the card allows an unlimited amount of copies, like <code class="card-name">Microbots</code> (ID 1366), this field is set to 'null'. If no special limit applies, this field doesn't exist
+                </i18n>
+            </li>
             <li><b class="optional field">moveCost</b>
                 <i18n>
                     For location cards, this is the amount of ink it costs to move a character to this location. For
