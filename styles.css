@@ -201,7 +201,7 @@ tr:nth-child(2n+1) td {
 td, th {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    padding: 0.25em 1em;
+    padding: 0.25em 0.5em;
     vertical-align: top;
 }
 
