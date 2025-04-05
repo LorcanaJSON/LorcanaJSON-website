@@ -14,115 +14,80 @@
 <aside id="sidebar">
     <h1>LorcanaJSON</h1>
     <ul class="toc">
-        <li><a href="#what-is-this">
-            <i18n>What is this?</i18n>
-        </a></li>
-        <li><a href="#datafiles">
-            <i18n>Data files explanation</i18n>
-        </a></li>
-        <li><a href="#field-explanation">
-            <i18n>Card data fields explanation</i18n>
-        </a></li>
-        <li><a href="#downloads">
-            <i18n>Downloads</i18n>
-        </a></li>
-        <li><a href="#changelogs">
-            <i18n>Changelogs</i18n>
-        </a></li>
-        <li><a href="#limitations">
-            <i18n>Limitations</i18n>
-        </a></li>
-        <li><a href="#plans">
-            <i18n>Future plans</i18n>
-        </a></li>
-        <li><a href="#contact">
-            <i18n>Contact</i18n>
+        <li><a href="#what-is-this">What is this?</a></li>
+        <li><a href="#datafiles">Data files explanation</a></li>
+        <li><a href="#field-explanation">Card data fields explanation</a></li>
+        <li><a href="#downloads">Downloads</a></li>
+        <li><a href="#changelogs">Changelogs</a></li>
+        <li><a href="#limitations">Limitations</a></li>
+        <li><a href="#plans">Future plans</a></li>
+        <li><a href="#contact">Contact
         </a></li>
     </ul>
 
     <footer>
         <p>
-            <i18n>
-                LorcanaJSON uses trademarks and/or copyrights associated with
-                <span class="lorcana">Disney Lorcana <span class="TCG">TCG</span></span>, used under
-                <a href="https://cdn.ravensburger.com/lorcana/community-code-en" target="_blank">Ravensburger’s Community Code Policy</a>.
-            </i18n>
+            LorcanaJSON uses trademarks and/or copyrights associated with
+            <span class="lorcana">Disney Lorcana <span class="TCG">TCG</span></span>, used under
+            <a href="https://cdn.ravensburger.com/lorcana/community-code-en" target="_blank">Ravensburger’s Community Code Policy</a>.
         </p>
         <p>
-            <i18n>
-                We are expressly prohibited from charging you to use or access this content. LorcanaJSON is not published,
-                endorsed, or specifically approved by Disney or Ravensburger.
-                For more information about <span class="lorcana">Disney Lorcana <span class="TCG">TCG</span></span>,
-                visit <a href="https://www.disneylorcana.com/en-US/" target="_blank">https://www.disneylorcana.com/</a>.
-            </i18n>
+            We are expressly prohibited from charging you to use or access this content. LorcanaJSON is not published,
+            endorsed, or specifically approved by Disney or Ravensburger.
+            For more information about <span class="lorcana">Disney Lorcana <span class="TCG">TCG</span></span>,
+            visit <a href="https://www.disneylorcana.com/en-US/" target="_blank">https://www.disneylorcana.com/</a>.
         </p>
     </footer>
 </aside>
 
 <article id="main">
     <section id="what-is-this">
-        <h1>
-            <i18n>What is this?</i18n>
-        </h1>
+        <h1>What is this?</h1>
         <p>
-            <i18n>
-                This project aims to collect data about all the cards in the <span class="lorcana">Disney Lorcana</span>
-                trading card game, and to make that data accessible in an easy-to-use format.
-            </i18n>
+            This project aims to collect data about all the cards in the <span class="lorcana">Disney Lorcana</span>
+            trading card game, and to make that data accessible in an easy-to-use format.
         </p>
         <p>
-            <i18n>
-                It's aimed at developers of <span class="lorcana">Disney Lorcana</span> tools and websites, rather than
-                players of the game. Having one source of data should save these developers time, since everybody
-                doesn't individually have to collect and enter their own card data anymore.
-            </i18n>
+            It's aimed at developers of <span class="lorcana">Disney Lorcana</span> tools and websites, rather than
+            players of the game. Having one source of data should save these developers time, since everybody
+            doesn't individually have to collect and enter their own card data anymore.
         </p>
         <p>
-            <i18n>This project is not affiliated with Ravensburger or Disney.</i18n>
+            This project is not affiliated with Ravensburger or Disney.
         </p>
     </section>
 
     <section id="datafiles">
-        <h1>
-            <i18n>Data files explanation</i18n>
-        </h1>
+        <h1>Data files explanation</h1>
         <p>
-            <i18n>There are four types of files: A metadata file; a file for each set and a zipfile with all individual set files; a file for each official deck and a zipfile with all individual deck files; and the file with all the cards.</i18n>
+            There are four types of files: A metadata file; a file for each set and a zipfile with all individual set files; a file for each official deck and a zipfile with all individual deck files; and the file with all the cards.
         </p>
         <p>
-            <i18n>Each data file type has its own use and fields:</i18n>
+            Each data file type has its own use and fields:
         </p>
         <ul>
             <li>
                 <p>
-                    <i18n>
-                        <b class="filename">metadata.json</b> contains data about the data files. Storing these values
-                        and occassionally retrieving just this file is an efficient way to check if the datafiles got
-                        updated, in which case you need to redownload them to get the latest version of the card data.
-                        This datablock is also included in the other data files under the "metadata" key. It consists of
-                        these fields:
-                    </i18n>
+                    <b class="filename">metadata.json</b> contains data about the data files. Storing these values
+                    and occassionally retrieving just this file is an efficient way to check if the datafiles got
+                    updated, in which case you need to redownload them to get the latest version of the card data.
+                    This datablock is also included in the other data files under the "metadata" key. It consists of
+                    these fields:
                 </p>
                 <ul>
                     <li><b class="field">formatVersion</b>
-                        <i18n>
-                            A string indicating the formatting version of the files, in
-                            <code class="version">major.minor.patch</code> format. If this version string changes, the
-                            data structure was changed, and your tool that uses these data files might need
-                            adjustments. You can check the <a href="changelog.html">changelog</a> for the exact changes
-                        </i18n>
+                        A string indicating the formatting version of the files, in
+                        <code class="version">major.minor.patch</code> format. If this version string changes, the
+                        data structure was changed, and your tool that uses these data files might need
+                        adjustments. You can check the <a href="changelog.html">changelog</a> for the exact changes
                     </li>
                     <li><b class="field">generatedOn</b>
-                        <i18n>
-                            An ISO 8601 formatted date and time string, indicating when the
-                            data files were generated. If this field changes, new cards may have been added or existing ones changed.
-                            You can check the <a href="changelog.html">changelog</a> for the exact changes
-                        </i18n>
+                        An ISO 8601 formatted date and time string, indicating when the
+                        data files were generated. If this field changes, new cards may have been added or existing ones changed.
+                        You can check the <a href="changelog.html">changelog</a> for the exact changes
                     </li>
                     <li><b class="field">language</b>
-                        <i18n>
-                            A two-letter code indicating which language this metadata is for, "en" for English
-                        </i18n>
+                        A two-letter code indicating which language this metadata is for, "en" for English
                     </li>
                 </ul>
             </li>
@@ -131,45 +96,33 @@
                 the set code. There is a file like this for each released set. Each setdata file consists of these fields:
                 <ul>
                     <li><b class="field">code</b>
-                        <i18n>
-                            The code of this set. This is already in the name of the set file, but it's here too for completion's sake
-                        </i18n>
+                        The code of this set. This is already in the name of the set file, but it's here too for completion's sake
                     </li>
                      <li><b class="field">hasAllCards</b>
-                        <i18n>
-                            A boolean indicating whether all cards for this set have been released yet.
-                            <code class="json-keyword">true</code> if all main cards (so excluding promos) of the set are in the datafile,
-                            <code class="json-keyword">false</code> otherwise
-                        </i18n>
+                        A boolean indicating whether all cards for this set have been released yet.
+                        <code class="json-keyword">true</code> if all main cards (so excluding promos) of the set are in the datafile,
+                        <code class="json-keyword">false</code> otherwise
                     </li>
                     <li><b class="field">metadata</b>
-                        <i18n>Contains the same metadata fields as in metadata.json, as described above</i18n>
+                        Contains the same metadata fields as in metadata.json, as described above
                     </li>
                     <li><b class="field">name</b>
-                        <i18n> The full name of this set</i18n>
+                        The full name of this set
                     </li>
                    <li><b class="field">number</b>
-                        <i18n>
-                            The number of the set, within the set's 'type'. So both setcode "1" and "Q1" have 'number' 1, since the former is expansion 1 and the latter is quest 1. See also the <code class="field ref">type</code> field
-                        </i18n>
+                        The number of the set, within the set's 'type'. So both setcode "1" and "Q1" have 'number' 1, since the former is expansion 1 and the latter is quest 1. See also the <code class="field ref">type</code> field
                     </li>
                      <li><b class="field">prereleaseDate</b>
-                        <i18n>
-                            The pre-release date for this set, when it was or will be available to buy from local game stores. Format is year-month-day. If the pre-release date isn't known yet, the value is 'null'
-                        </i18n>
+                        The pre-release date for this set, when it was or will be available to buy from local game stores. Format is year-month-day. If the pre-release date isn't known yet, the value is 'null'
                     </li>
                     <li><b class="field">releaseDate</b>
-                        <i18n>
-                            The release date for this set, when it was or will be available to buy from large retailers. Format is year-month-day. If the release date isn't known yet, the value is 'null'
-                        </i18n>
+                        The release date for this set, when it was or will be available to buy from large retailers. Format is year-month-day. If the release date isn't known yet, the value is 'null'
                     </li>
                     <li><b class="field">type</b>
-                        <i18n>
-                            What type of set this is. Most sets are type <code class="on-card">expansion</code>, but sets like 'Illumineer's Quest: Deep Trouble' are type <code class="on-card">quest</code>. The latter type may be missing some fields or values, and cards from these sets aren't allowed to be used during tournaments or official games
-                        </i18n>
+                        What type of set this is. Most sets are type <code class="on-card">expansion</code>, but sets like 'Illumineer's Quest: Deep Trouble' are type <code class="on-card">quest</code>. The latter type may be missing some fields or values, and cards from these sets aren't allowed to be used during tournaments or official games
                     </li>
                     <li><b class="field">cards</b>
-                        <i18n>A list of card objects. The fields of each card object are described in the section below</i18n>
+                        A list of card objects. The fields of each card object are described in the section below
                     </li>
                 </ul>
             </li>
@@ -178,46 +131,42 @@
                 the deck code. The difference between the files is that the file with '.full' in the name contains full data on each card, whereas the other file only contains deck-specific card data. Each deck file consists of these fields:
                 <ul>
                     <li><b class="field">colors</b>
-                        <i18n>A list of the card colors that this deck uses. Decks usually have two colors, but Ursula's deck in Illumineer's Quest: Deep Trouble doesn't have any, and the Gateway reward packs have four</i18n>
+                        A list of the card colors that this deck uses. Decks usually have two colors, but Ursula's deck in Illumineer's Quest: Deep Trouble doesn't have any, and the Gateway reward packs have four
                     </li>
                     <li><b class="field">deckGroup</b>
-                        <i18n>The code of the group this deck belongs to. For instance, with each new set they release two or three starter decks, and each of the starter decks for one set would have the same <code class="field">deckGroup</code> value</i18n>
+                        The code of the group this deck belongs to. For instance, with each new set they release two or three starter decks, and each of the starter decks for one set would have the same <code class="field">deckGroup</code> value
                     </li>
                     <li><b class="field">foilIds</b>
-                        <i18n>A lot of decks include foil versions of one or more cards. For instance, starter decks contain foil versions of the cards on the packaging. This field contains a list of IDs of the cards that are foil in this deck</i18n>
+                        A lot of decks include foil versions of one or more cards. For instance, starter decks contain foil versions of the cards on the packaging. This field contains a list of IDs of the cards that are foil in this deck
                     </li>
                     <li><b class="field">metadata</b>
-                        <i18n>Contains the same metadata fields as in metadata.json, as described above</i18n>
+                        Contains the same metadata fields as in metadata.json, as described above
                     </li>
                     <li><b class="optional field">name</b>
-                        <i18n>Some decks have a name. Starter decks for instance list the name on the back of the packaging. If a deck has a name, it's in this field. If it doesn't have a name, this field doesn't exist.
-                        <i><b>Help wanted</b>: While the names of the English starter decks are easy to find, it's far harder for starter decks in other languages. If you know the names of the starter decks in non-English languages, please send a message, contact info is listed <a href="#contact">at the bottom of this page</a></i></i18n>
+                        Some decks have a name. Starter decks for instance list the name on the back of the packaging. If a deck has a name, it's in this field. If it doesn't have a name, this field doesn't exist.
+                        <i><b>Help wanted</b>: While the names of the English starter decks are easy to find, it's far harder for starter decks in other languages. If you know the names of the starter decks in non-English languages, please send a message, contact info is listed <a href="#contact">at the bottom of this page</a></i>
                     </li>
                     <li><b class="field">type</b>
-                        <i18n>Different types of decks exist, for instance Starter Decks, Gateway Decks, and Quest decks. This field contains what type of deck this is</i18n>
+                        Different types of decks exist, for instance Starter Decks, Gateway Decks, and Quest decks. This field contains what type of deck this is
                     </li>
                     <li><b class="field">cards</b>
-                        <i18n>A list of card objects. For the contents of these objects, and the difference between the normal and the '.full' deckfiles, see the <a href="#field-explanation-decks">Deck Files paragraph</a> in the next section</i18n>
+                        A list of card objects. For the contents of these objects, and the difference between the normal and the '.full' deckfiles, see the <a href="#field-explanation-decks">Deck Files paragraph</a> in the next section
                     </li>
                 </ul>
             </li>
             <li><b class="filename">allCards.json</b>
-                <i18n>
-                    contains data on all the cards that have been released for
-                    <span class="lorcana">Disney Lorcana</span>. It consists of these fields:
-                </i18n>
+                Contains data on all the cards that have been released for
+                <span class="lorcana">Disney Lorcana</span>. It consists of these fields:
                 <ul>
                     <li><b class="field">metadata</b>
-                        <i18n>Contains the same metadata fields as in metadata.json, as described above</i18n>
+                        Contains the same metadata fields as in metadata.json, as described above
                     </li>
                     <li><b class="field">sets</b>
-                        <i18n>
-                            A dictionary with set data. There is a key for each set code, and the values are the same
-                            set data as described above for the set-specific datafiles (except the <code class="field">code</code> field isn't here, since it's already the key of the dictionary, and there's no <code class="field">cards</code> field here since there's already a general card list)
-                        </i18n>
+                        A dictionary with set data. There is a key for each set code, and the values are the same set data as described above for the set-specific datafiles
+                        (except the <code class="field">code</code> field isn't here, since it's already the key of the dictionary, and there's no <code class="field">cards</code> field here since there's already a general card list)
                     </li>
                     <li><b class="field">cards</b>
-                        <i18n>A list of card objects. The fields of each card object are described in the next section</i18n>
+                        A list of card objects. The fields of each card object are described in the next section
                     </li>
                 </ul>
             </li>
@@ -225,377 +174,264 @@
     </section>
 
     <section id="field-explanation">
-        <h1>
-            <i18n>Card data fields explanation</i18n>
-        </h1>
+        <h1>Card data fields explanation</h1>
         <p>
-            <i18n>
-                The <code class="filename ref">allCards.json</code> file and all the set files have a
-                <code class="field ref">cards</code> field, which contains a list of card objects.
-            </i18n>
+            The <code class="filename ref">allCards.json</code> file and all the set files have a
+            <code class="field ref">cards</code> field, which contains a list of card objects.
         </p>
         <p>
-            <i18n>
-                This section describes the v2 format version. For the old deprecated v1 format version fields, <a href="cardExplanations_formatV1.html">click here</a>
-            </i18n>
+            This section describes the v2 format version. For the old deprecated v1 format version fields, <a href="cardExplanations_formatV1.html">click here</a>
         </p>
         <p>
-            <i18n>Each of those card objects consists of the following fields:</i18n>
+            Each of those card objects consists of the following fields:
         </p>
         <ul>
             <li><b class="optional field">abilities</b>
-                <i18n>
-                    A list of abilities of a Character, Location, or Item card. For cards without abilities, this field doesn't exist. Each ability entry is a dictionary containing (some of) the following fields:
-                    <ul>
-                        <li><b class="field">fullText</b> contains the entire ability text as printed on the card, including newline characters</li>
-                        <li><b class="field">type</b> indicates what type of ability this is, one of 'activated' (pay cost to activate effect), 'keyword' (prenamed abilities), 'static' (always active), or 'triggered' (activated on certain events)</li>
-                        <li>
-                            'keyword'-type abilities are prenamed abilities, and ability entries with this type have the following extra fields:
-                            <ul>
-                                <li><b class="field">keyword</b> contains the name of the ability's keyword ('Ward', 'Resist', etc.)</li>
-                                <li><b class="optional field">keywordValue</b> contains the 'value' part of a keyword, so for 'Resist +1', this field would contain the '+1' part. For abilities like 'Shift: Discard an Action card', this field contains the part after the colon</li>
-                                <li><b class="optional field">keywordValueNumber</b> contains the numeric part of the <code class="field">keywordValue</code>, if it is numeric. So for 'Resist +1', this would be 1</li>
-                                <li><b class="optional field">reminderText</b> contains just the reminder text of a keyword ability, so the part between brackets. Most but not all cards with keyword abilities have reminder text for those keywords</li>
-                            </ul>
-                        </li>
-                        <li>
-                            Other types of abilities are named abilities, and they have the following extra fields:
-                            <ul>
-                                <li><b class="field">effect</b> is the text of what the ability actually does</li>
-                                <li><b class="field">name</b> is the name of the ability, shown at the start of the ability in a distinct label
-                                <li>
-                                    'activated'-type abilities are abilities that require you to actively pay a cost (exerting, paying ink, etc.) before the effect fires. Ability entries with this type have the following extra fields:
-                                    <ul>
-                                        <li><b class="field">costs</b> is a list of each separate cost that needs to be paid to be able to activate this ability</li>
-                                        <li><b class="field">costsText</b> is the costs as a single string</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </i18n>
+                A list of abilities of a Character, Location, or Item card. For cards without abilities, this field doesn't exist. Each ability entry is a dictionary containing (some of) the following fields:
+                <ul>
+                    <li><b class="field">fullText</b> contains the entire ability text as printed on the card, including newline characters</li>
+                    <li><b class="field">type</b> indicates what type of ability this is, one of 'activated' (pay cost to activate effect), 'keyword' (prenamed abilities), 'static' (always active), or 'triggered' (activated on certain events)</li>
+                    <li>
+                        'keyword'-type abilities are prenamed abilities, and ability entries with this type have the following extra fields:
+                        <ul>
+                            <li><b class="field">keyword</b> contains the name of the ability's keyword ('Ward', 'Resist', etc.)</li>
+                            <li><b class="optional field">keywordValue</b> contains the 'value' part of a keyword, so for 'Resist +1', this field would contain the '+1' part. For abilities like 'Shift: Discard an Action card', this field contains the part after the colon</li>
+                            <li><b class="optional field">keywordValueNumber</b> contains the numeric part of the <code class="field">keywordValue</code>, if it is numeric. So for 'Resist +1', this would be 1</li>
+                            <li><b class="optional field">reminderText</b> contains just the reminder text of a keyword ability, so the part between brackets. Most but not all cards with keyword abilities have reminder text for those keywords</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Other types of abilities are named abilities, and they have the following extra fields:
+                        <ul>
+                            <li><b class="field">effect</b> is the text of what the ability actually does</li>
+                            <li><b class="field">name</b> is the name of the ability, shown at the start of the ability in a distinct label
+                            <li>
+                                'activated'-type abilities are abilities that require you to actively pay a cost (exerting, paying ink, etc.) before the effect fires. Ability entries with this type have the following extra fields:
+                                <ul>
+                                    <li><b class="field">costs</b> is a list of each separate cost that needs to be paid to be able to activate this ability</li>
+                                    <li><b class="field">costsText</b> is the costs as a single string</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
             <li><b class="field">artists</b>
-                <i18n>A list of the name(s) of the artist(s) that drew the art for this card. This will usually contain just one entry, but some cards have multiple artists. See also the <code class="field ref">artistsText</code> field</i18n>
+                A list of the name(s) of the artist(s) that drew the art for this card. This will usually contain just one entry, but some cards have multiple artists. See also the <code class="field ref">artistsText</code> field
             </li>
             <li><b class="field">artistsText</b>
-                <i18n>The artist(s) that drew the card as it's printed on the bottom left of the card. See also the <code class="field ref">artists</code> field</i18n>
+                The artist(s) that drew the card as it's printed on the bottom left of the card. See also the <code class="field ref">artists</code> field
             </li>
             <li><b class="optional field">clarifications</b>
-                <i18n>
-                    Some cards have extra clarifications for how they work or interact with other cards. This field is a
-                    list of those clarifications. For cards without clarifications, this field doesn't exist. The text
-                    can contain newline characters
-                </i18n>
+                Some cards have extra clarifications for how they work or interact with other cards. This field is a list of those clarifications. For cards without clarifications, this field doesn't exist. The text can contain newline characters
             </li>
             <li><b class="field">code</b>
-                <i18n>
-                        This field is the two-character code for this card that the official app uses internally when saving a deck. It is the base-62 version of the card ID (digits higher than 9 use lowercase a-z and then uppercase A-Z). See also the <code class="field">id</code> field
-                </i18n>
+                This field is the two-character code for this card that the official app uses internally when saving a deck. It is the base-62 version of the card ID (digits higher than 9 use lowercase a-z and then uppercase A-Z). See also the <code class="field">id</code> field
             </li>
             <li><b class="field">color</b>
-                <i18n>The name of the color of the card. One of Amber, Amethyst, Emerald, Ruby, Sapphire, Steel. Cards from Quest-type sets don't have a color, so for those, this field is an empty string. For dual-ink cards, it lists both colors separated by a '-'; see also the <code class="field">colors</code> field</i18n>
+                The name of the color of the card. One of Amber, Amethyst, Emerald, Ruby, Sapphire, Steel. Cards from Quest-type sets don't have a color, so for those, this field is an empty string.
+                For dual-ink cards, it lists both colors separated by a '-'; see also the <code class="field">colors</code> field
             </li>
             <li><b class="optional field">colors</b>
-                <i18n>Only dual-ink cards have this field. This is a list field with each color of the card as a separate string. For single-color cards or cards with no color, this field doesn't exist. See also the <code class="field">color</code> field</i18n>
+                Only dual-ink cards have this field. This is a list field with each color of the card as a separate string. For single-color cards or cards with no color, this field doesn't exist. See also the <code class="field">color</code> field
             </li>
             <li><b class="field">cost</b>
-                <i18n>How much Ink this card costs to play</i18n>
+                How much Ink this card costs to play
             </li>
             <li><b class="optional field">effects</b>
-                <i18n>A list of strings with an entry for each effect an Action card has. For cards without effects, this field doesn't exist</i18n>
+                A list of strings with an entry for each effect an Action card has. For cards without effects, this field doesn't exist
             </li>
             <li><b class="optional field">enchantedId</b>
-                <i18n>
-                    For cards that have an Enchanted version, this field contains the ID of that Enchanted card. For
-                    other cards, this field doesn't exist. See also the <code class="field ref">nonEnchantedId</code>
-                    field
-                </i18n>
+                For cards that have an Enchanted version, this field contains the ID of that Enchanted card. For other cards, this field doesn't exist. See also the <code class="field ref">nonEnchantedId</code> field
             </li>
             <li><b class="optional field">errata</b>
-                <i18n>
-                    Some cards have errata, correcting mistakes on the card, and/or improving phrasing. This field is a
-                    list of those corrections. For cards without errata, this field doesn't exist. The text can contain
-                    newline characters
-                </i18n>
+                Some cards have errata, correcting mistakes on the card, and/or improving phrasing. This field is a list of those corrections.
+                For cards without errata, this field doesn't exist. The text can contain newline characters
             </li>
             <li><b class="field">externalLinks</b>
-                <i18n>
-                    This dictionary contains information to link this dataset to other Lorcana-related datasets. The dictionary itself always exists, but each field inside it only exists when it is known for the card. Available external link fields are:
-                </i18n>
+                This dictionary contains information to link this dataset to other Lorcana-related datasets. The dictionary itself always exists, but each field inside it only exists when it is known for the card. Available external link fields are:
                 <ul>
                     <li><b class="optional field">cardTraderId</b>
-                        <i18n>The ID used by the <a href="https://www.cardtrader.com/en/lorcana" target="_blank">CardTrader card marketplace</a> for this card. You can use <a href="https://www.cardtrader.com/docs/api/full/reference" target="_blank">their API</a> and this ID to look up pricing data of this card</i18n>
+                        The ID used by the <a href="https://www.cardtrader.com/en/lorcana" target="_blank">CardTrader card marketplace</a> for this card. You can use <a href="https://www.cardtrader.com/docs/api/full/reference" target="_blank">their API</a> and this ID to look up pricing data of this card
                     </li>
                     <li><b class="optional field">cardTraderUrl</b>
-                        <i18n>The page of this card on the <a href="https://www.cardtrader.com/en/lorcana" target="_blank">CardTrader card marketplace</a>. This is not a referral link, so LorcanaJSON doesn't earn any money when this link is used</i18n>
+                        The page of this card on the <a href="https://www.cardtrader.com/en/lorcana" target="_blank">CardTrader card marketplace</a>. This is not a referral link, so LorcanaJSON doesn't earn any money when this link is used
                     </li>
                     <li><b class="optional field">cardmarketId</b>
-                        <i18n>The ID used by the <a href="https://www.cardmarket.com/en/Lorcana" target="_blank">Cardmarket card marketplace</a> for this card. On their website, you can <a href="https://www.cardmarket.com/en/Lorcana/Data/Price-Guide" target="_blank">download a price guide</a>, and use this ID to look up pricing data of this card</i18n>
+                        The ID used by the <a href="https://www.cardmarket.com/en/Lorcana" target="_blank">Cardmarket card marketplace</a> for this card. On their website, you can <a href="https://www.cardmarket.com/en/Lorcana/Data/Price-Guide" target="_blank">download a price guide</a>, and use this ID to look up pricing data of this card
                     </li>
                     <li><b class="optional field">cardmarketUrl</b>
-                        <i18n>The page of this card on the <a href="https://www.cardmarket.com/en/Lorcana" target="_blank">Cardmarket card marketplace</a>. This is not a referral link, so LorcanaJSON doesn't earn any money when this link is used</i18n>
+                        The page of this card on the <a href="https://www.cardmarket.com/en/Lorcana" target="_blank">Cardmarket card marketplace</a>. This is not a referral link, so LorcanaJSON doesn't earn any money when this link is used
                     </li>
                     <li><b class="optional field">tcgPlayerId</b>
-                        <i18n>The ID used by the <a href="https://www.tcgplayer.com/categories/trading-and-collectible-card-games/disney-lorcana" target="_blank">TCGplayer card marketplace</a>. You can use the data from <a href="https://tcgcsv.com/" target="_blank">TCGCSV</a> and this ID to look up pricing data of this card</i18n>
+                        The ID used by the <a href="https://www.tcgplayer.com/categories/trading-and-collectible-card-games/disney-lorcana" target="_blank">TCGplayer card marketplace</a>. You can use the data from <a href="https://tcgcsv.com/" target="_blank">TCGCSV</a> and this ID to look up pricing data of this card
                     </li>
                     <li><b class="optional field">tcgPlayerUrl</b>
-                        <i18n>The page of this card on the <a href="https://www.tcgplayer.com/categories/trading-and-collectible-card-games/disney-lorcana" target="_blank">TCGplayer card marketplace</a>. This is not a referral link, so LorcanaJSON doesn't earn any money when this link is used</i18n>
+                        The page of this card on the <a href="https://www.tcgplayer.com/categories/trading-and-collectible-card-games/disney-lorcana" target="_blank">TCGplayer card marketplace</a>. This is not a referral link, so LorcanaJSON doesn't earn any money when this link is used
                     </li>
                 </ul>
             </li>
             <li><b class="optional field">flavorText</b>
-                <i18n>
-                    The flavor text at the bottom of a card. This has no gameplay effect, but does improve the feel of
-                    the card. For cards without flavor text, this field doesn't exist. The text can contain newline
-                    characters
-                </i18n>
+                The flavor text at the bottom of a card. This has no gameplay effect, but does improve the feel of the card.
+                For cards without flavor text, this field doesn't exist. The text can contain newline characters
             </li>
             <li><b class="optional field">foilTypes</b>
-                <i18n>
-                    A list of all the foil types the card can have. 'None' means no foiling. Since this is impossible to fully manually verify, this data may not be 100% accurate, especially for 'Special'-rarity cards.
-                    For cards where <code class="field ref">isExternalReveal</code> exists and is set to <code class="json-keyword">true</code>, and for some other special cards, this field does not exist
-                </i18n>
+                A list of all the foil types the card can have. 'None' means no foiling. Since this is impossible to fully manually verify, this data may not be 100% accurate, especially for 'Special'-rarity cards.
+                For cards where <code class="field ref">isExternalReveal</code> exists and is set to <code class="json-keyword">true</code>, and for some other special cards, this field does not exist
             </li>
             <li><b class="field">fullIdentifier</b>
-                <i18n>
-                    The full identifier as displayed on the bottom-left of each card, for instance
-                    <code class="on-card">9/204 • EN • 3</code>.
-                    The formatting may be different for promo cards. See also the <code class="field ref">number</code>
-                    and <code class="field ref">setNumber</code> fields
-                </i18n>
+                The full identifier as displayed on the bottom-left of each card, for instance <code class="on-card">9/204 • EN • 3</code>.
+                The formatting may be different for promo cards. See also the <code class="field ref">number</code> and <code class="field ref">setNumber</code> fields
             </li>
             <li><b class="field">fullName</b>
-                <i18n>
-                    The full name of the card. For characters and locations, this is the <code class="field ref">name</code> plus the <code class="field ref">version</code>, separated by a dash.
-                    For other card types this is the same as the <code class="field ref">name</code> field.
-                    See also the <code class="field ref">name</code>, <code class="field ref">version</code> and <code class="field ref">simpleName</code> fields
-                </i18n>
+                The full name of the card. For characters and locations, this is the <code class="field ref">name</code> plus the <code class="field ref">version</code>, separated by a dash.
+                For other card types this is the same as the <code class="field ref">name</code> field.
+                See also the <code class="field ref">name</code>, <code class="field ref">version</code> and <code class="field ref">simpleName</code> fields
             </li>
             <li><b class="field">fullText</b>
-                <i18n>
-                    The entire main gameplay text on the card as printed, not split up into abilities or effects. Does not
-                    include the flavor text. This field always exists, but can be an empty string on cards without rules text.
-                    The text can contain newline characters. See also the <code class="field ref">fullTextSections</code> field
-                </i18n>
+                The entire main gameplay text on the card as printed, not split up into abilities or effects. Does not include the flavor text. This field always exists, but can be an empty string on cards without rules text.
+                The text can contain newline characters. See also the <code class="field ref">fullTextSections</code> field
             </li>
             <li><b class="field">fullTextSections</b>
-                <i18n>
-                    A list of all the sections of the main gameplay text, with each ability or effect as a separate entry.
-                    Does not include the flavor text. This field always exists, but can be an empty list on cards without rules text.
-                    Each entry can contain newline characters. See also the <code class="field ref">fullText</code> field
-                </i18n>
+                A list of all the sections of the main gameplay text, with each ability or effect as a separate entry.
+                Does not include the flavor text. This field always exists, but can be an empty list on cards without rules text.
+                Each entry can contain newline characters. See also the <code class="field ref">fullText</code> field
             </li>
             <li><b class="field optional">historicData</b>
-                <i18n>
-                    This field only exists on cards that have had errata or changes to text on the card. The most well-known example is "Bucky - Squirrel Squeak Tutor" (ID 289), which got changed a lot. But other smaller changes have been made too.
-                    If it exists, it is a list of dictionaries, with each entry containing the card fields that have been changed in the errata, plus a field called <code class="field">usedUntil</code> that contains the date in yyyy-mm-dd format until when this historic data was used
-                </i18n>
+                This field only exists on cards that have had errata or changes to text on the card. The most well-known example is "Bucky - Squirrel Squeak Tutor" (ID 289), which got changed a lot. But other smaller changes have been made too.
+                If it exists, it is a list of dictionaries, with each entry containing the card fields that have been changed in the errata, plus a field called <code class="field">usedUntil</code> that contains the date in yyyy-mm-dd format until when this historic data was used
             </li>
             <li><b class="field">id</b>
-                <i18n>
-                    A unique number identifying the card. For the first set, this id is identical to the
-                    <code class="field ref">number</code> field; for subsequent sets, the id keeps counting up (so the
-                    first card of set&nbsp;2 has an id one higher than the last card of set&nbsp;1). The id is identical
-                    between different language versions of the same card
-                </i18n>
+                A unique number identifying the card. For the first set, this id is identical to the <code class="field ref">number</code> field;
+                for subsequent sets, the id keeps counting up (so the first card of set&nbsp;2 has an id one higher than the last card of set&nbsp;1).
+                The id is identical between different language versions of the same card
             </li>
             <li><b class="field">images</b>
-                <i18n>
-                    A dictionary with several URLs of card images. These images are the same ones as used in the
-                    official <span class="lorcana">Disney Lorcana</span> app.<br/>
-                    The fields in this dictionary are:
-                </i18n>
+                A dictionary with several URLs of card images. These images are the same ones as used in the
+                official <span class="lorcana">Disney Lorcana</span> app.<br/>
+                The fields in this dictionary are:
                 <ul>
                     <li><b class="field">full</b>
-                        <i18n>The URL of the card image at full size, usually 1468 by 2048 pixels</i18n>
+                        The URL of the card image at full size, usually 1468 by 2048 pixels
                     </li>
                     <li><b class="field">thumbnail</b>
-                        <i18n>The URL of the card image at thumbnail size, usually 367 by 512 pixels</i18n>
+                        The URL of the card image at thumbnail size, usually 367 by 512 pixels
                     </li>
                     <li><b class="optional field">foilMask</b>
-                        <i18n>
-                            A mask of the full card image that the official
-                            <span class="lorcana">Disney Lorcana</span> app uses to draw
-                            the foil effect, usually 1468 by 2048 pixels. Not all cards have this field
-                        </i18n>
+                        A mask of the full card image that the official <span class="lorcana">Disney Lorcana</span> app uses to draw the foil effect, usually 1468 by 2048 pixels. Not all cards have this field
                     </li>
                 </ul>
-                <i18n>
-                    Note: If the <code class="field ref">isExternalReveal</code> field exists and is set to
-                    <code class="json-keyword">true</code>, this card isn't in the official app yet, so only the
-                    'full' image field will be set
-                </i18n>
+                Note: If the <code class="field ref">isExternalReveal</code> field exists and is set to
+                <code class="json-keyword">true</code>, this card isn't in the official app yet, so only the
+                'full' image field will be set
             </li>
             <li><b class="field">inkwell</b>
-                <i18n>
-                    <code class="json-keyword">true</code> if this card is allowed to be put into the inkwell as ink,
-                    so if it has the extra decoration around the cost in the top left of the card, and
-                    <code class="json-keyword">false</code> otherwise
-                </i18n>
+                <code class="json-keyword">true</code> if this card is allowed to be put into the inkwell as ink,
+                so if it has the extra decoration around the cost in the top left of the card, and
+                <code class="json-keyword">false</code> otherwise
             </li>
             <li><b class="optional field">isExternalReveal</b>
-                <i18n>
-                    If this field exists and is <code class="json-keyword">true</code>, the data from this card didn't come from the official
-                    app, but the card image came from another official Ravensburger source. Practically, this means that the
-                    <code class="field ref">images</code> field will probably only have the <code class="field ref">full</code> URL set,
-                    and it will be in another format than usual. This field doesn't exist if the data for this card came from the official app
-                </i18n>
+                If this field exists and is <code class="json-keyword">true</code>, the data from this card didn't come from the official
+                app, but the card image came from another official Ravensburger source. Practically, this means that the
+                <code class="field ref">images</code> field will probably only have the <code class="field ref">full</code> URL set,
+                and it will be in another format than usual. This field doesn't exist if the data for this card came from the official app
             </li>
             <li><b class="optional field">keywordAbilities</b>
-                <i18n>
-                    A list of the keyword abilities of this character card, without the reminder text.
-                    For keyword abilities with a value, like <code class="on-card">Shift X</code> or <code class="on-card">Challenger +X</code>, the list entry doesn't include that value.
-                    For cards without keyword abilities, this field doesn't exist
-                </i18n>
+                A list of the keyword abilities of this character card, without the reminder text.
+                For keyword abilities with a value, like <code class="on-card">Shift X</code> or <code class="on-card">Challenger +X</code>, the list entry doesn't include that value.
+                For cards without keyword abilities, this field doesn't exist
             </li>
             <li><b class="optional field">lore</b>
-                <i18n>
-                    For character cards, this is the amount of lore this character earns for a player when they
-                    quest with it. For characters that can't quest, this value is 0. For location cards, this is the
-                    amount of lore this location card earns at the start of each turn. For other card types, this field doesn't exist
-                </i18n>
+                For character cards, this is the amount of lore this character earns for a player when they quest with it. For characters that can't quest, this value is 0.
+                For location cards, this is the amount of lore this location card earns at the start of each turn. For other card types, this field doesn't exist
             </li>
             <li><b class="optional field">maxCopiesInDeck</b>
-                <i18n>
-                    When building a deck, you can usually add a maximum of 4 copies of a card to that deck. Some cards are exceptions to that rule. For those cards, this field exists and is set to the maximum amount that applies for this card.
-                    See for example the card <code class="card-name">Dalmatian Puppy - Tail Wagger</code> (IDs 436-440): the card allows 99 copies of it in a deck, so the value of this field is set to '99'.
-                    If the card allows an unlimited amount of copies, like <code class="card-name">Microbots</code> (ID 1366), this field is set to 'null'. If no special limit applies, this field doesn't exist
-                </i18n>
+                When building a deck, you can usually add a maximum of 4 copies of a card to that deck. Some cards are exceptions to that rule. For those cards, this field exists and is set to the maximum amount that applies for this card.
+                See for example the card <code class="card-name">Dalmatian Puppy - Tail Wagger</code> (IDs 436-440): the card allows 99 copies of it in a deck, so the value of this field is set to '99'.
+                If the card allows an unlimited amount of copies, like <code class="card-name">Microbots</code> (ID 1366), this field is set to 'null'. If no special limit applies, this field doesn't exist
             </li>
             <li><b class="optional field">moveCost</b>
-                <i18n>
-                    For location cards, this is the amount of ink it costs to move a character to this location. For
-                    other cards, this field doesn't exist
-                </i18n>
+                For location cards, this is the amount of ink it costs to move a character to this location. For other cards, this field doesn't exist
             </li>
             <li><b class="field">name</b>
-                <i18n>
-                    The main name of the card. For characters and locations, this is the character or location name without the small version subtitle (So the "Minnie Mouse" part of "Minnie Mouse - Stylish Surfer").
-                    For other card types, this is the same as the <code class="field ref">fullName</code> field. See also the <code class="field ref">fullName</code> and <code class="field ref">version</code> fields
-                </i18n>
+                The main name of the card. For characters and locations, this is the character or location name without the small version subtitle (So the "Minnie Mouse" part of "Minnie Mouse - Stylish Surfer").
+                For other card types, this is the same as the <code class="field ref">fullName</code> field. See also the <code class="field ref">fullName</code> and <code class="field ref">version</code> fields
             </li>
             <li><b class="optional field">nonEnchantedId</b>
-                <i18n>
-                    For Enchanted-rarity cards, this field contains the ID of the non-Enchanted version of the same
-                    card. For non-Enchanted-rarity cards, this field doesn't exist. See also the <code class="field ref">enchantedId</code> field
-                </i18n>
+                For Enchanted-rarity cards, this field contains the ID of the non-Enchanted version of the same card.
+                For non-Enchanted-rarity cards, this field doesn't exist. See also the <code class="field ref">enchantedId</code> field
             </li>
             <li><b class="optional field">nonPromoId</b>
-                <i18n>
-                    Special versions of some cards are released at events or at other occasions, as promo versions.
-                    For these cards, this field points to the ID of the non-promo version of the same card. For other
-                    cards, this field doesn't exist. See also the <code class="field ref">promoIds</code> field
-                </i18n>
+                Special versions of some cards are released at events or at other occasions, as promo versions.
+                For these cards, this field points to the ID of the non-promo version of the same card. For other
+                cards, this field doesn't exist. See also the <code class="field ref">promoIds</code> field
             </li>
             <li><b class="field">number</b>
-                <i18n>
-                    The number of the card inside its set, shown as <code class="on-card">number/totalCards</code>
-                    in the bottom left of the card and in the <code class="field ref">fullIdentifier</code> field.
-                    For 'Special'-rarity cards, this number is the promo number instead, so a set
-                    might have two cards with number 1, one Special and one non-Special.
-                    This doesn't necessarily mean the cards are related, for that see the <code class="field ref">promoIds</code> and <code class="field ref">nonSpecialId</code> fields.
-                    For a unique card identifier, see the <code class="field ref">id</code> field
-                </i18n>
+                The number of the card inside its set, shown as <code class="on-card">number/totalCards</code> in the bottom left of the card and in the <code class="field ref">fullIdentifier</code> field.
+                For 'Special'-rarity cards, this number is the promo number instead, so a set might have two cards with number 1, one Special and one non-Special.
+                This doesn't necessarily mean the cards are related, for that see the <code class="field ref">promoIds</code> and <code class="field ref">nonSpecialId</code> fields.
+                For a unique card identifier, see the <code class="field ref">id</code> field
             </li>
             <li><b class="optional field">promoGrouping</b>
-                <i18n>
-                    This field contains which grouping a promo card belongs to. A grouping is different from a setcode. For instance, the promo card <code class="card-name">Minnie Mouse - Wide-Eyed Diver</code> (ID 674) has the full identifier '16/P1 • EN • 2'.
-                    The grouping here is 'P1'. Cards from different sets can belong to the same grouping. Available groupings are 'P1', 'P2', 'C1', 'C2', 'D23'; more will probably be added at a later time. This field doesn't exist for non-promo cards
-                </i18n>
+                This field contains which grouping a promo card belongs to. A grouping is different from a setcode. For instance, the promo card <code class="card-name">Minnie Mouse - Wide-Eyed Diver</code> (ID 674) has the full identifier '16/P1 • EN • 2'.
+                The grouping here is 'P1'. Cards from different sets can belong to the same grouping. Available groupings are 'P1', 'P2', 'C1', 'C2', 'D23'; more will probably be added at a later time. This field doesn't exist for non-promo cards
             </li>
             <li><b class="optional field">promoIds</b>
-                <i18n>
-                    Special versions of some cards are released at events or at other occasions, as promo versions.
-                    For cards that have such promo versions, this field has a list of IDs of those promo
-                    versions of this non-promo card. For cards without a promo version, this field doesn't exist.
-                    See also the <code class="field ref">nonPromoId</code> field
-                </i18n>
+                Special versions of some cards are released at events or at other occasions, as promo versions.
+                For cards that have such promo versions, this field has a list of IDs of those promo versions of this non-promo card. For cards without a promo version, this field doesn't exist.
+                See also the <code class="field ref">nonPromoId</code> field
             </li>
             <li><b class="field">rarity</b>
-                <i18n>
-                    The rarity of this card. One of Common, Uncommon, Rare, Super Rare, Legendary, Enchanted, or Special
-                    (the latter is used for promos or other special releases)
-                </i18n>
+                The rarity of this card. One of Common, Uncommon, Rare, Super Rare, Legendary, Enchanted, or Special (the latter is used for promos or other special releases)
             </li>
             <li><b class="field">setCode</b>
-                <i18n>
-                        A string representation of the set code, which is the set number for 'normal' cards, and <code class="on-card">Q1</code> for Illumineer's Quest cards. This is exactly how it's printed as the last part of the identifier at the bottom-left of each card.<br />
-                        This set code is also a key in the "sets" dictionary inside the "allCards.json" file, linking to the set name and other set data.<br />
-                        This field does not exist in the set-specific data files, since it doesn't make sense there. See also the <code class="field ref">setNumber</code> field
-                </i18n>
+                    A string representation of the set code, which is the set number for 'normal' cards, and <code class="on-card">Q1</code> for Illumineer's Quest cards. This is exactly how it's printed as the last part of the identifier at the bottom-left of each card.<br />
+                    This set code is also a key in the "sets" dictionary inside the "allCards.json" file, linking to the set name and other set data.<br />
+                    This field does not exist in the set-specific data files, since it doesn't make sense there. See also the <code class="field ref">setNumber</code> field
             </li>
             <li><b class="field">simpleName</b>
-                <i18n>
-                    The full name like in the <code class="field ref">fullName</code> field, but simplified: without
-                    the dash between name and version subtitle (for character and location cards), without special characters like
-                    '!' and '.', and entirely in lower-case.
-                    Special versions of letters are simplified too (for instance: "Te Kā - The Burning One" has the
-                    simpleName "te ka the burning one"). Quotemarks in possessives ("captain colonel's lieutenant") and dashes between words ("minnie
-                    mouse wide-eyed diver") <i>are</i> kept, since that's related to basic spelling.
-                    This field should make it easier to implement this data in a search engine, since most people
-                    won't use the dash or other special characters when searching for a card, so you can match their
-                    query against this field. See also the <code class="field ref">fullName</code> field
-                </i18n>
+                The full name like in the <code class="field ref">fullName</code> field, but simplified: without the dash between name and version subtitle (for character and location cards),
+                without special characters like '!' and '.', and entirely in lower-case.
+                Special versions of letters are simplified too (for instance: "Te Kā - The Burning One" has the simpleName "te ka the burning one").
+                Quotemarks in possessives ("captain colonel's lieutenant") and dashes between words ("minnie mouse wide-eyed diver") <i>are</i> kept, since that's related to basic spelling.
+                This field should make it easier to implement this data in a search engine, since most people won't use the dash or other special characters when searching for a card,
+                so you can match their query against this field. See also the <code class="field ref">fullName</code> field
             </li>
             <li><b class="field">story</b>
-                <i18n>
-                    The name of the story (movie, TV show, etc.) that the card is from or that it references
-                </i18n>
+                The name of the story (movie, TV show, etc.) that the card is from or that it references
             </li>
             <li><b class="optional field">strength</b>
-                <i18n>
-                    The strength of a character card, so how much damage it does to another character during a
-                    challenge. For card types other than characters, this field doesn't exist
-                </i18n>
+                The strength of a character card, so how much damage it does to another character during a
+                challenge. For card types other than characters, this field doesn't exist
             </li>
             <li><b class="optional field">subtypes</b>
-                <i18n>
-                    A list of the subtypes of this card. For characters, this can have entries like
-                    <code class="on-card">Dreamborn</code> and <code class="on-card">Princess</code>. For song actions,
-                    this contains 'Song'. The order of the list is the same as on the card. For cards without subtypes,
-                    this field doesn't exist. See also the <code class="field">subtypesText</code> field
-                </i18n>
+                A list of the subtypes of this card. For characters, this can have entries like <code class="on-card">Dreamborn</code> and <code class="on-card">Princess</code>.
+                For song actions, this contains 'Song'. The order of the list is the same as on the card. For cards without subtypes, this field doesn't exist. See also the <code class="field">subtypesText</code> field
             </li>
             <li><b class="optional field">subtypesText</b>
-                <i18n>
-                    If this card has one or more subtypes, this field contains those subtypes as one string, just like it's printed on the card.
-                    For cards without subtypes, this field doesn't exist. See also the <code class="field">subtypes</code> field
-                </i18n>
+                If this card has one or more subtypes, this field contains those subtypes as one string, just like it's printed on the card.
+                For cards without subtypes, this field doesn't exist. See also the <code class="field">subtypes</code> field
             </li>
             <li><b class="field">type</b>
-                <i18n>
-                    What kind of card this is. One of Action, Character, Item, Location
-                </i18n>
+                What kind of card this is. One of Action, Character, Item, Location
             </li>
             <li><b class="optional field">variant</b>
-                <i18n>
-                    Some cards have multiple variants that only have different art (for instance
-                    <code class="card-name">Dalmatian Puppy</code> has ID 436 to 440).
-                    These are differentiated by a letter after the card number (for <code class="card-name">Dalmatian Puppy</code>, letters 'a' to 'e').
-                    This field contains that letter. For cards without variants, this field doesn't exist.
-                    See also the <code class="field ref">variantIds</code> field
-                </i18n>
+                Some cards have multiple variants that only have different art (for instance <code class="card-name">Dalmatian Puppy</code> has ID 436 to 440).
+                These are differentiated by a letter after the card number (for <code class="card-name">Dalmatian Puppy</code>, letters 'a' to 'e').
+                This field contains that letter. For cards without variants, this field doesn't exist.
+                See also the <code class="field ref">variantIds</code> field
             </li>
             <li><b class="optional field">variantIds</b>
-                <i18n>
-                    Some cards have multiple variants that only have different art (for instance
-                    <code class="card-name">Dalmatian Puppy</code> has ID 436 to 440).
-                    This field contains a list of the IDs of the other cards belonging to this variant. For cards without
-                    variants, this field doesn't exist. See also the <code class="field ref">variant</code> field
-                </i18n>
+                Some cards have multiple variants that only have different art (for instance <code class="card-name">Dalmatian Puppy</code> has ID 436 to 440).
+                This field contains a list of the IDs of the other cards belonging to this variant. For cards without variants, this field doesn't exist.
+                See also the <code class="field ref">variant</code> field
             </li>
             <li><b class="optional field">version</b>
-                <i18n>
-                    The version subtitle of a character or location card, written below the <code class="field">name</code> (So the "Stylish Surfer" part of "Minnie Mouse - Stylish Surfer").
-                    For other card types, this field doesn't exist. See also the <code class="field ref">fullName</code> and <code class="field ref">name</code> fields
-                </i18n>
+                The version subtitle of a character or location card, written below the <code class="field">name</code> (So the "Stylish Surfer" part of "Minnie Mouse - Stylish Surfer").
+                For other card types, this field doesn't exist. See also the <code class="field ref">fullName</code> and <code class="field ref">name</code> fields
             </li>
             <li><b class="optional field">willpower</b>
-                <i18n>
-                    The willpower of a character or location card, so how much damage it can take before it is banished.
-                    For other card types, this field doesn't exist
-                </i18n>
+                The willpower of a character or location card, so how much damage it can take before it is banished. For other card types, this field doesn't exist
             </li>
         </ul>
 
@@ -617,47 +453,38 @@
         <ul>
             <li>
                 <code class="symbol">⟳</code>
-                <i18n>(Unicode character U+27F3): Exert</i18n>
+                (Unicode character U+27F3): Exert
             </li>
             <li>
                 <code class="symbol">⬡</code>
-                <i18n>(Unicode character U+2B21): Ink (usually in activation costs)</i18n>
+                (Unicode character U+2B21): Ink (usually in activation costs)
             </li>
             <li>
                 <code class="symbol">◊</code>
-                <i18n>(Unicode character U+25CA): Lore (usually used to indicate the lore gain</i18n>
-                when questing)
+                (Unicode character U+25CA): Lore (usually used to indicate the lore gain when questing)
             </li>
             <li>
                 <code class="symbol">¤</code>
-                <i18n>(Unicode character U+00A4): Strength</i18n>
+                (Unicode character U+00A4): Strength
             </li>
             <li>
                 <code class="symbol">⛉</code>
-                <i18n>(Unicode character U+26C9): Willpower</i18n>
+                (Unicode character U+26C9): Willpower
             </li>
             <li>
                 <code class="symbol">◉</code>
-                <i18n>
-                    (Unicode character U+25C9): Inkwell (the decoration around the card cost), meant to symbolise
-                    whether the card is allowed to be put into your inkwell.
-                    The character isn't too similar to the actual card symbol, but it's the closest available
-                </i18n>
+                (Unicode character U+25C9): Inkwell (the decoration around the card cost), meant to symbolise whether the card is allowed to be put into your inkwell.
+                The character isn't too similar to the actual card symbol, but it's the closest available
             </li>
             <li>
                 <code class="symbol">•</code>
-                <i18n>
-                    (Unicode character U+2022): Bullet point that separates different subtypes, and is also used in lists on cards
-                    (for instance <code class="card-name">Maui's Fish Hook</code>, ID 568)
-                </i18n>
+                (Unicode character U+2022): Bullet point that separates different subtypes, and is also used in lists on cards (for instance <code class="card-name">Maui's Fish Hook</code>, ID 568)
             </li>
         </ul>
     </section>
 
     <section id="downloads">
-        <h1>
-            <i18n>Downloads</i18n>
-        </h1>
+        <h1>Downloads</h1>
         <p>
             Here are the available downloads of the data files described above. There's the direct JSON download, or
             that same JSON file except in a zipfile so it's smaller.<br />
@@ -682,10 +509,10 @@
             </tr>
             <tr>
                 <td>
-                    <i18n>Metadata</i18n>
+                    Metadata
                 </td>
                 <td>
-                    <i18n>Contains format version and creation date</i18n>
+                    Contains format version and creation date
                 </td>
                 <td><a class="download" href="files/current/en/metadata.json" title="download"></a></td>
                 <td>-</td>
@@ -698,10 +525,10 @@
             </tr>
             <tr>
                 <td>
-                    <i18n>All Cards</i18n>
+                    All Cards
                 </td>
                 <td>
-                    <i18n>Contains all the cards from all the sets</i18n>
+                    Contains all the cards from all the sets
                 </td>
                 <td>
                     <a class="download" href="files/current/en/allCards.json" title="download"></a>
@@ -738,10 +565,10 @@
            </tr>
             <tr>
                 <td>
-                    <i18n>All Sets</i18n>
+                    All Sets
                 </td>
                 <td>
-                    <i18n>Contains all the separate setfiles described below, but in one single zipfile</i18n>
+                    Contains all the separate setfiles described below, but in one single zipfile
                 </td>
                 <td>-</td>
                 <td>
@@ -766,10 +593,10 @@
             </tr>
             <tr>
                 <td>
-                    <i18n>Set 1 cards</i18n>
+                    Set 1 cards
                 </td>
                 <td>
-                    <i18n>Contains all the cards from the first set: "The First Chapter"</i18n>
+                    Contains all the cards from the first set: "The First Chapter"
                 </td>
                 <td>
                     <a class="download" href="files/current/en/sets/setdata.1.json" title="download"></a>
@@ -806,10 +633,10 @@
             </tr>
             <tr>
                 <td>
-                    <i18n>Set 2 cards</i18n>
+                    Set 2 cards
                 </td>
                 <td>
-                    <i18n>Contains all the cards from the second set: "Rise of the Floodborn"</i18n>
+                    Contains all the cards from the second set: "Rise of the Floodborn"
                 </td>
                 <td>
                     <a class="download" href="files/current/en/sets/setdata.2.json" title="download"></a>
@@ -846,10 +673,10 @@
             </tr>
             <tr>
                 <td>
-                    <i18n>Set 3 cards</i18n>
+                    Set 3 cards
                 </td>
                 <td>
-                    <i18n>Contains all the cards from the third set: "Into the Inklands"</i18n>
+                    Contains all the cards from the third set: "Into the Inklands"
                 </td>
                 <td>
                     <a class="download" href="files/current/en/sets/setdata.3.json" title="download"></a>
@@ -886,10 +713,10 @@
             </tr>
             <tr>
                 <td>
-                    <i18n>Set 4 cards</i18n>
+                    Set 4 cards
                 </td>
                 <td>
-                    <i18n>Contains all the cards from the fourth set: "Ursula's Return"</i18n>
+                    Contains all the cards from the fourth set: "Ursula's Return"
                 </td>
                 <td>
                     <a class="download" href="files/current/en/sets/setdata.4.json" title="download"></a>
@@ -926,10 +753,10 @@
             </tr>
             <tr>
                 <td>
-                    <i18n>Illumineer's Quest: Deep Trouble cards</i18n>
+                    Illumineer's Quest: Deep Trouble cards
                 </td>
                 <td>
-                    <i18n>Contains all the cards from the first Quest set "Illumineer's Quest: Deep Trouble"</i18n>
+                    Contains all the cards from the first Quest set "Illumineer's Quest: Deep Trouble"
                 </td>
                 <td>
                     <a class="download" href="files/current/en/sets/setdata.Q1.json" title="download"></a>
@@ -966,10 +793,10 @@
             </tr>
             <tr>
                 <td>
-                    <i18n>Set 5 cards</i18n>
+                    Set 5 cards
                 </td>
                 <td>
-                    <i18n>Contains all the cards from the fifth set: "Shimmering Skies"</i18n>
+                    Contains all the cards from the fifth set: "Shimmering Skies"
                 </td>
                 <td>
                     <a class="download" href="files/current/en/sets/setdata.5.json" title="download"></a>
@@ -1006,10 +833,10 @@
             </tr>
             <tr>
                 <td>
-                    <i18n>Set 6 cards</i18n>
+                    Set 6 cards
                 </td>
                 <td>
-                    <i18n>Contains all the cards from the sixth set: "Azurite Sea"</i18n>
+                    Contains all the cards from the sixth set: "Azurite Sea"
                 </td>
                 <td>
                     <a class="download" href="files/current/en/sets/setdata.6.json" title="download"></a>
@@ -1046,10 +873,10 @@
             </tr>
             <tr>
                 <td>
-                    <i18n>Set 7 cards</i18n>
+                    Set 7 cards
                 </td>
                 <td>
-                    <i18n>Contains all the cards from the seventh set: "Archazia's Island"</i18n>
+                    Contains all the cards from the seventh set: "Archazia's Island"
                 </td>
                 <td>
                     <a class="download" href="files/current/en/sets/setdata.7.json" title="download"></a>
@@ -1991,73 +1818,49 @@
     </section>
 
     <section id="changelogs">
-        <h1>
-            <i18n>Changelogs</i18n>
-        </h1>
-        <i18n>
-            <a href="changelog.html">Click here for the changelog page of the English data</a>
-            <br />
-            <a href="changelog_fr.html">Click here for the changelog page of the French data</a>
-            <br />
-            <a href="changelog_de.html">Click here for the changelog page of the German data</a>
-            <br />
-            <a href="changelog_it.html">Click here for the changelog page of the Italian data</a>
-        </i18n>
+        <h1>Changelogs</h1>
+        <a href="changelog.html">Click here for the changelog page of the English data</a>
+        <br />
+        <a href="changelog_fr.html">Click here for the changelog page of the French data</a>
+        <br />
+        <a href="changelog_de.html">Click here for the changelog page of the German data</a>
+        <br />
+        <a href="changelog_it.html">Click here for the changelog page of the Italian data</a>
     </section>
 
     <section id="limitations">
-        <h1>
-            <i18n>Limitations</i18n>
+        <h1>Limitations
         </h1>
         <p>
-            <i18n>
-                The source of all this data is the same as the official
-                <span class="lorcana">Disney Lorcana</span> app uses, with extra image parsing to make the card text
-                more accurate. This means that LorcanaJSON files don't contain all cards teased for the next set release.<br />
-                Once the new set cards get added to the official app, they will also get added to the LorcanaJSON data
-                files within a few days.
-            </i18n>
+            The source of all this data is the same as the official <span class="lorcana">Disney Lorcana</span> app uses, with extra image parsing to make the card text more accurate.
+            This means that LorcanaJSON files don't contain all cards teased for the next set release.<br />
+            Once the new set cards get added to the official app, they will also get added to the LorcanaJSON data files within a few days.
         </p>
     </section>
 
     <section id="plans">
-        <h1>
-            <i18n>Future plans</i18n>
-        </h1>
+        <h1>Future plans</h1>
         <ul>
             <li>
-                <i18n>None for now, but feel free to email me when you have a good idea for an addition!</i18n>
+                None for now, but feel free to email me when you have a good idea for an addition!
             </li>
         </ul>
     </section>
 
     <section id="contact">
-        <h1>
-            <i18n>Contact</i18n>
-        </h1>
+        <h1>Contact</h1>
         <p>
-            <i18n>
-                For suggestions for extra fields or changes, or for data corrections, email
-                <a href="mailto:suggestions@lorcanajson.org">suggestions@lorcanajson.org</a>.
-            </i18n>
+            For suggestions for extra fields or changes, or for data corrections, email <a href="mailto:suggestions@lorcanajson.org">suggestions@lorcanajson.org</a>.
         </p>
         <p>
-            <i18n>
-                For other types of messages, email
-                <a href="mailto:contact@lorcanajson.org">contact@lorcanajson.org</a>.
-            </i18n>
+            For other types of messages, email <a href="mailto:contact@lorcanajson.org">contact@lorcanajson.org</a>.
         </p>
         <p>
-            <i18n>
-                LorcanaJSON has accounts on <a href="https://mastodon.social/@LorcanaJSON" target="_blank">Mastodon</a> and <a href="https://bsky.app/profile/lorcanajson.org" target="_blank">BlueSky</a>.
-                Whenever there is an update to the dataset, a message announcing that update will be posted there, along with a short description of the biggest changes.
-            </i18n>
+            LorcanaJSON has accounts on <a href="https://mastodon.social/@LorcanaJSON" target="_blank">Mastodon</a> and <a href="https://bsky.app/profile/lorcanajson.org" target="_blank">BlueSky</a>.
+            Whenever there is an update to the dataset, a message announcing that update will be posted there, along with a short description of the biggest changes.
         </p>
         <p>
-            <i18n>
-                To see the sourcecode that generates these datafiles, see
-                <a href="https://github.com/LorcanaJSON/LorcanaJSON">this GitHub project</a>.
-            </i18n>
+            To see the sourcecode that generates these datafiles, see <a href="https://github.com/LorcanaJSON/LorcanaJSON">this GitHub project</a>.
         </p>
     </section>
 </article>
