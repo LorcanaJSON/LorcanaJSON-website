@@ -231,15 +231,10 @@ b.field {
     display: inline-block;
 }
 
-b.field::after {
-    display: inline-block;
-    content: ":";
-    font-weight: normal;
-}
-
 b.optional.field::after {
-    content: " (optional):";
+    content: " (optional)";
     font-style: italic;
+    font-weight: normal;
 }
 
 /*********************** Versions (changelog) ****************************/
