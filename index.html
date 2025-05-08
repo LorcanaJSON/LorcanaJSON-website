@@ -324,6 +324,9 @@
                     <li><b class="optional field">foilMask</b>:
                         A mask of the full card image that the official <span class="lorcana">Disney Lorcana</span> app uses to draw the foil effect, usually 1468 by 2048 pixels. Not all cards have this field
                     </li>
+                    <li><b class="optional field">varnishMask</b>:
+                        A mask of the full card image that the official <span class="lorcana">Disney Lorcana</span> app uses to draw the varnish effect, usually 1468 by 2048 pixels. Not all cards have this field. See also the <code class="field">varnishType</code> field
+                    </li>
                 </ul>
                 Note: If the <code class="field ref">isExternalReveal</code> field exists and is set to
                 <code class="json-keyword">true</code>, this card isn't in the official app yet, so only the
@@ -429,6 +432,11 @@
                 Some cards have multiple variants that only have different art (for instance <code class="card-name">Dalmatian Puppy</code> has ID 436 to 440).
                 This field contains a list of the IDs of the other cards belonging to this variant. For cards without variants, this field doesn't exist.
                 See also the <code class="field ref">variant</code> field
+            </li>
+            <li><b class="optional field">varnishType</b>:
+                A few cards have a special varnish effect. If this card is varnished, this field exists and is set to the exact varnish type.
+                For cards that don't have a varnish effect, this field doesn't exist.
+                See also the <code class="field">varnishMask</code> subfield of the <code class="field">images</code> dictionary
             </li>
             <li><b class="optional field">version</b>:
                 The version subtitle of a character or location card, written below the <code class="field">name</code> (So the "Stylish Surfer" part of "Minnie Mouse - Stylish Surfer").
