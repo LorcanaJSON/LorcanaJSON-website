@@ -22,6 +22,7 @@
         <i18n>Versions:</i18n>
     </p>
     <ul id="versions-toc">
+        <li><a href="#v2025-06-14-2.1.5-1">2025-06-14-2.1.5-1</a></li>
         <li><a href="#v2025-05-28-2.1.4-1">2025-05-28-2.1.4-1</a></li>
         <li><a href="#v2025-05-12-2.1.4-1">2025-05-12-2.1.4-1</a></li>
         <li><a href="#v2025-05-09-2.1.4-1">2025-05-09-2.1.4-1</a></li>
@@ -53,6 +54,48 @@
 <article id="main">
     <section>
         <h1>LorcanaJSON German Changelog</h1>
+
+        <h2 id="v2025-06-14-2.1.5-1">2025-06-14 <span class="format nonbreaking">2.1.5</span></h2>
+        <div class="version">
+            <ul>
+                <li>Non-breaking format update: Some foil cards have slightly different art than their non-foil counterpart (for instance the nephews in Set 8, IDs 1665-1667, miss one or both black borders on the side).
+                    The new field <code class="field">fullFoil</code> inside the <code class="field">images</code> dictionary contains a URL to this differing foil art. Cards that don't have different foil art don't have this field</li>
+                <li>Fill in <code class="field">externalLinks</code> of the Set 8 and Palace Heist cards</li>
+                <li>Add <code class="field">tcgPlayerId</code> and <code class="field">tcgPlayerUrl</code> to the <code class="field">externalLinks</code> of some promo cards:
+                    <ul>
+                        <li><code class="card-name">Kristoff - Rentier Hüter</code> (ID 1181)</li>
+                        <li><code class="card-name">Stitch - Alien-Seeräuber</code> (ID 1423)</li>
+                        <li><code class="card-name">Aladdin - Unerschrockener Kommandant</code> (ID 1424)</li>
+                        <li><code class="card-name">Rettungstruppe! Auf geht's!</code> (ID 1425)</li>
+                        <li><code class="card-name">Honey Lemon - Chemie-Genie</code> (ID 1426)</li>
+                        <li><code class="card-name">Scar - Herzloser Jäger</code> (ID 1429)</li>
+                        <li><code class="card-name">Lilo - Entfesslungskünstlerin</code> (ID 1431)</li>
+                        <li><code class="card-name">Vaiana - Abenteurerin zu Land und See</code> (ID 1433)</li>
+                        <li><code class="card-name">Anna - Eisbrecherin</code> (ID 1656)</li>
+                        <li><code class="card-name">Kronk - Entspannt</code> (ID 1657)</li>
+                        <li><code class="card-name">Perdi - Verspielte Mutter</code> (ID 1658)</li>
+                        <li><code class="card-name">Li Shang - Frisch befördert</code> (ID 1659)</li>
+                        <li><code class="card-name">Schneewittchen - Die Schönste im Land</code> (ID 1660)</li>
+                        <li><code class="card-name">Hiro Hamada - Rüstungsdesigner</code> (ID 1661 & 1662)</li>
+                    </ul>
+                </li>
+                <li>Fix part of the ability effect being part of the name for <code class="card-name">Olaf - Fröhlicher Passagier</code> (ID 1165)</li>
+                <li>Correct number from 1 to 2 in ability of <code class="card-name">Der Kutscher - Gieriger Betrüger</code> (ID 1804).
+                    <i>This was a typo in the card image, which was corrected by a new card image. Since the error came from the card, a <code class="field">historicData</code> entry was added with the original text</i>
+                </li>
+            </ul>
+            <aside class="links">
+                <header>
+                    <i18n>Permanent links:</i18n>
+                </header>
+                <a class="download" href="files/2025-06-14-2.1.5-1/de/allCards.json.zip">allCards.json.zip</a>
+                (<a class="md5" href="files/2025-06-14-2.1.5-1/de/allCards.json.zip.md5">md5</a>),
+                <a class="download" href="files/2025-06-14-2.1.5-1/de/sets/allSets.zip">allSets.zip</a>
+                (<a class="md5" href="files/2025-06-14-2.1.5-1/de/sets/allSets.zip.md5">md5</a>),
+                <a class="download" href="files/2025-06-14-2.1.5-1/de/decks/allDecks.zip">allDecks.zip</a>
+                (<a class="md5" href="files/2025-06-14-2.1.5-1/de/decks/allDecks.zip.md5">md5</a>)
+            </aside>
+        </div>
 
         <h2 id="v2025-05-28-2.1.4-1">2025-05-28 <span class="format unchanged">2.1.4</span></h2>
         <div class="version">
