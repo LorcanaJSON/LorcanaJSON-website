@@ -247,9 +247,10 @@
             <li><b class="field">artistsText</b>:
                 The artist(s) that drew the card as it's printed on the bottom left of the card. See also the <code class="field ref">artists</code> field
             </li>
-            <li><b class="optional field">bannedSince</b>:
+            <li><b class="optional field"><s>bannedSince</s></b>:
                 Very rarely, Ravensburger bans certain cards from Constructed tournaments. If this card has been banned, this field exists and is set to the date when the ban went or will go into effect.
-                Note that this means they're banned specifically in official Constructed tournaments, and the card can still be used in Sealed and Draft events. For cards that haven't been banned, this field doesn't exist
+                Note that this means they're banned specifically in official Constructed tournaments, and the card can still be used in Sealed and Draft events. For cards that haven't been banned, this field doesn't exist<br/>
+                <b><i>Note</i></b>: This field was removed in format version 2.2.0, see <code class="field">allowedInFormats</code> for its replacement
             </li>
             <li><b class="optional field">clarifications</b>:
                 Some cards have extra clarifications for how they work or interact with other cards. This field is a list of those clarifications. For cards without clarifications, this field doesn't exist. The text can contain newline characters
