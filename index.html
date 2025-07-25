@@ -95,6 +95,16 @@
                 <b class="filename">setdata.[setCode].json</b> contains data on all the cards in the set specified by
                 the set code. There is a file like this for each released set. Each setdata file consists of these fields:
                 <ul>
+                    <li><b class="field">allowedInFormats</b>:
+                        This dictionary has for each official Constructed format (Currently "Core" and "Infinity") data on whether this set is allowed in official tournaments, and when it rotates out if it does.
+                        Available fields are:
+                        <ul>
+                            <li><b class="field">allowed</b>: A boolean indicating whether this set is allowed to be used in official tournaments in this format</li>
+                            <li><b class="optional field">allowedUntilDate</b>: If a date is known when this set rotates out of this format, this field exists and is set to the date until when the set is allowed to be used. If no date is known, this field doesn't exist</li>
+                            <li><b class="optional field">rotationGroup</b>: If this format uses set rotations, this field is set to a number indicating a group of sets that rotate out at the same time (so Set 1 to 4 have the same 'rotationGroup' for Core).
+                                If this format doesn't use rotations, this field doesn't exist</li>
+                        </ul>
+                    </li>
                     <li><b class="field">code</b>:
                         The code of this set. This is already in the name of the set file, but it's here too for completion's sake
                     </li>
@@ -214,6 +224,15 @@
                             </li>
                         </ul>
                     </li>
+                </ul>
+            </li>
+            <li><b class="field">allowedInFormats</b>:
+                This dictionary has for each official Constructed format (Currently "Core" and "Infinity") data on whether this card is allowed in official tournaments, whether it's banned, and when it rotates out if it does.
+                Available fields are:
+                <ul>
+                    <li><b class="field">allowed</b>: A boolean indicating whether this card is allowed to be used in official tournaments in this format</li>
+                    <li><b class="optional field">allowedUntilDate</b>: If a date is known when this card rotates out of this format, or if this card was banned, this field exists and is set to the date until when the card was or is allowed to be used. If no date is known, this field doesn't exist</li>
+                    <li><b class="optional field">bannedSinceDate</b>: If this card has been banned in this format, this field is set to the date when the ban took or takes effect. If this card has not been banned in this format, this field doesn't exist</li>
                 </ul>
             </li>
             <li><b class="field">artists</b>:
