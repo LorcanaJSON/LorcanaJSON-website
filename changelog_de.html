@@ -22,6 +22,7 @@
         <i18n>Versions:</i18n>
     </p>
     <ul id="versions-toc">
+        <li><a href="#v2025-07-25-2.2.0-1">2025-07-25-2.2.0-1</a></li>
         <li><a href="#v2025-07-06-2.1.5-1">2025-07-06-2.1.5-1</a></li>
         <li><a href="#v2025-06-14-2.1.5-1">2025-06-14-2.1.5-1</a></li>
         <li><a href="#v2025-05-28-2.1.4-1">2025-05-28-2.1.4-1</a></li>
@@ -55,6 +56,34 @@
 <article id="main">
     <section>
         <h1>LorcanaJSON German Changelog</h1>
+
+        <h2 id="v2025-07-25-2.2.0-1">2025-07-25 <span class="format breaking">2.2.0</span></h2>
+        <div class="version">
+            <ul>
+                <li>Format addition: <code class="field">allowedInFormats</code> is a new dictionary field in sets and cards that contains data per format ("Core" and "Infinity" for now) saying whether the set or card is currently allowed in that format.
+                    If it's allowed until a certain date, that info is also included. If a card is banned in that format, that is included in this format dictionary. See the <code class="field">allowedInFormats</code> explanation for more details</li>
+                <li>Breaking format change: Because per-format ban data is now contained in <code class="field">allowedInFormats</code> as mentioned above, the separate <code class="field">bannedSince</code> card field has been removed</li>
+                <li>Format addition: <code class="field">allowedInTournamentsFromDate</code> card field contains a date string indicating when this set or card is/was allowed to be used in official tournaments</li>
+                <li>Format addition: Since cards are getting reprinted, two fields have been added: <code class="field">reprintedAsIds</code> is a list of card IDs that are reprints of the current card; and <code class="field">reprintOfId</code> is the ID of the card that this is a reprint of.
+                    Neither field exists if they're not relevant. Currently only two cards have been reprinted:
+                    <ul>
+                        <li><code class="card-name">Käpt'n Hook - Mächtiger Duellant</code>: ID 174 is the original print, and ID 1850 is the reprint</li>
+                        <li><code class="card-name">Dalmatiner Welpe - Schwanzwedler</code>: ID 436 is the original print, and ID 1702 is the reprint. <i>Note: This card has variants, but only the first variant is used for the reprint fields</i></li>
+                    </ul>
+                </li>
+            </ul>
+            <aside class="links">
+                <header>
+                    <i18n>Permanent links:</i18n>
+                </header>
+                <a class="download" href="files/2025-07-25-2.2.0-1/de/allCards.json.zip">allCards.json.zip</a>
+                (<a class="md5" href="files/2025-07-25-2.2.0-1/de/allCards.json.zip.md5">md5</a>),
+                <a class="download" href="files/2025-07-25-2.2.0-1/de/sets/allSets.zip">allSets.zip</a>
+                (<a class="md5" href="files/2025-07-25-2.2.0-1/de/sets/allSets.zip.md5">md5</a>),
+                <a class="download" href="files/2025-07-25-2.2.0-1/de/decks/allDecks.zip">allDecks.zip</a>
+                (<a class="md5" href="files/2025-07-25-2.2.0-1/de/decks/allDecks.zip.md5">md5</a>)
+            </aside>
+        </div>
 
         <h2 id="v2025-07-06-2.1.5-1">2025-07-06 <span class="format unchanged">2.1.5</span></h2>
         <div class="version">
