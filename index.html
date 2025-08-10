@@ -423,10 +423,12 @@
             </li>
             <li><b class="optional field">reprintedAsIds</b>:
                 Some cards from older sets are reprinted in newer sets, to make sure they stay available after set rotations. If this card got reprinted in one or more later sets, this field exists and is a list of card IDs that are reprints of this card.
+                Some fields, like <code class="field">rarity</code>, may differ between the original print and the reprint.
                 If this card hasn't been reprinted, this field doesn't exist. Note that for cards with variants, only the first variant has this field. See also the <code class="field ref">reprintOfId</code> field
             </li>
             <li><b class="optional field">reprintOfId</b>:
                 Some cards from older sets are reprinted in newer sets, to make sure they stay available after set rotations. If this card is a reprint from a card in an older set, this field exists and is set to the ID of the card this is a reprint of.
+                Some fields, like <code class="field">rarity</code>, may differ between the original print and the reprint.
                 If this card isn't a reprint, this field doesn't exist. Note that for cards with variants, this field points to the first variant. See also the <code class="field ref">reprintedAsIds</code> field
             </li>
             <li><b class="field">setCode</b>:
