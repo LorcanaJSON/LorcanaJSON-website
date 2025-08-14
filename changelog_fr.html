@@ -20,6 +20,7 @@
     </ul>
     <p>>Versions:</p>
     <ul id="versions-toc">
+        <li><a href="#v2025-08-14-2.2.0-1">2025-08-14-2.2.0-1</a></li>
         <li><a href="#v2025-07-25-2.2.0-1">2025-07-25-2.2.0-1</a></li>
         <li><a href="#v2025-07-06-2.1.5-1">2025-07-06-2.1.5-1</a></li>
         <li><a href="#v2025-06-14-2.1.5-1">2025-06-14-2.1.5-1</a></li>
@@ -58,6 +59,55 @@
     <section>
         <h1>LorcanaJSON French Changelog</h1>
 
+        <h2 id="v2025-08-14-2.2.0-1">2025-08-14 <span class="format unchanged">2.2.0</span></h2>
+        <div class="version">
+            <ul>
+                <li>Added prerelease and release dates for Set 10 "Lueurs dans le Profondeurs": 2025-11-07 and 2025-11-14 respectively </li>
+                <li>Added preliminary info on set 11 "Givresort" (though no release dates beyond 'Q1 2026' are known)</li>
+                <li>The reminder text of the "Rempart" keyword ("Bodyguard" in English) has been updated on cards from Set 1, 2, and 3 to match the phrasing of later cards. The original phrasing is kept in the <code class="field">historicData</code> field. Affected cards are:
+                    <ul>
+                        <li><code class="card-name">Dingo - Mousquetaire</code> (ID 4)</li>
+                        <li><code class="card-name">Simba - Lionceau protecteur</code> (ID 20)</li>
+                        <li><code class="card-name">Donald - Mousquetaire</code> (ID 177)</li>
+                        <li><code class="card-name">Hercule - Vrai héros</code> (ID 181)</li>
+                        <li><code class="card-name">Namaari - Brume matinale</code> (ID 405 & 432)</li>
+                        <li><code class="card-name">Le Prince - N'abandonne jamais</code> (ID 411)</li>
+                    </ul>
+                    The old phrasing is stored in the <code class="field">historicData</code> for each of these cards
+                </li>
+                <li>The text on some cards got changed, to fix errors and/or improve phrasing. Affected cards are:
+                    <ul>
+                        <li><code class="card-name">Belle - Archère dissimulée</code> (ID 288): Changed 'personne' to 'personnage'</li>
+                        <li><code class="card-name">Chat du Cheshire - Toujours ce sourire…</code> (ID 290): Capitalized 'Comment' in flavor text</li>
+                        <li><code class="card-name">Chat du Cheshire - Sorti de l'ombre</code> (ID 291): Correct spelling of 'bannissez-le'</li>
+                        <li><code class="card-name">Rebondir</code> (ID 313): Rephrased effect</li>
+                        <li><code class="card-name">Fidget - Homme de main de Ratigan</code> (ID 324): Correct 'ou' to 'où' in flavor text</li>
+                        <li><code class="card-name">Le chasseur - Homme de main réticent</code> (ID 410): Change 'défaussez' to 'défausser'</li>
+                    </ul>
+                    The old text is stored in the <code class="field">historicData</code> for each of these cards
+                </li>
+                <li>The artist on <code class="card-name">Félicia - Toujours affamée</code> (ID 323) and <code class="card-name">Mulan - Tout juste sortie de l'entraînement</code> (ID 333) got simplified to 'Cookie' (The old text is stored in <code class="field">historicData</code>)</li>
+                <li>Ravensburger changed all the image links, so all the links inside <code class="field">images</code> have changed. Foil mask and varnish mask images no longer have numbers (cost, strength, etc), which is probably the reason for the link updates</li>
+                <li>Filled in <code class="field">externalLinks</code> (except TCGPlayer data) for the reward card from "Quête de illumineurs: Vol au palais" (ID 1935)</li>
+                <li>Corrected <code class="field">cardMarketId</code> inside <code class="field">externalLinks</code> for:
+                    <ul>
+                        <li><code class="card-name">Seigneur Pélinore - Chevalier chevronné</code> (ID 1818)</li>
+                        <li><code class="card-name">Anita Radcliffe - Passionnée de chiens</code> (ID 1819)</li>
+                        <li><code class="card-name">Olaf - Résumant l'histoire</code> (ID 1820)</li>
+                    </ul>
+                </li>
+            </ul>
+            <aside class="links">
+                <header>Permanent links:</header>
+                <a class="download" href="files/2025-08-14-2.2.0-1/fr/allCards.json.zip">allCards.json.zip</a>
+                (<a class="md5" href="files/2025-08-14-2.2.0-1/fr/allCards.json.zip.md5">md5</a>),
+                <a class="download" href="files/2025-08-14-2.2.0-1/fr/sets/allSets.zip">allSets.zip</a>
+                (<a class="md5" href="files/2025-08-14-2.2.0-1/fr/sets/allSets.zip.md5">md5</a>),
+                <a class="download" href="files/2025-08-14-2.2.0-1/fr/decks/allDecks.zip">allDecks.zip</a>
+                (<a class="md5" href="files/2025-08-14-2.2.0-1/fr/decks/allDecks.zip.md5">md5</a>)
+            </aside>
+        </div>
+        
         <h2 id="v2025-07-25-2.2.0-1">2025-07-25 <span class="format breaking">2.2.0</span></h2>
         <div class="version">
             <ul>
