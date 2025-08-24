@@ -252,6 +252,10 @@
                 Note that this means they're banned specifically in official Constructed tournaments, and the card can still be used in Sealed and Draft events. For cards that haven't been banned, this field doesn't exist<br/>
                 <b><i>Note</i></b>: This field was removed in format version 2.2.0, see <code class="field">allowedInFormats</code> for its replacement
             </li>
+            <li><b class="optional field">baseId</b>:
+                Special-, Epic-, Enchanted-, or Iconic-rarity cards are based on cards that fall within the normal 204-number scheme. Cards with one of these rarities have this <code class="field">baseId</code> field set containing the ID of their normal base equivalent.
+                Cards that don't have one of these rarities don't have this field set. See also the <code class="field">epicId</code>, <code class="field">enchantedId</code>, <code class="field">iconicId</code>, and <code class="field">promoIds</code> fields
+            </li>
             <li><b class="optional field">clarifications</b>:
                 Some cards have extra clarifications for how they work or interact with other cards. This field is a list of those clarifications. For cards without clarifications, this field doesn't exist. The text can contain newline characters
             </li>
