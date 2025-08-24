@@ -276,7 +276,7 @@
                 A list of strings with an entry for each effect an Action card has. For cards without effects, this field doesn't exist
             </li>
             <li><b class="optional field">enchantedId</b>:
-                For cards that have an Enchanted version, this field contains the ID of that Enchanted card. For other cards, this field doesn't exist. See also the <code class="field ref">nonEnchantedId</code> field
+                For cards that have an Enchanted-rarity version, this field contains the ID of that Enchanted card. For other cards, this field doesn't exist. See also the <code class="field ref">baseId</code> field
             </li>
             <li><b class="optional field">epicId</b>:
                 For cards that have an Epic-rarity version, this field contains the ID of that Epic card. For other cards, this field doesn't exist. See also the <code class="field ref">baseId</code> field
@@ -404,14 +404,16 @@
                 The main name of the card. For characters and locations, this is the character or location name without the small version subtitle (So the "Minnie Mouse" part of "Minnie Mouse - Stylish Surfer").
                 For other card types, this is the same as the <code class="field ref">fullName</code> field. See also the <code class="field ref">fullName</code> and <code class="field ref">version</code> fields
             </li>
-            <li><b class="optional field">nonEnchantedId</b>:
+            <li><b class="optional field"><s>nonEnchantedId</s></b>:
                 For Enchanted-rarity cards, this field contains the ID of the non-Enchanted version of the same card.
                 For non-Enchanted-rarity cards, this field doesn't exist. See also the <code class="field ref">enchantedId</code> field
+                <b><i>Note</i></b>: This field will be removed in format version 2.3.0 on September 5th, see <code class="field">baseId</code> for its replacement
             </li>
-            <li><b class="optional field">nonPromoId</b>:
+            <li><b class="optional field"><s>nonPromoId</s></b>:
                 Special versions of some cards are released at events or at other occasions, as promo versions.
                 For these cards, this field points to the ID of the non-promo version of the same card. For other
                 cards, this field doesn't exist. See also the <code class="field ref">promoIds</code> field
+                <b><i>Note</i></b>: This field will be removed in format version 2.3.0 on September 5th, see <code class="field">baseId</code> for its replacement
             </li>
             <li><b class="field">number</b>:
                 The number of the card inside its set, shown as <code class="on-card">number/totalCards</code> in the bottom left of the card and in the <code class="field ref">fullIdentifier</code> field.
