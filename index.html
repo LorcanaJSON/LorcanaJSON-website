@@ -278,6 +278,9 @@
             <li><b class="optional field">enchantedId</b>:
                 For cards that have an Enchanted version, this field contains the ID of that Enchanted card. For other cards, this field doesn't exist. See also the <code class="field ref">nonEnchantedId</code> field
             </li>
+            <li><b class="optional field">epicId</b>:
+                For cards that have an Epic-rarity version, this field contains the ID of that Epic card. For other cards, this field doesn't exist. See also the <code class="field ref">baseId</code> field
+            </li>
             <li><b class="optional field">errata</b>:
                 Some cards have errata, correcting mistakes on the card, and/or improving phrasing. This field is a list of those corrections.
                 For cards without errata, this field doesn't exist. The text can contain newline characters
@@ -334,6 +337,9 @@
             <li><b class="field optional">historicData</b>:
                 This field only exists on cards that have had errata or changes to text on the card. The most well-known example is "Bucky - Squirrel Squeak Tutor" (ID 289), which got changed a lot. But other smaller changes have been made too.
                 If it exists, it is a list of dictionaries, with each entry containing the card fields that have been changed in the errata, plus a field called <code class="field">usedUntil</code> that contains the date in yyyy-mm-dd format until when this historic data was used
+            </li>
+            <li><b class="optional field">iconicId</b>:
+                For cards that have an Iconic-rarity version, this field contains the ID of that Iconic card. For other cards, this field doesn't exist. See also the <code class="field ref">baseId</code> field
             </li>
             <li><b class="field">id</b>:
                 A unique number identifying the card. For the first set, this id is identical to the <code class="field ref">number</code> field;
