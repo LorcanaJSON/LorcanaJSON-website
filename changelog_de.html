@@ -20,6 +20,7 @@
     </ul>
     <p>Versions:</p>
     <ul id="versions-toc">
+        <li><a href="#v2025-09-05-2.3.0-1">2025-09-05-2.3.0-1</a></li>
         <li><a href="#v2025-08-30-2.2.1-1">2025-08-30-2.2.1-1</a></li>
         <li><a href="#v2025-08-25-2.2.1-1">2025-08-25-2.2.1-1</a></li>
         <li><a href="#v2025-08-14-2.2.0-1">2025-08-14-2.2.0-1</a></li>
@@ -53,6 +54,44 @@
 <article id="main">
     <section>
         <h1>LorcanaJSON German Changelog</h1>
+
+        <h2 id="v2025-09-05-2.3.0-1">2025-09-05 <span class="format breaking">2.3.0</span></h2>
+        <div class="version">
+            <ul>
+                <li>Breaking format change: As previously announced, removed <code class="field">nonEnchantedId</code> and <code class="field">nonPromoId</code>; they've been replaced by <code class="field">baseId</code></li>
+                <li>Marked Sets 1 to 4 as no longer being allowed in the Constructed format, since they rotated out <i>(Cards that were reprinted in Set 9 are still allowed, see each card's <code class="field">allowedInFormat</code> dictionary)</i></li>
+                <li>Removed extra space in <code class="field">errata</code> of cards from set 1 to 3 with the "Beschützen" keyword ("Bodyguard" in English)</li>
+                <li>Removed extra spaces from <code class="field">clarifications</code> and <code class="field">errata</code> from:
+                    <ul>
+                        <li><code class="card-name">Stitch - Sorgloser Surfer</code> (ID 21)</li>
+                        <li><code class="card-name">Marshmallow - Hartnäckiger Hüter</code> (ID 50)</li>
+                        <li><code class="card-name">Naseweis - Peter Pans Verbündete</code> (ID 58)</li>
+                        <li><code class="card-name">Das meistbeirrende Spiel</code> (ID 62)</li>
+                        <li><code class="card-name">Grinsekatze - Nicht ganz da</code> (ID 71)</li>
+                        <li><code class="card-name">Bratpfanne</code> (ID 202)</li>
+                        <li><code class="card-name">In Sekunden auf Hundert</code> (ID 248)</li>
+                        <li><code class="card-name">Bucky - Lehrer für Hörnchensprache</code> (ID 289)</li>
+                        <li><code class="card-name">Die Herzkönigin - Jähzornig</code> (ID 306)</li>
+                        <li><code class="card-name">Tick Duck - Gerissener Neffe</code> (ID 581)</li>
+                        <li><code class="card-name">Gustav der Riese - Schrecken des Königreichs</code> (ID 609)</li>
+                    </ul>
+                </li>
+                <li>Remove slashes around ability name in <code class="field">errata</code> of <code class="card-name">Bucky - Lehrer für Hörnchensprache</code> (ID 289)</li>
+                <li>Filled in (missing fields of) <code class="field">externalLinks</code> of a lot of Set 9 and P3-promo cards</li>
+                <li>Fixed <code class="field">cardMarketUrl</code> in <code class="field">externalLinks</code> of <code class="card-name">Agrabah - Marktplatz</code> (ID 2072)</li>
+                <li>Fixed <code class="field">cardTraderId</code> and <code class="field">cardTraderUrl</code> in <code class="field">externalLinks</code> of
+                    <code class="card-name">Sven - Offizieller Eislieferant</code> (ID 1992) and <code class="card-name">Aurora - Hält Hof</code> (ID 2160)</li>
+            </ul>
+            <aside class="links">
+                <header>Permanent links:</header>
+                <a class="download" href="files/2025-09-05-2.3.0-1/de/allCards.json.zip">allCards.json.zip</a>
+                (<a class="md5" href="files/2025-09-05-2.3.0-1/de/allCards.json.zip.md5">md5</a>),
+                <a class="download" href="files/2025-09-05-2.3.0-1/de/sets/allSets.zip">allSets.zip</a>
+                (<a class="md5" href="files/2025-09-05-2.3.0-1/de/sets/allSets.zip.md5">md5</a>),
+                <a class="download" href="files/2025-09-05-2.3.0-1/de/decks/allDecks.zip">allDecks.zip</a>
+                (<a class="md5" href="files/2025-09-05-2.3.0-1/de/decks/allDecks.zip.md5">md5</a>)
+            </aside>
+        </div>
 
         <h2 id="v2025-08-30-2.2.1-1">2025-08-30 <span class="format unchanged">2.2.1</span></h2>
         <div class="version">
