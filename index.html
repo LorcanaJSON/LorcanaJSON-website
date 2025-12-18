@@ -245,6 +245,9 @@
                 A list of the name(s) of the artist(s) that drew the art for this card, as written on the bottom left of the card. This will usually contain just one entry, but some cards have multiple artists.
                 See also the <code class="field ref">artistsNormalized</code> and <code class="field ref">artistsText</code> fields
             </li>
+            <li><b class="optional field">artistsNormalized</b>:
+                Artist names aren't always consistent between sets. If a card uses one or more artist names that have changed since, or were abbreviated on this card, this field will exist and contain the consistent or preferred name(s) of the artist(s),
+                in the same order as the <code class="field ref">artists</code>-list. If the artist name(s) are fine as written on the card, this field doesn't exist. See also the <code class="field ref">artists</code> and <code class="field ref">artistsText</code> fields
             </li>
             <li><b class="field">artistsText</b>:
                 The artist(s) that drew the card as it's printed on the bottom left of the card. See also the <code class="field ref">artists</code> field
