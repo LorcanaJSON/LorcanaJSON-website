@@ -159,6 +159,11 @@ a:hover {
     transform: translate(-1em, -2px);
 }
 
+#sidebar .sub-toc {
+    margin-left: 1em;
+    margin-bottom: 0px;
+}
+
 #sidebar footer {
     padding: 0 1em;
     font-size: smaller;
