@@ -150,13 +150,13 @@ a:hover {
 
 #sidebar li a {
     position: relative;
-    margin-left: 2em;
+    margin-left: 1em;
 }
 
 #sidebar li a:hover::before {
-    content: " ➤";
+    content: "➤";
     position: absolute;
-    transform: translate(-2em, -2px);
+    transform: translate(-1em, -2px);
 }
 
 #sidebar footer {
