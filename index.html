@@ -412,7 +412,12 @@
             </li>
             <li><b class="field">name</b>:
                 The main name of the card. For characters and locations, this is the character or location name without the small version subtitle (So the "Minnie Mouse" part of "Minnie Mouse - Stylish Surfer").
-                For other card types, this is the same as the <code class="field ref">fullName</code> field. See also the <code class="field ref">fullName</code> and <code class="field ref">version</code> fields
+                For other card types, this is the same as the <code class="field ref">fullName</code> field. See also the <code class="field ref">fullName</code>, <code class="field ref">names</code> and <code class="field ref">version</code> fields
+            </li>
+            <li><b class="optional field">names</b>:
+                Some character cards consist of multiple characters, these cards also count as the individual characters from their name. For instance <code class="card-name">Mickey Mouse & Minnie Mouse - Adventuring Duo</code> (ID 3070 & 3209)
+                also counts as a card named <code class="card-name">Mickey Mouse</code> and one named <code class="card-name">Minnie Mouse</code>. To make that clearer, this field exists, listing all the different names this card counts as.
+                For cards that don't consist of multiple characters, this field doesn't exist. See also the <code class="field ref">name</code> field
             </li>
             <li><b class="optional field"><s>nonEnchantedId</s></b>:
                 For Enchanted-rarity cards, this field contains the ID of the non-Enchanted version of the same card.
