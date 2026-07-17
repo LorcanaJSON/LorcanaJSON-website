@@ -113,6 +113,15 @@
                     <li><b class="field">allowedInTournamentsFromDate</b>:
                         A date string saying from when this set was or will be allowed to be used in official tournaments. If that date isn't known, or if the set isn't allowed in any official tournaments, this field is set to 'null'
                     </li>
+                    <li><b class="field">cardCounts</b>:
+                        A dictionary containing counts of cards in this set for different categories for this set. Available categories are:
+                        <ul>
+                            <li><b class="field">base</b>: How many base cards this set contains. Base cards are unique cards, within the range of the maximum card number listed in the bottom left (So for instance '10/204')</li>
+                            <li><b class="field">nonBase</b>: How many non-base cards this set contains. Non-base cards are alternate art, higher-rarity versions of base cards. They are outside the range of the maximum number (So for instance '234/204')</li>
+                            <li><b class="field">promo</b>: How many promo cards there are for this set. Promo cards don't have a maximum number listed, but belong to a promo group (For instance '1/P1')</li>
+                            <li><b class="field">total</b>: The total number of cards for this set. It is a sum of the previous fields</li>
+                        </ul>
+                    </li>
                     <li><b class="field">code</b>:
                         The code of this set. This is already in the name of the set file, but it's here too for completion's sake
                     </li>
