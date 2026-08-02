@@ -22,6 +22,7 @@
             <li><a href="#downloads-sets">Set downloads</a></li>
             <li><a href="#downloads-decks">Deck downloads</a></li>
             <li><a href="#downloads-cockatrice">Cockatrice downloads</a></li>
+            <li><a href="#downloads-coconut">[Format Coconut] downloads</a></li>
         </ul>
         <li><a href="#changelogs">Changelogs</a></li>
         <li><a href="#limitations">Limitations</a></li>
@@ -2651,7 +2652,38 @@
                 </td>
             </tr>
         </table>
+
+        <h2 id="downloads-coconut">[Format Coconut] download</h2>
+        <p>At the end of July 2026, Ravensburger announced a beta test for a new multiplayer singleton format, called (presumably temporarily) "[Format Coconut]".
+            <a href="https://www.disneylorcana.com/en-GB/news/2026/07/format-coconut" target="_blank">Click here for the official announcement news post</a>,
+            and a short format description PDF <a href="https://files.disneylorcana.com/FormatCoconut_Rules.pdf" target="_blank">can be found here</a>.
+        </p>
+        <p>The format uses special so-called Coconut cards, which were only released in English. The data on these Coconut cards in LorcanaJSON-formatting can be downloaded here:
+            <a class="download" href="files/current/en/formatCoconutCards.json" title="download"></a>
+            <a class="md5" href="files/current/en/formatCoconutCards.json.md5" title="md5 checksum"></a>
+        </p>
+        <p><b>Note</b>: Since this format is in Beta, this data is bound to change. It may even disappear completely, if and when Ravensburger stops with their Beta. So keep in mind that this data file might not exist permanently</p>
+        <p>This dataset is formatted the same as the normal cards dataset, so it has a "metadata" dictionary and a "cards" list. The cards themselves have a subset of the fields of 'normal' cards, only the ones that are relevant to these Coconut cards.
+            The fields that work the same are: <i>abilities, artists, artistsText, color, fullName, fullText, fullTextSections, images, name, number, subtitle</i>.<br />
+            An important difference is that these cards don't have an <code class="field">id</code>, because in this beta stage it can't be guaranteed that cards remain constant or even extant.
+            For now <code class="field">number</code> can be used as an ID, since these are unique within the Coconut card list.
+        </p>
+        <p>These Coconut cards have a few fields unique to them:
+            <ul>
+                <li><b class="field">associatedId</b>:
+                    In "[Format Coconut]", you can only have one copy of a card in your deck, except for a special card listed on the Coconut card, which you're allowed 4 copies of. This field contains the ID used in the main card data set of the base version of this allowed card.
+                    See also <code class="field">associatedName</code>
+                </li>
+                <li><b class="field">associatedName</b>:
+                    This field contains the name of the card that this Coconut card allows you more copies of. See also <code class="field">associatedId</code>
+                </li>
+                <li><b class="field">closeup</b> (inside <code class="field">images</code>):
+                    In the official app, when you select which Coconut card you want to use, it shows a little closeup of part of the card art as a reminder. This field contains the image URL of that closeup image
+                </li>
+            </ul>
+        </p>
     </section>
+
 
     <section id="changelogs">
         <h1>Changelogs</h1>
