@@ -390,6 +390,9 @@
                     <li><b class="optional field">varnishMask</b>:
                         A mask of the full card image that the official <span class="lorcana">Disney Lorcana</span> app uses to draw the varnish effect, usually 1468 by 2048 pixels. Not all cards have this field. See also the <code class="field">varnishType</code> field
                     </li>
+                    <li><b class="optional field">varnishMask2</b>:
+                        A few cards have a second varnish mask URL, similar to what's in <code class="field">varnishMask</code>. For those cards, this field exists and is set to the URL of that second mask image. If the card has no second varnish mask, this field won't exist
+                    </li>
                 </ul>
                 Note: If the <code class="field ref">isExternalReveal</code> field exists and is set to
                 <code class="json-keyword">true</code>, this card isn't in the official app yet, so only the
