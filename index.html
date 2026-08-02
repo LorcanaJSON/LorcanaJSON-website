@@ -331,6 +331,10 @@
                 The flavor text at the bottom of a card. This has no gameplay effect, but does improve the feel of the card.
                 For cards without flavor text, this field doesn't exist. The text can contain newline characters
             </li>
+            <li><b class="optional field">foilEffectColors</b>:
+                Some cards use one or more colors for their foiling effect in the official Lorcana app. If a card does, this field is a list of each of those colors in hex format (A '#' followed by two characters each for R, G, B in hexadecimal).
+                If a card doesn't have colored foil effects, this field doesn't exist
+            </li>
             <li><b class="optional field">foilTypes</b>:
                 A list of all the foil types the card can have. 'None' means no foiling. While this data does come from the official app, it is impossible to fully manually verify, so this data may not be 100% accurate, especially for 'Special'-rarity cards.
                 For cards where <code class="field ref">isExternalReveal</code> exists and is set to <code class="json-keyword">true</code>, this field does not exist
