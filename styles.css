@@ -216,6 +216,15 @@ td, th {
     padding: 0.25em 0.5em;
     vertical-align: top;
 }
+/*
+td.center {
+	text-align: center;
+}
+*/
+
+.fit-content {
+	width: fit-content;
+}
 
 body.index a.download::after {
     display: block;
