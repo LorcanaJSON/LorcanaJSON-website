@@ -252,6 +252,13 @@ b.optional.field::after {
     font-weight: normal;
 }
 
+b.nullable.field::after {
+    content: " (nullable)";
+    color: var(--lorcana-kelp);
+    font-style: italic;
+    font-weight: normal;
+}
+
 /*********************** Versions (changelog) ****************************/
 .version > ul,
 .version > p {

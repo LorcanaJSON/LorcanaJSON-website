@@ -111,7 +111,7 @@
                                 If this format doesn't use rotations, this field doesn't exist</li>
                         </ul>
                     </li>
-                    <li><b class="field">allowedInTournamentsFromDate</b>:
+                    <li><b class="nullable field">allowedInTournamentsFromDate</b>:
                         A date string saying from when this set was or will be allowed to be used in official tournaments. If that date isn't known, or if the set isn't allowed in any official tournaments, this field is set to 'null'
                     </li>
                     <li><b class="field">cardCounts</b>:
@@ -140,10 +140,10 @@
                    <li><b class="field">number</b>:
                         The number of the set, within the set's 'type'. So both setcode "1" and "Q1" have 'number' 1, since the former is expansion 1 and the latter is quest 1. See also the <code class="field ref">type</code> field
                     </li>
-                     <li><b class="field">prereleaseDate</b>:
+                     <li><b class="nullable field">prereleaseDate</b>:
                         The pre-release date for this set, when it was or will be available to buy from local game stores. Format is year-month-day. If the pre-release date isn't known yet, the value is 'null'
                     </li>
-                    <li><b class="field">releaseDate</b>:
+                    <li><b class="nullable field">releaseDate</b>:
                         The release date for this set, when it was or will be available to buy from large retailers. Format is year-month-day. If the release date isn't known yet, the value is 'null'
                     </li>
                     <li><b class="field">type</b>:
@@ -253,7 +253,7 @@
                     <li><b class="optional field">bannedSinceDate</b>: If this card has been banned in this format, this field is set to the date when the ban took or takes effect. If this card has not been banned in this format, this field doesn't exist</li>
                 </ul>
             </li>
-            <li><b class="field">allowedInTournamentsFromDate</b>:
+            <li><b class="nullable field">allowedInTournamentsFromDate</b>:
                 A date string saying from when this card was or will be allowed to be used in official tournaments. If that date isn't known, or if the card isn't allowed in any official tournaments, this field is set to 'null'
             </li>
             <li><b class="field">artists</b>:
@@ -447,7 +447,7 @@
                 cards, this field doesn't exist. See also the <code class="field ref">promoIds</code> field
                 <b><i>Note</i></b>: This field was removed in format version 2.3.0, see <code class="field">baseId</code> for its replacement
             </li>
-            <li><b class="field">number</b>:
+            <li><b class="nullable field">number</b>:
                 The number of the card inside its set, shown as <code class="on-card">number/totalCards</code> in the bottom left of the card and in the <code class="field ref">fullIdentifier</code> field.
                 For 'Special'-rarity cards, this number is the promo number instead, so a set might have two cards with number 1, one Special and one non-Special.
                 This doesn't necessarily mean the cards are related, for that see the <code class="field ref">promoIds</code> and <code class="field ref">baseId</code> fields.
