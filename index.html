@@ -451,7 +451,7 @@
                 The number of the card inside its set, shown as <code class="on-card">number/totalCards</code> in the bottom left of the card and in the <code class="field ref">fullIdentifier</code> field.
                 For 'Special'-rarity cards, this number is the promo number instead, so a set might have two cards with number 1, one Special and one non-Special.
                 This doesn't necessarily mean the cards are related, for that see the <code class="field ref">promoIds</code> and <code class="field ref">baseId</code> fields.
-                For a unique card identifier, see the <code class="field ref">id</code> field
+                For a unique card identifier, see the <code class="field ref">id</code> field. Token-like cards (like <code class="card-name">Vine Tendril</code> (ID 3551) from Set Q3 "The Great Hunny Rescue) do not have a number, for those card this field is 'null'
             </li>
             <li><b class="optional field">promoGrouping</b>:
                 This field contains which grouping a promo card belongs to. A grouping is different from a setcode. For instance, the promo card <code class="card-name">Minnie Mouse - Wide-Eyed Diver</code> (ID 674) has the full identifier '16/P1 • EN • 2'.
